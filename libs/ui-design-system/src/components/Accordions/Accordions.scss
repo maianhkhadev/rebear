@@ -1,0 +1,81 @@
+@import '../../mixins.scss';
+
+.rb-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid var(--rb-light-neutral-200);
+  border-radius: 0.5rem;
+  padding: 12px;
+  overflow: hidden;
+
+  .rb-accordion {
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--rb-light-neutral-200);
+
+      .rb-accordion-panel {
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .rb-accordion-header {
+      @include rb-paragraph-L;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--rb-dark-neutral-800);
+      background-color: var(--rb-white);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      border: 0.125rem solid var(--rb-white);
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      outline-offset: 1px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--rb-light-surface-50);
+        border-color: var(--rb-light-surface-50);
+      }
+
+      &:focus {
+        background-color: var(--rb-light-surface-50);
+        border-color: var(--rb-primary-600);
+        outline: 0.125rem solid var(--rb-primary-100);
+      }
+
+      .rb-accordion-icon {
+        width: 1.5rem;
+        color: var(--rb-primary-500);
+        transition: all 0.25s ease-in-out;
+      }
+    }
+
+    .rb-accordion-transition {
+      max-height: 0;
+      transition: max-height 0.25s ease-in-out;
+      overflow: hidden;
+
+      .rb-accordion-panel {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+
+  .rb-accordion-active {
+
+    .rb-accordion-header {
+
+      .rb-accordion-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .rb-accordion-transition {
+      max-height: 100vh;
+    }
+  }
+}

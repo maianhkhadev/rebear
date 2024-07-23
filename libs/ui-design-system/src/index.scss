@@ -1,0 +1,143 @@
+@import './mixins.scss';
+
+:root {
+  // PRIMARY COLORS
+  --rb-primary-900: #00044b;
+  --rb-primary-800: #0d1660;
+  --rb-primary-700: #171f6b;
+  --rb-primary-600: #202776;
+  --rb-primary-500: #4e51a7;
+  --rb-primary-400: #666bb4;
+  --rb-primary-300: #8086c1;
+  --rb-primary-200: #a3a8d3;
+  --rb-primary-100: #c7cae5;
+  --rb-primary-50: #e9eaf4;
+  // LIGHT NEUTRAL COLORS
+  --rb-light-neutral-900: #b4bcbf;
+  --rb-light-neutral-800: #bbc3c5;
+  --rb-light-neutral-700: #c3c9cc;
+  --rb-light-neutral-600: #cad0d2;
+  --rb-light-neutral-500: #d1d6d8;
+  --rb-light-neutral-400: #d9dddf;
+  --rb-light-neutral-300: #e0ebeb;
+  --rb-light-neutral-200: #f0f1f2;
+  --rb-light-neutral-100: #f7f8f8;
+  --rb-light-neutral-50: #e9eaf4;
+  // DARK NEUTRAL COLORS
+  --rb-dark-neutral-900: #212121;
+  --rb-dark-neutral-800: #424242;
+  --rb-dark-neutral-700: #616161;
+  --rb-dark-neutral-600: #757575;
+  --rb-dark-neutral-500: #9e9e9e;
+  --rb-dark-neutral-400: #bdbdbd;
+  --rb-dark-neutral-300: #e0e0e0;
+  --rb-dark-neutral-200: #eeeeee;
+  --rb-dark-neutral-100: #f5f5f5;
+  --rb-dark-neutral-50: #fafafa;
+  // LIGHT SURFACE COLORS
+  --rb-light-surface-900: #b4bcbf;
+  --rb-light-surface-800: #bbc3c5;
+  --rb-light-surface-700: #c3c9cc;
+  --rb-light-surface-600: #cad0d2;
+  --rb-light-surface-500: #d6e4ff;
+  --rb-light-surface-400: #d9dddf;
+  --rb-light-surface-300: #e0ebeb;
+  --rb-light-surface-200: #f0f1f2;
+  --rb-light-surface-100: #f7f8f8;
+  --rb-light-surface-50: #f8faff;
+  // DARK SURFACE COLORS
+  --rb-dark-surface-900: #212121;
+  --rb-dark-surface-800: #424242;
+  --rb-dark-surface-700: #616161;
+  --rb-dark-surface-600: #757575;
+  --rb-dark-surface-500: #9e9e9e;
+  --rb-dark-surface-400: #bdbdbd;
+  --rb-dark-surface-300: #e0e0e0;
+  --rb-dark-surface-200: #eeeeee;
+  --rb-dark-surface-100: #f5f5f5;
+  --rb-dark-surface-50: #fafafa;
+  // INFORMATION COLORS
+  --rb-info-900: #294e9e;
+  --rb-info-800: #336cbe;
+  --rb-info-700: #397dd0;
+  --rb-info-600: #408fe3;
+  --rb-info-500: #469df1;
+  --rb-info-400: #59abf3;
+  --rb-info-300: #73baf5;
+  --rb-info-200: #99cef9;
+  --rb-info-100: #bfe0fb;
+  --rb-info-50: #e5f3fd;
+  // SUCCESS COLORS
+  --rb-success-900: #265d28;
+  --rb-success-800: #377c39;
+  --rb-success-700: #408d43;
+  --rb-success-600: #4b9f4e;
+  --rb-success-500: #54ae57;
+  --rb-success-400: #6cba70;
+  --rb-success-300: #85c688;
+  --rb-success-200: #a8d5aa;
+  --rb-success-100: #c9e6cb;
+  --rb-success-50: #e9f5ea;
+  // WARNING COLORS
+  --rb-warning-900: #ea6f10;
+  --rb-warning-800: #ec8c15;
+  --rb-warning-700: #ed9b18;
+  --rb-warning-600: #eead1c;
+  --rb-warning-500: #eeba22;
+  --rb-warning-400: #f0c434;
+  --rb-warning-300: #f2cf55;
+  --rb-warning-200: #f6dc84;
+  --rb-warning-100: #f9e9b4;
+  --rb-warning-50: #fdf7e1;
+  // ERROR COLORS
+  --rb-error-900: #b92215;
+  --rb-error-800: #c82d22;
+  --rb-error-700: #d53429;
+  --rb-error-600: #e73e2f;
+  --rb-error-500: #f5482f;
+  --rb-error-400: #f1574b;
+  --rb-error-300: #e87570;
+  --rb-error-200: #f19b98;
+  --rb-error-100: #ffced1;
+  --rb-error-50: #ffebee;
+
+  --rb-white: #ffffff;
+  --rb-primary-color: var(--rb-primary-600);
+  --rb-secondary-color: #6c757d;
+  --rb-success-color: var(--rb-success-600);
+  --rb-warning-color: var(--rb-warning-600);
+  --rb-error-color: var(--rb-error-600);
+  --rb-info-color: var(--rb-info-600);
+  --rb-modal-backdrop: #5d6880;
+
+  // TYPOGRAPHY
+  --rb-title-h1-font-size: 3rem;
+  --rb-title-h1-line-height: 3.75rem;
+
+  --rb-title-h2-font-size: 2.25rem;
+  --rb-title-h2-line-height: 2.75rem;
+
+  --rb-title-h3-font-size: 1.875rem;
+  --rb-title-h3-line-height: 2.375rem;
+
+  --rb-title-h4-font-size: 1.5rem;
+  --rb-title-h4-line-height: 2rem;
+
+  --rb-title-h5-font-size: 1.25rem;
+  --rb-title-h5-line-height: 1.875rem;
+
+  --rb-paragraph-large-font-size: 1rem;
+  --rb-paragraph-large-line-height: 1.5rem;
+
+  --rb-paragraph-small-font-size: 0.875rem;
+  --rb-paragraph-small-line-height: 1.25rem;
+
+  --rb-caption-font-size: 0.75rem;
+  --rb-caption-line-height: 1.125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

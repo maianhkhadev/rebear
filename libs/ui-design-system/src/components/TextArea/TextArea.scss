@@ -1,0 +1,69 @@
+@import '../../mixins.scss';
+
+.rebear-text-area {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.25rem;
+  outline-offset: 1px;
+  cursor: pointer;
+
+  &::placeholder {
+    color: var(--rb-dark-neutral-600);
+  }
+}
+
+.rebear-text-area-small {
+  @include rb-paragraph-S;
+  padding: 0.313rem 0.5rem;
+}
+
+.rebear-text-area-medium {
+  @include rb-paragraph-L;
+  padding: 0.438rem 0.75rem;
+}
+
+.rebear-text-area-large {
+  @include rb-title-h5;
+  padding: 0.5rem 1rem;
+}
+
+.rebear-text-area-primary {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-white);
+  border-color: var(--rb-light-neutral-600);
+
+  &:hover {
+    border-color: var(--rb-light-neutral-900);
+  }
+
+  &:focus {
+    outline: 0.125rem solid var(--rb-primary-100);
+    border-color: var(--rb-primary-400);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--rb-light-neutral-50);
+    border-color: var(--rb-light-neutral-500);
+  }
+}
+
+.rebear-text-area-error {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-white);
+  border-color: var(--rb-error-700);
+
+  &:hover {
+    border-color: var(--rb-error-900);
+  }
+
+  &:focus {
+    outline: 0.125rem solid var(--rb-error-100);
+    border-color: var(--rb-error-700);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--rb-light-neutral-50);
+    border-color: var(--rb-light-neutral-500);
+  }
+}

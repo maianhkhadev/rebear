@@ -1,0 +1,19 @@
+@mixin rb-title-h5 {
+  font-size: var(--rb-title-h5-font-size);
+  line-height: var(--rb-title-h5-line-height);
+}
+
+@mixin rb-paragraph-L {
+  font-size: var(--rb-paragraph-large-font-size);
+  line-height: var(--rb-paragraph-large-line-height);
+}
+
+@mixin rb-paragraph-S {
+  font-size: var(--rb-paragraph-small-font-size);
+  line-height: var(--rb-paragraph-small-line-height);
+}
+
+@mixin rb-caption {
+  font-size: var(--rb-caption-font-size);
+  line-height: var(--rb-caption-line-height);
+}

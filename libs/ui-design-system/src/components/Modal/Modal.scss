@@ -1,0 +1,36 @@
+.rebear-modal-backdrop {
+  background-color: rgba(#212529, 0.5);
+}
+
+.rebear-modal {
+  background-color: var(--rb-white);
+  border-radius: 0.25rem;
+  margin: 2rem auto;
+  
+  .rebear-modal-header {
+    padding: 1rem;
+  }
+
+  .rebear-modal-content {
+    padding: 1rem;
+  }
+
+  .rebear-modal-actions {
+    display: flex;
+    justify-content: end;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+.rebear-modal-small {
+  width: 31.25rem;
+}
+
+.rebear-modal-medium {
+  width: 40.625rem;
+}
+
+.rebear-modal-large {
+  width: 50rem;
+}

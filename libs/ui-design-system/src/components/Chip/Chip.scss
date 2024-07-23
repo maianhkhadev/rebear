@@ -1,0 +1,33 @@
+@import '../../mixins.scss';
+
+.rebear-chip {
+  @include rb-caption;
+  display: inline-block;
+  border-radius: 2rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.rebear-chip-primary {
+  color: var(--rb-white);
+  background-color: var(--rb-primary-600);
+}
+
+.rebear-chip-success {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-success-100);
+}
+
+.rebear-chip-warning {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-warning-100);
+}
+
+.rebear-chip-error {
+  color: var(--rb-white);
+  background-color: var(--rb-error-900);
+}
+
+.rebear-chip-info {
+  color: var(--rb-info-900);
+  background-color: var(--rb-info-100);
+}
