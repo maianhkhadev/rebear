@@ -6,7 +6,7 @@ import { ModalContent } from './ModalContent';
 import { ModalActions } from './ModalActions';
 import { Button } from '../Button';
 
-const FakeCom = () => {
+const Demo = () => {
   const [open, onOpenChange] = useState(false);
 
   const handleClick = () => {
@@ -36,7 +36,7 @@ const FakeCom = () => {
 const meta: Meta<typeof Modal> = {
   component: Modal,
   title: 'Modal',
-  render: ({ ...args }) => <FakeCom {...args} />,
+  render: ({ ...args }) => <Demo {...args} />,
 };
 export default meta;
 type Story = StoryObj<typeof Modal>;

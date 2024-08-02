@@ -1,0 +1,89 @@
+@import '../../mixins.scss';
+
+.rebear-select {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.25rem;
+  outline-offset: 1px;
+  cursor: pointer;
+
+  &::placeholder {
+    color: var(--rb-dark-neutral-600);
+  }
+}
+
+.rebear-select-small {
+  @include rb-paragraph-S;
+  padding: 0.313rem 0.5rem;
+}
+
+.rebear-select-medium {
+  @include rb-paragraph-L;
+  padding: 0.438rem 0.75rem;
+}
+
+.rebear-select-large {
+  @include rb-title-h5;
+  padding: 0.5rem 1rem;
+}
+
+.rebear-select-primary {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-white);
+  border-color: var(--rb-light-neutral-600);
+
+  &:hover {
+    border-color: var(--rb-light-neutral-900);
+  }
+
+  &:focus {
+    outline: 0.125rem solid var(--rb-primary-100);
+    border-color: var(--rb-primary-400);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--rb-light-neutral-50);
+    border-color: var(--rb-light-neutral-500);
+  }
+}
+
+.rebear-select-error {
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-white);
+  border-color: var(--rb-error-700);
+
+  &:hover {
+    border-color: var(--rb-error-900);
+  }
+
+  &:focus {
+    outline: 0.125rem solid var(--rb-error-100);
+    border-color: var(--rb-error-700);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--rb-light-neutral-50);
+    border-color: var(--rb-light-neutral-500);
+  }
+}
+
+.rebear-select-dropdown {
+  box-shadow: 0 4px 4px 0 #00000026;
+}
+
+.rebear-select-option {
+  @include rb-paragraph-L;
+  color: var(--rb-dark-neutral-800);
+  background-color: var(--rb-white);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--rb-light-surface-100);
+  }
+
+  &:disabled, &.disabled {
+    background-color: var(--rb-light-neutral-50);
+  }
+}
