@@ -1,18 +1,12 @@
-import { forwardRef, HTMLProps, useState } from 'react';
+import { forwardRef, HTMLProps, useState, useMemo } from 'react';
 import clsx from 'clsx';
 import {
-  useFloating,
-  autoUpdate,
-  offset,
-  flip,
-  shift,
-  useClick,
-  useDismiss,
-  useRole,
-  useInteractions,
+  useMergeRefs,
   FloatingPortal,
   FloatingFocusManager,
 } from '@floating-ui/react';
+import { useInstallFloating } from './useInstallFloating';
+import { SelectContext } from './SelectContext';
 import {
   ClassNames,
   SelectVariant,
@@ -25,10 +19,10 @@ import {
 import './Select.scss';
 
 export type SelectProps = {
-  value?: string;
+  value?: string | number | readonly string[] | undefined;
   variant?: SelectVariants;
   size?: SelectSizes;
-  onChange?: (value: string) => void;
+  onChange?: (value: string | number | readonly string[] | undefined) => void;
 };
 
 export const Select = forwardRef<
@@ -37,24 +31,20 @@ export const Select = forwardRef<
 >(function Select(props, ref) {
   const { value, className, variant, size, children, onChange, ...rest } =
     props;
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, onOpenChange] = useState(false);
+  const floatingData = useInstallFloating({ open, onOpenChange });
+  const { context, refs, referenceProps, floatingProps } = floatingData;
 
-  const { refs, context } = useFloating({
-    open: isOpen,
-    onOpenChange: setIsOpen,
-    middleware: [offset(10), flip(), shift()],
-    whileElementsMounted: autoUpdate,
-  });
+  const mergedRef = useMergeRefs([refs.setReference, ref]);
 
-  const click = useClick(context);
-  const dismiss = useDismiss(context);
-  const role = useRole(context);
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
-    click,
-    dismiss,
-    role,
-  ]);
+  const contextValue = useMemo(
+    () => ({
+      open,
+      onOpenChange,
+      onChange,
+    }),
+    [open, onOpenChange, onChange]
+  );
 
   const classes = clsx([
     ClassNames.Select,
@@ -64,10 +54,10 @@ export const Select = forwardRef<
   ]);
 
   return (
-    <>
+    <SelectContext.Provider value={contextValue}>
       <select
-        ref={refs.setReference}
-        {...getReferenceProps()}
+        ref={mergedRef}
+        {...referenceProps}
         className={classes}
         value={value}
         onChange={onChange}
@@ -75,19 +65,19 @@ export const Select = forwardRef<
       />
 
       <FloatingPortal>
-        {isOpen && (
+        {open && (
           <FloatingFocusManager context={context} modal={false}>
             <div
               ref={refs.setFloating}
               className={ClassNames.SelectDropdown}
-              {...getFloatingProps()}
+              {...floatingProps}
             >
               {children}
             </div>
           </FloatingFocusManager>
         )}
       </FloatingPortal>
-    </>
+    </SelectContext.Provider>
   );
 });
 

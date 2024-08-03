@@ -1,4 +1,4 @@
-import { forwardRef, HTMLProps } from 'react';
+import { forwardRef, HTMLProps, ReactElement } from 'react';
 import clsx from 'clsx';
 import {
   ClassNames,
@@ -15,13 +15,16 @@ export type ButtonProps = {
   variant?: ButtonVariants;
   size?: ButtonSizes;
   block?: boolean;
+  prefixIcon?: ReactElement;
+  suffixIcon?: ReactElement;
 };
 
 export const Button = forwardRef<
   HTMLButtonElement,
   ButtonProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function Button(props, ref) {
-  const { variant, size, block, children, ...rest } = props;
+  const { variant, size, block, prefixIcon, suffixIcon, children, ...rest } =
+    props;
 
   const classes = clsx([
     ClassNames.Button,
@@ -32,7 +35,15 @@ export const Button = forwardRef<
 
   return (
     <button {...rest} ref={ref} type="button" className={classes}>
+      {prefixIcon && (
+        <span className={ClassNames.PrefixIcon}>{prefixIcon}</span>
+      )}
+
       {children}
+
+      {suffixIcon && (
+        <span className={ClassNames.SuffixIcon}>{suffixIcon}</span>
+      )}
     </button>
   );
 });
@@ -41,6 +52,8 @@ Button.defaultProps = {
   variant: ButtonVariant.Primary,
   size: ButtonSize.Medium,
   block: false,
+  prefixIcon: undefined,
+  suffixIcon: undefined,
 };
 
 export default Button;

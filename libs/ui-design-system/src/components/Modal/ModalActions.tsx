@@ -1,4 +1,5 @@
 import { forwardRef, HTMLProps } from 'react';
+import { ClassNames } from './Modal.constant';
 
 export const ModalActions = forwardRef<
   HTMLElement,
@@ -7,7 +8,7 @@ export const ModalActions = forwardRef<
   const { children } = props
 
   return (
-    <footer ref={ref} className="rebear-modal-actions">
+    <footer ref={ref} className={ClassNames.ModalActions}>
       {children}
     </footer>
   );

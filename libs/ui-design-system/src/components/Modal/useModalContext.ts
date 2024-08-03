@@ -2,13 +2,15 @@ import { useContext } from 'react';
 import { ModalContext } from './ModalContext';
 
 export const useModalContext = () => {
-  const context = useContext(ModalContext);
+  const modalContext = useContext(ModalContext);
 
-  if (context == null) {
-    throw new Error("Missing ModalContext, please use Modal component inside Provider");
+  if (!modalContext) {
+    throw new Error(
+      'Missing ModalContext, please use inside a ModalContext Provider'
+    );
   }
 
-  return context;
+  return modalContext;
 };
 
 export default useModalContext;

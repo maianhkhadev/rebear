@@ -63,21 +63,42 @@
   border-radius: 0.25rem;
   outline-offset: 1px;
   cursor: pointer;
+
+  &.rebear-button-small {
+    @include rb-paragraph-S;
+    padding: 0.313rem 1rem;
+  }
+
+  &.rebear-button-medium {
+    @include rb-paragraph-L;
+    padding: 0.438rem 1.5rem;
+  }
+
+  &.rebear-button-large {
+    @include rb-title-h5;
+    padding: 0.5rem 2rem;
+  }
 }
 
-.rebear-button-small {
-  @include rb-paragraph-S;
-  padding: 0.313rem 1rem;
-}
+.rebear-button-icon {
+  line-height: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  outline-offset: 1px;
+  cursor: pointer;
 
-.rebear-button-medium {
-  @include rb-paragraph-L;
-  padding: 0.438rem 1.5rem;
-}
+  &.rebear-button-small {
+    padding: 0.313rem;
+  }
 
-.rebear-button-large {
-  @include rb-title-h5;
-  padding: 0.5rem 2rem;
+  &.rebear-button-medium {
+    padding: 0.438rem;
+  }
+
+  &.rebear-button-large {
+    padding: 0.5rem;
+  }
 }
 
 .rebear-button-block {

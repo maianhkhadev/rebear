@@ -1,7 +1,10 @@
 
 export const ClassNames = {
   Button: 'rebear-button',
+  PrefixIcon: 'rebear-button-prefix-icon',
+  SuffixIcon: 'rebear-button-suffix-icon',
   Block: 'rebear-button-block',
+  ButtonIcon: 'rebear-button-icon',
 };
 
 export const ButtonVariant = {

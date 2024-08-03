@@ -1,4 +1,5 @@
 export * from './Modal'
+export * from './ModalDismiss'
 export * from './ModalTitle'
 export * from './ModalContent'
 export * from './ModalActions'
