@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextField } from './TextField';
+import { Input } from './Input';
+import IconClose from '../Icons/IconClose';
 
-const meta: Meta<typeof TextField> = {
-  component: TextField,
-  title: 'TextField',
-  render: ({ ...args }) => <TextField {...args} />,
+const meta: Meta<typeof Input> = {
+  component: Input,
+  title: 'Input',
+  render: ({ ...args }) => <Input {...args} suffixIcon={<IconClose />} />,
 };
 export default meta;
-type Story = StoryObj<typeof TextField>;
+type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {

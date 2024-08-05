@@ -1,45 +1,41 @@
 @import '../../mixins.scss';
 
-.rebear-select-container {
+.rebear-input-container {
   position: relative;
 
-  select {
-    
-  }
+  &:has(.rebear-input-prefix-icon) {
 
-  &:has(.rebear-select-prefix-icon) {
-
-    .rebear-select-small {
+    .rebear-input-small {
       padding-left: 2.5rem;
     }
 
-    .rebear-select-medium {
+    .rebear-input-medium {
       padding-left: 3rem;
     }
 
-    .rebear-select-large {
+    .rebear-input-large {
       padding-left: 3.5rem;
     }
   }
 
-  &:has(.rebear-select-suffix-icon) {
+  &:has(.rebear-input-suffix-icon) {
     
-    .rebear-select-small {
+    .rebear-input-small {
       padding-right: 2.5rem;
     }
 
-    .rebear-select-medium {
+    .rebear-input-medium {
       padding-right: 3rem;
     }
 
-    .rebear-select-large {
+    .rebear-input-large {
       padding-right: 3.5rem;
     }
   }
 }
 
-.rebear-select-prefix-icon,
-.rebear-select-suffix-icon {
+.rebear-input-prefix-icon,
+.rebear-input-suffix-icon {
   position: absolute;
 
   svg {
@@ -47,25 +43,23 @@
   }
 }
 
-.rebear-select {
+.rebear-input {
   width: 100%;
   border-width: 1px;
   border-style: solid;
   border-radius: 0.25rem;
   outline-offset: 1px;
-  cursor: pointer;
 
   &::placeholder {
     color: var(--rb-dark-neutral-600);
   }
 }
 
-.rebear-select-small {
+.rebear-input-small {
   @include rb-paragraph-S;
-  height: 2rem;
   padding: 0.313rem 0.5rem;
 
-  + .rebear-select-prefix-icon {
+  + .rebear-input-prefix-icon {
     top: 0.5rem;
     left: 0.5rem;
 
@@ -75,7 +69,7 @@
     }
   }
 
-  + .rebear-select-suffix-icon {
+  + .rebear-input-suffix-icon {
     top: 0.5rem;
     right: 0.5rem;
 
@@ -86,12 +80,11 @@
   }
 }
 
-.rebear-select-medium {
+.rebear-input-medium {
   @include rb-paragraph-L;
-  height: 2.5rem;
   padding: 0.438rem 0.75rem;
 
-  + .rebear-select-prefix-icon {
+  + .rebear-input-prefix-icon {
     top: 0.675rem;
     left: 0.675rem;
 
@@ -101,7 +94,7 @@
     }
   }
 
-  + .rebear-select-suffix-icon {
+  + .rebear-input-suffix-icon {
     top: 0.675rem;
     right: 0.675rem;
 
@@ -112,12 +105,11 @@
   }
 }
 
-.rebear-select-large {
+.rebear-input-large {
   @include rb-title-h5;
-  height: 3rem;
   padding: 0.5rem 1rem;
 
-  + .rebear-select-prefix-icon {
+  + .rebear-input-prefix-icon {
     top: 0.75rem;
     left: 0.75rem;
 
@@ -127,7 +119,7 @@
     }
   }
 
-  + .rebear-select-suffix-icon {
+  + .rebear-input-suffix-icon {
     top: 0.75rem;
     right: 0.75rem;
 
@@ -138,7 +130,7 @@
   }
 }
 
-.rebear-select-primary {
+.rebear-input-primary {
   color: var(--rb-dark-neutral-800);
   background-color: var(--rb-white);
   border-color: var(--rb-light-neutral-600);
@@ -152,13 +144,14 @@
     border-color: var(--rb-primary-400);
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: var(--rb-light-neutral-50);
     border-color: var(--rb-light-neutral-500);
   }
 }
 
-.rebear-select-error {
+.rebear-input-error {
   color: var(--rb-dark-neutral-800);
   background-color: var(--rb-white);
   border-color: var(--rb-error-700);
@@ -172,30 +165,9 @@
     border-color: var(--rb-error-700);
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: var(--rb-light-neutral-50);
     border-color: var(--rb-light-neutral-500);
-  }
-}
-
-.rebear-select-dropdown {
-  box-shadow: 0 4px 4px 0 #00000026;
-  outline: unset;
-  margin-top: 0.25rem;
-}
-
-.rebear-select-option {
-  @include rb-paragraph-L;
-  color: var(--rb-dark-neutral-800);
-  background-color: var(--rb-white);
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--rb-light-surface-100);
-  }
-
-  &:disabled, &.disabled {
-    background-color: var(--rb-light-neutral-50);
   }
 }

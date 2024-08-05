@@ -1,12 +1,17 @@
-import { forwardRef, HTMLProps, useState, useMemo } from 'react';
-import clsx from 'clsx';
 import {
-  useMergeRefs,
-  FloatingPortal,
-  FloatingFocusManager,
-} from '@floating-ui/react';
+  forwardRef,
+  HTMLProps,
+  ReactElement,
+  ReactNode,
+  useState,
+  useMemo,
+  useRef,
+} from 'react';
+import clsx from 'clsx';
+import { FloatingPortal, FloatingFocusManager } from '@floating-ui/react';
 import { useInstallFloating } from './useInstallFloating';
 import { SelectContext } from './SelectContext';
+import IconChevronDown from '../Icons/IconChevronDown';
 import {
   ClassNames,
   SelectVariant,
@@ -19,31 +24,51 @@ import {
 import './Select.scss';
 
 export type SelectProps = {
-  value?: string | number | readonly string[] | undefined;
+  value?: string;
   variant?: SelectVariants;
   size?: SelectSizes;
-  onChange?: (value: string | number | readonly string[] | undefined) => void;
+  prefixIcon?: ReactElement;
+  onChange?: (value: string) => void;
 };
 
 export const Select = forwardRef<
   HTMLSelectElement,
   SelectProps & Omit<HTMLProps<HTMLSelectElement>, 'size'>
 >(function Select(props, ref) {
-  const { value, className, variant, size, children, onChange, ...rest } =
-    props;
+  const {
+    value,
+    className,
+    variant,
+    size,
+    prefixIcon,
+    children,
+    onChange,
+    ...rest
+  } = props;
   const [open, onOpenChange] = useState(false);
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, referenceProps, floatingProps } = floatingData;
-
-  const mergedRef = useMergeRefs([refs.setReference, ref]);
-
+  const optionsRef = useRef<Map<string, ReactNode>>(new Map());
+  const [selectedText, setSelectedText] = useState<ReactNode>();
+  
   const contextValue = useMemo(
     () => ({
       open,
       onOpenChange,
-      onChange,
+      onChange: (value: string) => {
+        onChange && onChange(value);
+
+        const node = optionsRef.current.get(value);
+        setSelectedText(node)
+      },
+      register: (value: string, text: ReactNode) => {
+        optionsRef.current.set(value, text);
+      },
+      unregister: (value: string) => {
+        optionsRef.current.delete(value);
+      },
     }),
-    [open, onOpenChange, onChange]
+    [open, onOpenChange]
   );
 
   const classes = clsx([
@@ -55,14 +80,21 @@ export const Select = forwardRef<
 
   return (
     <SelectContext.Provider value={contextValue}>
-      <select
-        ref={mergedRef}
-        {...referenceProps}
-        className={classes}
-        value={value}
-        onChange={onChange}
-        {...rest}
-      />
+      <select ref={ref} value={value} hidden {...rest} />
+
+      <div className={ClassNames.Container}>
+        {prefixIcon && (
+          <span className={ClassNames.PrefixIcon}>{prefixIcon}</span>
+        )}
+
+        <div ref={refs.setReference} className={classes} {...referenceProps}>
+          {selectedText}
+        </div>
+
+        <span className={ClassNames.SuffixIcon}>
+          <IconChevronDown />
+        </span>
+      </div>
 
       <FloatingPortal>
         {open && (
@@ -85,6 +117,7 @@ Select.defaultProps = {
   value: undefined,
   variant: SelectVariant.Primary,
   size: SelectSize.Medium,
+  prefixIcon: undefined,
   onChange: undefined,
 };
 

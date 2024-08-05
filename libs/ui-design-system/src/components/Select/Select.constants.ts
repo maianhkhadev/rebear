@@ -1,8 +1,11 @@
 
 export const ClassNames = {
+  Container: 'rebear-select-container',
   Select: 'rebear-select',
   SelectDropdown: 'rebear-select-dropdown',
   SelectOption: 'rebear-select-option',
+  PrefixIcon: 'rebear-select-prefix-icon',
+  SuffixIcon: 'rebear-select-suffix-icon',
 }
 
 export const SelectVariant = {

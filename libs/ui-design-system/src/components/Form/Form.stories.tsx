@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Form } from './Form';
 import { FormItem } from './FormItem';
 import { FormLabel } from './FormLabel';
-import { TextField } from '../TextField';
+import { Input } from '../Input';
 
 const DemoForm = () => {
 
@@ -10,17 +10,17 @@ const DemoForm = () => {
     <Form>
       <FormItem>
         <FormLabel>First name</FormLabel>
-        <TextField />
+        <Input />
       </FormItem>
 
       <FormItem>
         <FormLabel>Last name</FormLabel>
-        <TextField />
+        <Input />
       </FormItem>
 
       <FormItem>
         <FormLabel>Email</FormLabel>
-        <TextField />
+        <Input />
       </FormItem>
     </Form>
   )
