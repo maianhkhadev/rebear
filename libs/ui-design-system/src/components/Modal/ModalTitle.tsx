@@ -1,4 +1,5 @@
 import { forwardRef, HTMLProps } from 'react';
+import { ClassNames } from './Modal.constants';
 
 export const ModalTitle = forwardRef<
   HTMLElement,
@@ -7,7 +8,7 @@ export const ModalTitle = forwardRef<
   const { children } = props
 
   return (
-    <header ref={ref} className="rebear-modal-header">
+    <header ref={ref} className={ClassNames.ModalTitle}>
       {children}
     </header>
   );

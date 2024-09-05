@@ -1,0 +1,38 @@
+$grid-columns: 24;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+
+.rebear-col {
+  box-sizing: border-box;
+}
+
+@for $i from 1 through $grid-columns {
+  $col-width: percentage(calc($i / $grid-columns));
+
+  .rebear-col-#{$i} {
+    flex: 0 0 $col-width;
+    max-width: $col-width;
+  }
+
+  .rebear-col-offset-#{$i} {
+    margin-left: $col-width;
+  }
+
+  @each $size, $breakpoint in $breakpoints {
+    @media (min-width: map-get($breakpoints, $size)) {
+      .rebear-col-#{$size}-#{$i} {
+        flex: 0 0 $col-width;
+        max-width: $col-width;
+      }
+      .rebear-offset-#{$size}-#{$i} {
+        margin-left: $col-width;
+      }
+    }
+  }
+}

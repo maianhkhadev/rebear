@@ -12,17 +12,15 @@ import {
 import './TextArea.scss';
 
 export type TextAreaProps = {
-  value?: string;
   variant?: TextAreaVariants;
   size?: TextAreaSizes;
-  onChange?: (value: string) => void;
 };
 
 export const TextArea = forwardRef<
   HTMLTextAreaElement,
   TextAreaProps & Omit<HTMLProps<HTMLTextAreaElement>, 'size'>
 >(function TextArea(props, ref) {
-  const { value, className, variant, size, onChange, ...rest } = props;
+  const { className, variant, size, ...rest } = props;
 
   const classes = clsx([
     ClassNames.TextArea,
@@ -32,17 +30,13 @@ export const TextArea = forwardRef<
   ]);
 
   return (
-    <textarea ref={ref} className={classes} onChange={onChange} {...rest}>
-      {value}
-    </textarea>
+    <textarea className={classes} {...rest} ref={ref} />
   );
 });
 
 TextArea.defaultProps = {
-  value: undefined,
   variant: TextAreaVariant.Primary,
   size: TextAreaSize.Medium,
-  onChange: undefined,
 };
 
 export default TextArea;

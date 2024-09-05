@@ -3,7 +3,7 @@ import {
   autoUpdate,
   offset,
   flip,
-  shift,
+  size,
   useClick,
   useDismiss,
   useRole,
@@ -18,11 +18,24 @@ export type InstallFloatingProps = {
 export const useInstallFloating = (props: InstallFloatingProps) => {
   const { open, onOpenChange } = props;
 
-  const { refs, context } = useFloating({
+  const { refs, context, floatingStyles } = useFloating({
     open,
     onOpenChange,
-    middleware: [offset(10), flip(), shift()],
+    placement: "bottom-start",
     whileElementsMounted: autoUpdate,
+    middleware: [
+      offset(5),
+      flip({ padding: 10 }),
+      size({
+        apply({ rects, elements, availableHeight }) {
+          Object.assign(elements.floating.style, {
+            maxHeight: `${availableHeight}px`,
+            minWidth: `${rects.reference.width}px`,
+          });
+        },
+        padding: 10,
+      }),
+    ],
   });
 
   const click = useClick(context);
@@ -38,10 +51,12 @@ export const useInstallFloating = (props: InstallFloatingProps) => {
   return {
     context,
     refs,
+    floatingStyles,
     referenceProps: {
       ...getReferenceProps(),
     },
     floatingProps: {
+      style: floatingStyles,
       ...getFloatingProps(),
     },
   };

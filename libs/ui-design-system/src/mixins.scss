@@ -1,3 +1,8 @@
+@mixin rb-title-h4 {
+  font-size: var(--rb-title-h4-font-size);
+  line-height: var(--rb-title-h4-line-height);
+}
+
 @mixin rb-title-h5 {
   font-size: var(--rb-title-h5-font-size);
   line-height: var(--rb-title-h5-line-height);

@@ -12,6 +12,7 @@ import {
 import './Button.scss';
 
 export type ButtonProps = {
+  type?: "button" | "submit" | "reset";
   variant?: ButtonVariants;
   size?: ButtonSizes;
   block?: boolean;
@@ -23,18 +24,28 @@ export const Button = forwardRef<
   HTMLButtonElement,
   ButtonProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function Button(props, ref) {
-  const { variant, size, block, prefixIcon, suffixIcon, children, ...rest } =
-    props;
+  const {
+    type,
+    variant,
+    size,
+    block,
+    prefixIcon,
+    suffixIcon,
+    className,
+    children,
+    ...rest
+  } = props;
 
   const classes = clsx([
     ClassNames.Button,
     variant && ClassNameVariantMapping.get(variant),
     size && ClassNameSizeMapping.get(size),
     block && ClassNames.Block,
+    className,
   ]);
 
   return (
-    <button {...rest} ref={ref} type="button" className={classes}>
+    <button ref={ref} type={type} className={classes} {...rest}>
       {prefixIcon && (
         <span className={ClassNames.PrefixIcon}>{prefixIcon}</span>
       )}
@@ -49,6 +60,7 @@ export const Button = forwardRef<
 });
 
 Button.defaultProps = {
+  type: undefined,
   variant: ButtonVariant.Primary,
   size: ButtonSize.Medium,
   block: false,

@@ -43,7 +43,7 @@
   position: absolute;
 
   svg {
-    color: var(--rb-dark-neutral-800);
+    color: var(--rb-gray-800);
   }
 }
 
@@ -56,7 +56,7 @@
   cursor: pointer;
 
   &::placeholder {
-    color: var(--rb-dark-neutral-600);
+    color: var(--rb-gray-600);
   }
 }
 
@@ -139,27 +139,27 @@
 }
 
 .rebear-select-primary {
-  color: var(--rb-dark-neutral-800);
+  color: var(--rb-gray-800);
   background-color: var(--rb-white);
-  border-color: var(--rb-light-neutral-600);
+  border-color: var(--rb-gray-600);
 
   &:hover {
-    border-color: var(--rb-light-neutral-900);
+    border-color: var(--rb-gray-900);
   }
 
   &:focus {
-    outline: 0.125rem solid var(--rb-primary-100);
-    border-color: var(--rb-primary-400);
+    outline: 0.125rem solid var(--rb-brand-100);
+    border-color: var(--rb-brand-400);
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-light-neutral-50);
-    border-color: var(--rb-light-neutral-500);
+    background-color: var(--rb-gray-50);
+    border-color: var(--rb-gray-500);
   }
 }
 
 .rebear-select-error {
-  color: var(--rb-dark-neutral-800);
+  color: var(--rb-gray-800);
   background-color: var(--rb-white);
   border-color: var(--rb-error-700);
 
@@ -173,12 +173,13 @@
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-light-neutral-50);
-    border-color: var(--rb-light-neutral-500);
+    background-color: var(--rb-gray-50);
+    border-color: var(--rb-gray-500);
   }
 }
 
 .rebear-select-dropdown {
+  background-color: var(--rb-white);
   box-shadow: 0 4px 4px 0 #00000026;
   outline: unset;
   margin-top: 0.25rem;
@@ -186,16 +187,16 @@
 
 .rebear-select-option {
   @include rb-paragraph-L;
-  color: var(--rb-dark-neutral-800);
+  color: var(--rb-gray-800);
   background-color: var(--rb-white);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--rb-light-surface-100);
+    background-color: var(--rb-gray-100);
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-light-neutral-50);
+    background-color: var(--rb-gray-50);
   }
 }

@@ -6,7 +6,7 @@ export const useAccordionContext = () => {
 
   if (!accordionContext) {
     throw new Error(
-      'Missing AccordionContext, please use the Accordion component inside a AccordionContainer',
+      'Missing AccordionContext, please use inside a AccordionContext Provider',
     );
   }
 

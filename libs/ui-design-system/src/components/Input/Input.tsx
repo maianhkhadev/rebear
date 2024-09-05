@@ -12,28 +12,17 @@ import {
 import './Input.scss';
 
 export type InputProps = {
-  value?: string;
   variant?: InputVariants;
   size?: InputSizes;
   prefixIcon?: ReactElement;
   suffixIcon?: ReactElement;
-  onChange?: (value: string) => void;
 };
 
 export const Input = forwardRef<
   HTMLInputElement,
   InputProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Input(props, ref) {
-  const {
-    value,
-    className,
-    variant,
-    size,
-    prefixIcon,
-    suffixIcon,
-    onChange,
-    ...rest
-  } = props;
+  const { className, variant, size, prefixIcon, suffixIcon, ...rest } = props;
 
   const classes = clsx([
     ClassNames.Input,
@@ -48,14 +37,7 @@ export const Input = forwardRef<
         <span className={ClassNames.PrefixIcon}>{prefixIcon}</span>
       )}
 
-      <input
-        ref={ref}
-        type="text"
-        className={classes}
-        value={value}
-        onChange={onChange}
-        {...rest}
-      />
+      <input type="text" className={classes} {...rest} ref={ref} />
 
       {suffixIcon && (
         <span className={ClassNames.SuffixIcon}>{suffixIcon}</span>
@@ -65,12 +47,10 @@ export const Input = forwardRef<
 });
 
 Input.defaultProps = {
-  value: undefined,
   variant: InputVariant.Primary,
   size: InputSize.Medium,
   prefixIcon: undefined,
   suffixIcon: undefined,
-  onChange: undefined,
 };
 
 export default Input;

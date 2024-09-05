@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from './Modal';
-import { ModalDismiss } from './ModalDismiss';
 import { ModalTitle } from './ModalTitle';
 import { ModalContent } from './ModalContent';
 import { ModalActions } from './ModalActions';
@@ -25,9 +24,7 @@ const Demo = () => {
       </Button>
 
       <Modal open={open} onOpenChange={onOpenChange}>
-        <ModalTitle>
-          Modal title <ModalDismiss />
-        </ModalTitle>
+        <ModalTitle>Modal title</ModalTitle>
         <ModalContent>Modal content</ModalContent>
         <ModalActions>
           <Button variant="secondary" onClick={handleClose}>
@@ -50,4 +47,22 @@ type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   args: {},
+};
+
+export const SizeSmall: Story = {
+  args: {
+    size: 'small',
+  },
+};
+
+export const SizeMedium: Story = {
+  args: {
+    size: 'medium',
+  },
+};
+
+export const SizeLarge: Story = {
+  args: {
+    size: 'large',
+  },
 };

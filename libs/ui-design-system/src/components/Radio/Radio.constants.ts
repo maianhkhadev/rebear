@@ -1,6 +1,9 @@
 
 export const ClassNames = {
+  RadioGroup: 'rebear-radio-group',
   Radio: 'rebear-radio',
+  RadioMarker: 'rebear-radio-marker',
+  RadioLabel: 'rebear-radio-label',
 }
 
 export const RadioSize = {

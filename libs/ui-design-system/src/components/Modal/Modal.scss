@@ -1,13 +1,23 @@
+@import '../../mixins.scss';
+
 .rebear-modal-backdrop {
   background-color: rgba(#212529, 0.5);
 }
 
 .rebear-modal {
+  position: relative;
   background-color: var(--rb-white);
   border-radius: 0.25rem;
   margin: 2rem auto;
+
+  .rebear-modal-dismiss {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
   
   .rebear-modal-header {
+    @include rb-title-h4;
     padding: 1rem;
   }
 

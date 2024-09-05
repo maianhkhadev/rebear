@@ -1,0 +1,72 @@
+:root {
+  // LEVEL 1
+  --rb-spacing-0: 0;
+  --rb-spacing-1: 2px;
+  --rb-spacing-2: 4px;
+  --rb-spacing-3: 6px;
+  --rb-spacing-4: 8px;
+  --rb-spacing-5: 12px;
+  --rb-spacing-6: 16px;
+  --rb-spacing-8: 20px;
+  --rb-spacing-10: 24px;
+  --rb-spacing-12: 32px;
+  --rb-spacing-14: 40px;
+  --rb-spacing-16: 48px;
+  --rb-spacing-20: 64px;
+  --rb-spacing-24: 80px;
+  --rb-spacing-32: 96px;
+  --rb-spacing-40: 128px;
+  --rb-spacing-48: 160px;
+  --rb-spacing-56: 192px;
+  --rb-spacing-64: 224px;
+  --rb-spacing-80: 256px;
+  --rb-spacing-96: 320px;
+  --rb-spacing-120: 384px;
+  --rb-spacing-140: 480px;
+  --rb-spacing-160: 560px;
+  --rb-spacing-180: 640px;
+  --rb-spacing-192: 720px;
+  --rb-spacing-256: 768px;
+  --rb-spacing-320: 1024px;
+  --rb-spacing-360: 1280px;
+  --rb-spacing-400: 1440px;
+  --rb-spacing-480: 1600px;
+  --rb-spacing-560: 1920px;
+
+  // LEVEL 2
+  --rb-spacing-none: $spacing-values-0;
+  --rb-spacing-xxs: $spacing-values-1;
+  --rb-spacing-xs: $spacing-values-2;
+  --rb-spacing-sm: $spacing-values-2;
+  --rb-spacing-md: $spacing-values-4;
+  --rb-spacing-lg: $spacing-values-5;
+  --rb-spacing-xl: $spacing-values-6;
+  --rb-spacing-2xl: $spacing-values-8;
+  --rb-spacing-3xl: $spacing-values-10;
+  --rb-spacing-4xl: $spacing-values-12;
+  --rb-spacing-5xl: $spacing-values-14;
+  --rb-spacing-6xl: $spacing-values-16;
+  --rb-spacing-7xl: $spacing-values-20;
+  --rb-spacing-8xl: $spacing-values-24;
+  --rb-spacing-9xl: $spacing-values-32;
+  --rb-spacing-10xl: $spacing-values-40;
+  --rb-spacing-11xl: $spacing-values-48;
+
+  --rb-width-xxs: $spacing-values-96;
+  --rb-width-xs: $spacing-values-120;
+  --rb-width-sm: $spacing-values-140;
+  --rb-width-md: $spacing-values-160;
+  --rb-width-lg: $spacing-values-192;
+  --rb-width-xl: $spacing-values-256;
+  --rb-width-2xl: $spacing-values-320;
+  --rb-width-3xl: $spacing-values-360;
+  --rb-width-4xl: $spacing-values-400;
+  --rb-width-5xl: $spacing-values-480;
+  --rb-width-6xl: $spacing-values-560;
+
+  --rb-container-padding-mobile: $spacing-values-6;
+  --rb-container-padding-desktop: $spacing-values-12;
+  --rb-container-max-width-desktop: $spacing-values-360;
+
+  --rb-paragraph-max-width: $spacing-values-192;
+}

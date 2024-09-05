@@ -1,10 +1,13 @@
 import { ButtonIcon } from '../Button';
 import IconClose from '../Icons/IconClose';
-import { useModalContext } from './useModalContext';
-import { ClassNames } from './Modal.constant';
+import { ClassNames } from './Modal.constants';
 
-export const ModalDismiss = () => {
-  const { onOpenChange } = useModalContext();
+export interface ModalDismissProps {
+  onOpenChange: (open: boolean) => void;
+}
+
+export const ModalDismiss = (props: ModalDismissProps) => {
+  const { onOpenChange } = props;
 
   const handleClick = () => {
     onOpenChange(false);
@@ -13,7 +16,7 @@ export const ModalDismiss = () => {
   return (
     <ButtonIcon
       className={ClassNames.ModalDismiss}
-      variant="primary"
+      variant="secondary"
       size="small"
       icon={<IconClose />}
       onClick={handleClick}

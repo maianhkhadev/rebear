@@ -6,7 +6,7 @@ export const useFormItemContext = () => {
 
   if (!formItemContext) {
     throw new Error(
-      'Missing FormItemContext, please use the FormItem component inside a Context',
+      'Missing FormItemContext, please use inside a FormItemContext Provider',
     );
   }
 

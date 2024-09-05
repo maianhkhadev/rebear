@@ -6,9 +6,8 @@ import { SelectOption } from './SelectOption';
 const Demo = () => {
   const [value, setValue] = useState<string | number | readonly string[] | undefined>();
 
-  const handleChange = (newValue: string | number | readonly string[] | undefined) => {
-    console.log(newValue)
-    setValue(newValue);
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue(event.target.value);
   };
 
   return (

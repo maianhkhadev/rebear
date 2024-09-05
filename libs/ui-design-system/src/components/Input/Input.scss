@@ -39,7 +39,7 @@
   position: absolute;
 
   svg {
-    color: var(--rb-dark-neutral-800);
+    color: var(--rb-gray-800);
   }
 }
 
@@ -51,7 +51,7 @@
   outline-offset: 1px;
 
   &::placeholder {
-    color: var(--rb-dark-neutral-600);
+    color: var(--rb-gray-600);
   }
 }
 
@@ -131,28 +131,28 @@
 }
 
 .rebear-input-primary {
-  color: var(--rb-dark-neutral-800);
+  color: var(--rb-gray-800);
   background-color: var(--rb-white);
-  border-color: var(--rb-light-neutral-600);
+  border-color: var(--rb-gray-600);
 
   &:hover {
-    border-color: var(--rb-light-neutral-900);
+    border-color: var(--rb-gray-900);
   }
 
   &:focus {
-    outline: 0.125rem solid var(--rb-primary-100);
-    border-color: var(--rb-primary-400);
+    outline: 0.125rem solid var(--rb-brand-100);
+    border-color: var(--rb-brand-400);
   }
 
   &:disabled,
   &.disabled {
-    background-color: var(--rb-light-neutral-50);
-    border-color: var(--rb-light-neutral-500);
+    background-color: var(--rb-gray-50);
+    border-color: var(--rb-gray-500);
   }
 }
 
 .rebear-input-error {
-  color: var(--rb-dark-neutral-800);
+  color: var(--rb-gray-800);
   background-color: var(--rb-white);
   border-color: var(--rb-error-700);
 
@@ -167,7 +167,7 @@
 
   &:disabled,
   &.disabled {
-    background-color: var(--rb-light-neutral-50);
-    border-color: var(--rb-light-neutral-500);
+    background-color: var(--rb-gray-50);
+    border-color: var(--rb-gray-500);
   }
 }

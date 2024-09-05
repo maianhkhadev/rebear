@@ -3,9 +3,9 @@ import {
   HTMLProps,
   ReactElement,
   ReactNode,
+  ChangeEvent,
   useState,
   useMemo,
-  useRef,
 } from 'react';
 import clsx from 'clsx';
 import { FloatingPortal, FloatingFocusManager } from '@floating-ui/react';
@@ -24,51 +24,43 @@ import {
 import './Select.scss';
 
 export type SelectProps = {
-  value?: string;
   variant?: SelectVariants;
   size?: SelectSizes;
   prefixIcon?: ReactElement;
-  onChange?: (value: string) => void;
 };
 
 export const Select = forwardRef<
   HTMLSelectElement,
   SelectProps & Omit<HTMLProps<HTMLSelectElement>, 'size'>
 >(function Select(props, ref) {
-  const {
-    value,
-    className,
-    variant,
-    size,
-    prefixIcon,
-    children,
-    onChange,
-    ...rest
-  } = props;
+  const { className, variant, size, prefixIcon, children, ...rest } =
+    props;
   const [open, onOpenChange] = useState(false);
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, referenceProps, floatingProps } = floatingData;
-  const optionsRef = useRef<Map<string, ReactNode>>(new Map());
   const [selectedText, setSelectedText] = useState<ReactNode>();
-  
+
   const contextValue = useMemo(
     () => ({
       open,
       onOpenChange,
-      onChange: (value: string) => {
-        onChange && onChange(value);
+      setSelectedText,
+      onSelect: (
+        value: string | number | readonly string[] | undefined,
+        text: ReactNode
+      ) => {
+        setSelectedText(text);
 
-        const node = optionsRef.current.get(value);
-        setSelectedText(node)
-      },
-      register: (value: string, text: ReactNode) => {
-        optionsRef.current.set(value, text);
-      },
-      unregister: (value: string) => {
-        optionsRef.current.delete(value);
+        const event = new Event('change', { bubbles: true });
+        const selectElement = document.querySelector('select');
+        
+        if (selectElement) {
+          selectElement.value = value as string;
+          selectElement.dispatchEvent(event);
+        }
       },
     }),
-    [open, onOpenChange]
+    [open, onOpenChange, setSelectedText]
   );
 
   const classes = clsx([
@@ -80,7 +72,9 @@ export const Select = forwardRef<
 
   return (
     <SelectContext.Provider value={contextValue}>
-      <select ref={ref} value={value} hidden {...rest} />
+      <select ref={ref} hidden {...rest}>
+        {children}
+      </select>
 
       <div className={ClassNames.Container}>
         {prefixIcon && (
@@ -96,8 +90,8 @@ export const Select = forwardRef<
         </span>
       </div>
 
-      <FloatingPortal>
-        {open && (
+      {open && (
+        <FloatingPortal>
           <FloatingFocusManager context={context} modal={false}>
             <div
               ref={refs.setFloating}
@@ -107,18 +101,16 @@ export const Select = forwardRef<
               {children}
             </div>
           </FloatingFocusManager>
-        )}
-      </FloatingPortal>
+        </FloatingPortal>
+      )}
     </SelectContext.Provider>
   );
 });
 
 Select.defaultProps = {
-  value: undefined,
   variant: SelectVariant.Primary,
   size: SelectSize.Medium,
   prefixIcon: undefined,
-  onChange: undefined,
 };
 
 export default Select;

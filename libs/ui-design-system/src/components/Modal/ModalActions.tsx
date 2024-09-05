@@ -1,5 +1,5 @@
 import { forwardRef, HTMLProps } from 'react';
-import { ClassNames } from './Modal.constant';
+import { ClassNames } from './Modal.constants';
 
 export const ModalActions = forwardRef<
   HTMLElement,

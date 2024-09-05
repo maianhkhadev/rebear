@@ -16,8 +16,8 @@
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-light-neutral-900);
-    border-color: var(--rb-light-neutral-900);
+    background-color: var(--rb-gray-900);
+    border-color: var(--rb-gray-900);
     pointer-events: none;
   }
 
@@ -44,8 +44,8 @@
   }
 
   &:disabled, &.disabled {
-    color: var(--rb-light-neutral-900);
-    border-color: var(--rb-light-neutral-900);
+    color: var(--rb-gray-900);
+    border-color: var(--rb-gray-900);
     pointer-events: none;
   }
 

@@ -21,12 +21,13 @@ export const ButtonIcon = forwardRef<
   HTMLButtonElement,
   ButtonIconProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function ButtonIcon(props, ref) {
-  const { variant, size, icon, ...rest } = props;
+  const { variant, size, icon, className, ...rest } = props;
 
   const classes = clsx([
     ClassNames.ButtonIcon,
     variant && ClassNameVariantMapping.get(variant),
     size && ClassNameSizeMapping.get(size),
+    className,
   ]);
 
   return (
