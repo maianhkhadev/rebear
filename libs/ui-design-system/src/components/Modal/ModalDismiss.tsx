@@ -1,5 +1,5 @@
 import { ButtonIcon } from '../Button';
-import IconClose from '../Icons/IconClose';
+import { IconClose } from 'rebear-icons';
 import { ClassNames } from './Modal.constants';
 
 export interface ModalDismissProps {

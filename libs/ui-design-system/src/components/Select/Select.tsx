@@ -3,15 +3,14 @@ import {
   HTMLProps,
   ReactElement,
   ReactNode,
-  ChangeEvent,
   useState,
   useMemo,
 } from 'react';
 import clsx from 'clsx';
+import { IconChevronDown } from 'rebear-icons';
 import { FloatingPortal, FloatingFocusManager } from '@floating-ui/react';
 import { useInstallFloating } from './useInstallFloating';
 import { SelectContext } from './SelectContext';
-import IconChevronDown from '../Icons/IconChevronDown';
 import {
   ClassNames,
   SelectVariant,

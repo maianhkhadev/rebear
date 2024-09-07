@@ -10,23 +10,19 @@
       "outputs": ["{options.outputFile}"]
     },
     "build": {
-      "executor": "@nx/rollup:rollup",
+      "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/ui-icons",
-        "tsConfig": "libs/ui-icons/tsconfig.lib.json",
-        "project": "libs/ui-icons/package.json",
-        "entryFile": "libs/ui-icons/src/index.ts",
-        "external": ["react", "react-dom", "react/jsx-runtime"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "libs/ui-icons/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
+        "outputPath": "dist/libs/ui-icons"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
-import IconClose from '../Icons/IconClose';
+import { IconClose } from 'rebear-icons';
 
 const meta: Meta<typeof Input> = {
   component: Input,

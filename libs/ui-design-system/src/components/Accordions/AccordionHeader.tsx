@@ -1,6 +1,6 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import { clsx } from 'clsx';
-import IconChevronDown from '../Icons/IconChevronDown';
+import { IconChevronDown } from 'rebear-icons';
 import { useAccordionsContext } from './useAccordionsContext';
 import { useAccordionContext } from './useAccordionContext';
 import { ClassNames } from './Accordions.constants';

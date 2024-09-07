@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { IconClose } from 'rebear-icons';
 import { Button } from './Button';
 import { ButtonIcon } from './ButtonIcon';
-import IconClose from '../Icons/IconClose';
 
 const meta: Meta<typeof Button> = {
   component: Button,

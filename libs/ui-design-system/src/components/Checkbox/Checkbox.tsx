@@ -1,6 +1,6 @@
 import { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
-import IconCheck from '../Icons/IconCheck';
+import { IconCheck } from 'rebear-icons';
 import {
   ClassNames,
   CheckboxSize,
