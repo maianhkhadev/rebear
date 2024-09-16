@@ -1,0 +1,148 @@
+@import "../../mixins"
+
+.rebear-avatar
+  position: relative
+
+  > div
+    position: absolute
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    background-size: cover
+
+.btx-avatar-default
+  border-radius: 50px
+  background-size: cover
+  background-position: center
+  border-width: 1px
+  border-style: solid
+  background-color: var(--btx-white)
+  color: var(--btx-neutral-800)
+  border-color: var(--btx-light-neutral-900)
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  span
+    color: var(--btx-neutral-600)
+
+.btx-avatar-s
+  @extend .btx-avatar-default
+  width: 32px
+  height: 32px
+
+  span
+    @include btx-paragraph-S()
+
+.btx-avatar-m
+  @extend .btx-avatar-default
+  width: 40px
+  height: 40px
+
+  span
+    @include title-h5
+
+.btx-avatar-l
+  @extend .btx-avatar-default
+  width: 48px
+  height: 48px
+
+  span
+    @include title-h4
+
+  .btx-avatar-change-photo
+    width: 20px
+    height: 20px
+
+.btx-avatar-xl
+  @extend .btx-avatar-default
+  width: 56px
+  height: 56px
+
+  span
+    @include title-h3
+
+  .btx-avatar-change-photo
+    width: 24px
+    height: 24px
+
+.btx-avatar-xxl
+  @extend .btx-avatar-default
+  width: 80px
+  height: 80px
+
+  span
+    @include title-h2
+
+  .btx-avatar-change-photo
+    width: 24px
+    height: 24px
+
+.btx-avatar-dark-mode
+  @extend .btx-avatar-default
+  background-color: var(--btx-primary-600)
+  border-color: var(--btx-primary-100)
+
+  span
+    color: var(--btx-white) !important
+
+.btx-avatar-change-photo
+  position: absolute
+  display: flex
+  right: 0
+  bottom: 0
+  justify-content: center
+  align-items: center
+  background: var(--btx-white)
+  border: 1px solid var(--btx-light-neutral-900)
+  border-radius: 49px
+  color: var(--btx-primary-600)
+
+[class*='btx-avatar-initials'] span
+  color: var(--btx-neutral-800)
+
+.btx-avatar-initials-style1
+  border: 1px solid var(--btx-primary-100)
+  background-color: var(--btx-primary-50)
+
+.btx-avatar-initials-style2
+  border: 1px solid var(--btx-success-100)
+  background-color: var(--btx-success-50)
+
+.btx-avatar-initials-style3
+  border: 1px solid var(--btx-positive-100)
+  background-color: var(--btx-positive-50)
+
+.btx-avatar-initials-style4
+  border: 1px solid var(--btx-danger-100)
+  background-color: var(--btx-danger-50)
+
+.btx-avatar-initials-style5
+  border: 1px solid var(--btx-warning-100)
+  background-color: var(--btx-warning-100)
+
+[class*='btx-avatar-app-']
+  background-image: var(--btx-universal-gradient)
+
+  svg
+    color: var(--btx-white)
+
+.btx-avatar-app-payments
+  background-image: var(--btx-payments-gradient)
+
+.btx-avatar-app-financials
+  background-image: var(--btx-financials-gradient)
+
+.btx-avatar-app-sales
+  background-image: var(--btx-sales-gradient)
+
+.btx-avatar-app-invoices
+  background-image: var(--btx-purchases-gradient)
+
+.btx-avatar-app-partner
+  background-image: var(--btx-partner-gradient)

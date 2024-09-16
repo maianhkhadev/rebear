@@ -6,10 +6,9 @@ const meta: Meta<typeof CheckboxGroup> = {
   component: CheckboxGroup,
   title: 'CheckboxGroup',
   render: ({ ...args }) => (
-    <CheckboxGroup name="gender" defaultValue="male">
-      <Checkbox value="male">Male</Checkbox>
-      <Checkbox value="female">Female</Checkbox>
-      <Checkbox value="other">Other</Checkbox>
+    <CheckboxGroup name="languages">
+      <Checkbox value="vi">Tiếng Việt</Checkbox>
+      <Checkbox value="en">English</Checkbox>
     </CheckboxGroup>
   ),
 };

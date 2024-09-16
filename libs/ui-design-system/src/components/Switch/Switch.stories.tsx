@@ -1,18 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from './Checkbox';
+import { Switch } from './Switch';
 
-const meta: Meta<typeof Checkbox> = {
-  component: Checkbox,
-  title: 'Checkbox',
-  render: ({ ...args }) => (
-    <>
-      <Checkbox name="languages" value="vi">Tiếng Việt</Checkbox>
-      <Checkbox name="languages" value="en">English</Checkbox>
-    </>
-  ),
+const meta: Meta<typeof Switch> = {
+  component: Switch,
+  title: 'Switch',
+  render: ({ ...args }) =>  <Switch {...args} />,
 };
 export default meta;
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<typeof Switch>;
 
 export const Default: Story = {
   args: {},

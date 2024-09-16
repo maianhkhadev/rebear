@@ -16,41 +16,21 @@ export const RadioGroup = forwardRef<
   HTMLDivElement,
   RadioGroupProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
 >(function RadioGroup(props, ref) {
-  const {
-    name,
-    defaultValue,
-    value,
-    className,
-    size,
-    children,
-    onChange,
-    ...rest
-  } = props;
+  const { className, children, ...rest } = props;
 
   const classes = clsx([ClassNames.RadioGroup, className]);
 
   return (
-    <div className={classes} {...rest} ref={ref}>
+    <div className={classes} ref={ref}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          const props = {
+          const aaaa = {
+            ...rest,
             ...child.props,
-            name,
-            size,
-            onChange,
+            
           };
-
-          if (defaultValue) {
-            const defaultChecked = isChecked(defaultValue, props.value);
-            props.defaultChecked = defaultChecked;
-          }
-
-          if (value) {
-            const checked = isChecked(value, props.value);
-            props.checked = checked;
-          }
-
-          return React.cloneElement(child, props);
+          console.log(aaaa)
+          return React.cloneElement(child, aaaa);
         }
         return child;
       })}

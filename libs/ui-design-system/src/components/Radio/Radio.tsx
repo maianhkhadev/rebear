@@ -26,7 +26,7 @@ export const Radio = forwardRef<
 
   return (
     <label className={classes}>
-      <input type="radio" {...rest} ref={ref} defaultChecked />
+      <input type="radio" {...rest} ref={ref} />
       <span className={ClassNames.RadioMarker} />
       <span className={ClassNames.RadioLabel}>{children}</span>
     </label>

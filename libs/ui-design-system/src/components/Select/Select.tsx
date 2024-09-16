@@ -71,9 +71,7 @@ export const Select = forwardRef<
 
   return (
     <SelectContext.Provider value={contextValue}>
-      <select ref={ref} hidden {...rest}>
-        {children}
-      </select>
+      <select ref={ref} hidden {...rest} />
 
       <div className={ClassNames.Container}>
         {prefixIcon && (

@@ -24,7 +24,7 @@ export const Checkbox = forwardRef<
     size && ClassNameSizeMapping.get(size),
     className,
   ]);
-
+  
   return (
     <label className={classes}>
       <input type="checkbox" {...rest} ref={ref} />
