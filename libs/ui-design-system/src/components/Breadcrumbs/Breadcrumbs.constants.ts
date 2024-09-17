@@ -1,5 +1,5 @@
 export const ClassNames = {
-  Breadcrumbs: 'btx-breadcrumbs',
-  Breadcrumb: 'btx-breadcrumb',
-  BreadcrumbDivider: 'btx-breadcrumb-divider',
+  Breadcrumbs: 'rebear-breadcrumbs',
+  Breadcrumb: 'rebear-breadcrumb',
+  BreadcrumbDivider: 'rebear-breadcrumb-divider',
 };

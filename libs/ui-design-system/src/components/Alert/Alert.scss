@@ -1,0 +1,81 @@
+.rebear-alert {
+  min-width: 320px;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-gap: 16px;
+  border-radius: 8px;
+  padding: 16px;
+
+  .rebear-alert-has-dismiss {
+    position: relative;
+    padding-right: 44px;
+
+    .rebear-alert-dismiss {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: var(--rebear-surface-400);
+    }
+  }
+
+  .rebear-alert-icon {
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .rebear-alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    .rebear-alert-title {
+      color: var(--rebear-neutral-900);
+      font-weight: 600;
+    }
+
+    .rebear-alert-description {
+      color: var(--rebear-neutral-700);
+    }
+  }
+
+  .rebear-alert-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+}
+
+.rebear-alert-info {
+  background-color: var(--rb-positive-50);
+
+  .rebear-alert-icon {
+    color: var(--rebear-positive-900);
+  }
+}
+
+.rebear-alert-warning {
+  background-color: var(--rb-warning-50);
+
+  .rebear-alert-icon {
+    color: var(--rb-warning-900);
+  }
+}
+
+.rebear-alert-error {
+  background-color: var(--rb-error-50);
+
+  .rebear-alert-icon {
+    color: var(--rb-error-900);
+  }
+}
+
+.rebear-alert-success {
+  background-color: var(--rb-success-50);
+
+  .rebear-alert-icon {
+    color: var(--rb-success-900);
+  }
+}
