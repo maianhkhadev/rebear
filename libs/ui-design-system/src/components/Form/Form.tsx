@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { FormContext } from './FormContext';
 import { ClassNames } from './Form.constants';
 import { Input } from '../Input';
-import { CheckboxGroup, Checkbox } from '../Checkbox';
+import { Select, SelectOption } from '../Select';
 import { RadioGroup, Radio } from '../Radio';
 import { Button } from '../Button';
 import './Form.scss';
@@ -54,11 +54,12 @@ export const Form = forwardRef<
           control={control}
           render={({ field }) => {
             return (
-              <RadioGroup {...field}>
-                <Radio value="male">Male</Radio>
-                <Radio value="female">Female</Radio>
-                <Radio value="other">Other</Radio>
-              </RadioGroup>
+              <Select {...field}>
+                <SelectOption value="1" label="1" />
+                <SelectOption value="2" label="2" />
+                <SelectOption value="3" label="3" />
+                <SelectOption value="4" label="4" />
+              </Select>
             );
           }}
         />
@@ -69,22 +70,7 @@ export const Form = forwardRef<
           <Radio value="other">Other</Radio>
         </RadioGroup> */}
 
-        <Controller
-          name="languages"
-          control={control}
-          render={({ field }) => {
-            return (
-              <CheckboxGroup {...field}>
-                <Checkbox value="vi">
-                  Tiếng Việt
-                </Checkbox>
-                <Checkbox value="en">
-                  English
-                </Checkbox>
-              </CheckboxGroup>
-            );
-          }}
-        />
+        {/* <CheckboxGroup {...register('languages')} /> */}
 
         <input type="submit" />
       </form>

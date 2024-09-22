@@ -23,7 +23,7 @@ export const FormItem = forwardRef<
     <div ref={ref} className={classes} {...rest}>
       {label && <FormLabel>{label}</FormLabel>}
       {children}
-      {/* {React.Children.map(children, (child) => {
+      {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           return (
             <Controller
@@ -42,7 +42,7 @@ export const FormItem = forwardRef<
           );
         }
         return child;
-      })} */}
+      })}
     </div>
   );
 });

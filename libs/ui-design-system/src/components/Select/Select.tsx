@@ -5,6 +5,7 @@ import {
   ReactNode,
   useState,
   useMemo,
+  useRef,
 } from 'react';
 import clsx from 'clsx';
 import { IconChevronDown } from 'rebear-icons';
@@ -23,44 +24,55 @@ import {
 import './Select.scss';
 
 export type SelectProps = {
+  value: string | number | undefined;
   variant?: SelectVariants;
   size?: SelectSizes;
   prefixIcon?: ReactElement;
+  multiple?: boolean;
+  onChange: (value: string | number) => void;
 };
 
 export const Select = forwardRef<
   HTMLSelectElement,
-  SelectProps & Omit<HTMLProps<HTMLSelectElement>, 'size'>
+  SelectProps & Omit<HTMLProps<HTMLSelectElement>, 'size' | 'onChange'>
 >(function Select(props, ref) {
-  const { className, variant, size, prefixIcon, children, ...rest } =
-    props;
+  const {
+    className,
+    variant,
+    size,
+    prefixIcon,
+    children,
+    onChange,
+    ...rest
+  } = props;
   const [open, onOpenChange] = useState(false);
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, referenceProps, floatingProps } = floatingData;
-  const [selectedText, setSelectedText] = useState<ReactNode>();
+  const optionsRef = useRef<Map<string | number, string>>(new Map());
 
   const contextValue = useMemo(
     () => ({
-      open,
-      onOpenChange,
-      setSelectedText,
-      onSelect: (
-        value: string | number | readonly string[] | undefined,
-        text: ReactNode
-      ) => {
-        setSelectedText(text);
-
-        const event = new Event('change', { bubbles: true });
-        const selectElement = document.querySelector('select');
-        
-        if (selectElement) {
-          selectElement.value = value as string;
-          selectElement.dispatchEvent(event);
-        }
+      onSelect: (value: string | number) => {
+        onChange && onChange(value);
+        onOpenChange(false);
+      },
+      register: (value: string | number, text: string) => {
+        optionsRef.current.set(value, text);
+      },
+      unregister: (value: string | number) => {
+        optionsRef.current.delete(value);
       },
     }),
-    [open, onOpenChange, setSelectedText]
+    []
   );
+
+  const selectedText = useMemo(() => {
+    if (rest.value) {
+      return optionsRef.current.get(rest.value);
+    }
+
+    return '';
+  }, [rest.value]);
 
   const classes = clsx([
     ClassNames.Select,
@@ -108,6 +120,7 @@ Select.defaultProps = {
   variant: SelectVariant.Primary,
   size: SelectSize.Medium,
   prefixIcon: undefined,
+  multiple: false,
 };
 
 export default Select;

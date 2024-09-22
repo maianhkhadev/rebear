@@ -1,12 +1,10 @@
-import { createContext, ReactNode } from 'react';
+import { createContext } from 'react';
 
 export type SelectData = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  onSelect: (
-    value: string | number | readonly string[] | undefined,
-    text: ReactNode
-  ) => void;
+  onSelect: (value: string | number) => void;
+  register: (value: string | number, text: string) => void;
+  unregister: (value: string | number) => void;
+
 };
 
 export const SelectContext = createContext<SelectData | undefined>(undefined);

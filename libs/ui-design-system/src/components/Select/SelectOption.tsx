@@ -1,19 +1,32 @@
-import { forwardRef, HTMLProps } from 'react';
+import { useEffect, forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
 import { useSelectContext } from './useSelectContext';
 import { ClassNames } from './Select.constants';
 import './Select.scss';
 
+export type SelectOptionProps = {
+  value: string | number;
+  label: string;
+};
+
 export const SelectOption = forwardRef<
   HTMLOptionElement,
-  HTMLProps<HTMLOptionElement>
+  SelectOptionProps & HTMLProps<HTMLOptionElement>
 >(function SelectOption(props, ref) {
-  const { value, className, children, ...rest } = props;
-  const { onSelect, onOpenChange } = useSelectContext();
+  const { value, className, label, children, ...rest } = props;
+  const { onSelect, register, unregister } = useSelectContext();
+
+  useEffect(() => {
+    register(value, label);
+
+    return () => {
+      unregister(value);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
 
   const handleClick = () => {
-    onSelect(value, children);
-    onOpenChange(false);
+    onSelect(value);
   };
 
   const classes = clsx([ClassNames.SelectOption, className]);
@@ -26,7 +39,7 @@ export const SelectOption = forwardRef<
       onClick={handleClick}
       {...rest}
     >
-      {children}
+      {children || label}
     </option>
   );
 });

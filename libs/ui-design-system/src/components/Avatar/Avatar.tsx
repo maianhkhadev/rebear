@@ -10,12 +10,9 @@ import {
   AvatarClassNames,
   AvatarDataTestIds,
   avatarIconSizeMapping,
-  AvatarInitialsStyle,
-  avatarInitialsStyleClassMapping,
   AvatarSize,
   avatarSizeClassMapping,
   AvatarSizes,
-  changePhotoIconSize,
 } from './Avatar.constants';
 
 export type AvatarProps = {
@@ -24,15 +21,11 @@ export type AvatarProps = {
   avatarUrl?: string;
   initials?: string;
   icon?: ReactElement;
-  hasUpload?: boolean;
-  initialsStyle?: AvatarInitialsStyle;
-  children?: React.ReactNode;
-} &
-  Omit<HTMLProps<HTMLDivElement>, 'children'>;
+} & Omit<HTMLProps<HTMLDivElement>, 'children'>;
 
 export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
   props,
-  ref,
+  ref
 ) {
   const {
     className,
@@ -41,37 +34,16 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
     initials,
     darkMode,
     icon,
-    hasUpload,
-    initialsStyle,
-    children,
     ...otherProps
   } = props;
 
-  const spacingClasses = useSpacing({
-    margin,
-    marginTop,
-    marginRight,
-    marginBottom,
-    marginLeft,
-    marginMd,
-    marginTopMd,
-    marginRightMd,
-    marginBottomMd,
-    marginLeftMd,
-  });
-
   const classes = clsx([
     AvatarClassNames.container,
-    className,
     avatarSize &&
       avatarSizeClassMapping.has(avatarSize) &&
       avatarSizeClassMapping.get(avatarSize),
-    initials &&
-      initialsStyle &&
-      avatarInitialsStyleClassMapping.has(initialsStyle) &&
-      avatarInitialsStyleClassMapping.get(initialsStyle),
     darkMode && AvatarClassNames.darkMode,
-    spacingClasses,
+    className,
   ]);
 
   const avatarStyles: CSSProperties = avatarUrl
@@ -94,15 +66,6 @@ export const Avatar = forwardRef<HTMLDivElement, AvatarProps>(function Avatar(
           size: avatarIconSizeMapping.get(avatarSize as AvatarSize),
           color: 'var(--btx-neutral-600)',
         })}
-      {hasUpload && avatarSize === AvatarSizes.XXL && (
-        <div
-          className="btx-avatar-change-photo"
-          data-testid={AvatarDataTestIds.changeIconContainer}
-        >
-          <IconChangePhoto size={changePhotoIconSize} />
-        </div>
-      )}
-      {children}
     </div>
   );
 });
@@ -113,9 +76,6 @@ Avatar.defaultProps = {
   avatarUrl: undefined,
   initials: undefined,
   icon: undefined,
-  hasUpload: false,
-  initialsStyle: undefined,
-  children: undefined,
 };
 
 export default Avatar;

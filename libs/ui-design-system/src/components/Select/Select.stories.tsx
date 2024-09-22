@@ -4,18 +4,18 @@ import { Select } from './Select';
 import { SelectOption } from './SelectOption';
 
 const Demo = () => {
-  const [value, setValue] = useState<string | number | readonly string[] | undefined>();
+  const [value, setValue] = useState<string | number | undefined>();
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue(event.target.value);
+  const handleChange = (value: string | number) => {
+    setValue(value);
   };
 
   return (
     <Select value={value} onChange={handleChange}>
-      <SelectOption value={1}>Option 1</SelectOption>
-      <SelectOption value={2}>Option 2</SelectOption>
-      <SelectOption value={3}>Option 3</SelectOption>
-      <SelectOption value={4}>Option 4</SelectOption>
+      <SelectOption value={1} label="Option 1" />
+      <SelectOption value={2} label="Option 2" />
+      <SelectOption value={3} label="Option 3" />
+      <SelectOption value={4} label="Option 4" />
     </Select>
   );
 };
