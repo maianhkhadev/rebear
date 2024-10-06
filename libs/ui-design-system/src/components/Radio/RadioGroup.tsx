@@ -9,14 +9,19 @@ export type RadioGroupProps = {
   defaultValue?: string | number;
   value?: string | number;
   size?: RadioSizes;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value?: string | number) => void;
 };
 
 export const RadioGroup = forwardRef<
   HTMLDivElement,
-  RadioGroupProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
+  RadioGroupProps & Omit<HTMLProps<HTMLDivElement>, 'size' | 'onChange'>
 >(function RadioGroup(props, ref) {
-  const { className, children, ...rest } = props;
+  const { name, className, children, onChange } = props;
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    onChange && onChange(value)
+  }
 
   const classes = clsx([ClassNames.RadioGroup, className]);
 
@@ -24,13 +29,13 @@ export const RadioGroup = forwardRef<
     <div className={classes} ref={ref}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          const aaaa = {
-            ...rest,
+          const props = {
+            name,
             ...child.props,
-            
+            onChange: handleChange
           };
-          console.log(aaaa)
-          return React.cloneElement(child, aaaa);
+
+          return React.cloneElement(child, props);
         }
         return child;
       })}
@@ -40,6 +45,7 @@ export const RadioGroup = forwardRef<
 
 RadioGroup.defaultProps = {
   size: RadioSize.Medium,
+  onChange: undefined,
 };
 
 export default RadioGroup;

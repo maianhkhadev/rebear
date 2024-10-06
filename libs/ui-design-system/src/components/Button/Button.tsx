@@ -14,7 +14,7 @@ import './Button.scss';
 export type ButtonProps = {
   type?: "button" | "submit" | "reset";
   variant?: ButtonVariants;
-  size?: ButtonSizes;
+  size?: ButtonSizes;              
   block?: boolean;
   prefixIcon?: ReactElement;
   suffixIcon?: ReactElement;
@@ -62,7 +62,7 @@ export const Button = forwardRef<
 Button.defaultProps = {
   type: undefined,
   variant: ButtonVariant.Primary,
-  size: ButtonSize.Medium,
+  size: ButtonSize.MD,
   block: false,
   prefixIcon: undefined,
   suffixIcon: undefined,

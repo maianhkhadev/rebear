@@ -1,82 +1,57 @@
-@import '../../mixins.scss';
+:root {
+  --rb-button-primary-fg: var(--rb-gray-50);
+  --rb-button-primary-bg: var(--rb-brand-500);
+  --rb-button-primary-fg-hover: var(--rb-gray-50);
+  --rb-button-primary-bg-hover: var(--rb-brand-600);
 
-@mixin generate-button($color) {
-  color: var(--rb-white);
-  background-color: var(--rb-#{$color}-600);
-  border-color: var(--rb-#{$color}-600);
-  
-  &:hover {
-    background-color: var(--rb-#{$color}-500);
-    border-color: var(--rb-#{$color}-500);
-  }
+  --rb-button-secondary-fg: var(--rb-gray-700);
+  --rb-button-secondary-bg: var(--rb-white);
+  --rb-button-secondary-border: var(--rb-gray-300);
+  --rb-button-secondary-fg-hover: var(--rb-gray-800);
+  --rb-button-secondary-bg-hover: var(--rb-gray-50);
 
-  &:focus-visible {
-    border-color: var(--rb-#{$color}-400);
-    outline: 0.125rem solid var(--rb-#{$color}-300);
-  }
-
-  &:disabled, &.disabled {
-    background-color: var(--rb-gray-900);
-    border-color: var(--rb-gray-900);
-    pointer-events: none;
-  }
-
-  &:active, &:visited {
-    background-color: var(--rb-#{$color}-500);
-    box-shadow: 0 0.25rem 0 0 var(--rb-#{$color}-600) inset;
-  }
-}
-
-@mixin generate-outline-button($color) {
-  color: var(--rb-#{$color}-600);
-  background-color: var(--rb-white);
-  border-color: var(--rb-#{$color}-600);
-  
-  &:hover {
-    color: var(--rb-#{$color}-500);
-    background-color: var(--rb-#{$color}-50);
-    border-color: var(--rb-#{$color}-500);
-  }
-
-  &:focus, &:focus-visible {
-    border-color: var(--rb-#{$color}-400);
-    outline: 0.125rem solid var(--rb-#{$color}-300);
-  }
-
-  &:disabled, &.disabled {
-    color: var(--rb-gray-900);
-    border-color: var(--rb-gray-900);
-    pointer-events: none;
-  }
-
-  &:active, &:visited {
-    color: var(--rb-#{$color}-500);
-    background-color: var(--rb-#{$color}-50);
-    box-shadow: 0 0.25rem 0 0 var(--rb-#{$color}-600) inset;
-  }
+  --rb-button-tertiary-fg: var(--rb-gray-700);
+  --rb-button-tertiary-bg: transparent;
+  --rb-button-tertiary-fg-hover: var(--rb-gray-700);
+  --rb-button-tertiary-bg-hover: var(--rb-brand-50);
 }
 
 .rebear-button {
   font-weight: 600;
   border-width: 1px;
   border-style: solid;
-  border-radius: 0.25rem;
+  border-radius: var(--rb-radius-md);
   outline-offset: 1px;
   cursor: pointer;
 
-  &.rebear-button-small {
-    @include rb-paragraph-S;
-    padding: 0.313rem 1rem;
+  &:focus {
+    outline: 1px solid var(--rb-ring-brand);
   }
 
-  &.rebear-button-medium {
-    @include rb-paragraph-L;
-    padding: 0.438rem 1.5rem;
+  &.disabled, &:disabled {
+    color: var(--rb-fg-disabled);
+    background-color: var(--rb-bg-primary);
+    border-color: var(--rb-border-disabled);
   }
 
-  &.rebear-button-large {
-    @include rb-title-h5;
-    padding: 0.5rem 2rem;
+  &.rebear-button-sm {
+    padding: var(--rb-spacing-4) var(--rb-spacing-5);
+  }
+
+  &.rebear-button-md {
+    padding: 10px var(--rb-spacing-6);
+  }
+
+  &.rebear-button-lg {
+    padding: 10px var(--rb-spacing-6);
+  }
+
+  &.rebear-button-xl {
+    padding: var(--rb-spacing-5) var(--rb-spacing-6);
+  }
+
+  &.rebear-button-2xl {
+    padding: var(--rb-spacing-6) var(--rb-spacing-8);
   }
 }
 
@@ -88,16 +63,34 @@
   outline-offset: 1px;
   cursor: pointer;
 
-  &.rebear-button-small {
-    padding: 0.313rem;
+  &:focus {
+    outline: 1px solid var(--rb-ring-brand);
   }
 
-  &.rebear-button-medium {
-    padding: 0.438rem;
+  &.disabled, &:disabled {
+    color: var(--rb-fg-disabled);
+    background-color: var(--rb-bg-primary);
+    border-color: var(--rb-border-disabled);
   }
 
-  &.rebear-button-large {
-    padding: 0.5rem;
+  &.rebear-button-sm {
+    padding: var(--rb-spacing-4);
+  }
+
+  &.rebear-button-md {
+    padding: 10px;
+  }
+
+  &.rebear-button-lg {
+    padding: var(--rb-spacing-5);
+  }
+
+  &.rebear-button-xl {
+    padding: var(--rb-spacing-6);
+  }
+
+  &.rebear-button-2xl {
+    padding: var(--rb-spacing-8);
   }
 }
 
@@ -105,50 +98,38 @@
   width: 100%;
 }
 
-.rebear-button-primary {
-  @include generate-button('primary');
+.rebear-button-primary:not(.disabled) {
+  color: var(--rb-button-primary-fg);
+  background-color: var(--rb-button-primary-bg);
+  border-color: var(--rb-button-primary-bg);
+
+  &:hover {
+    color: var(--rb-button-primary-fg-hover);
+    background-color: var(--rb-button-primary-bg-hover);
+    border-color: var(--rb-button-primary-bg-hover);
+  }
 }
 
-.rebear-button-secondary {
-  @include generate-button('secondary');
+.rebear-button-secondary:not(.disabled) {
+  color: var(--rb-button-secondary-fg);
+  background-color: var(--rb-button-secondary-bg);
+  border-color: var(--rb-button-secondary-border);
+
+  &:hover {
+    color: var(--rb-button-secondary-fg-hover);
+    background-color: var(--rb-button-secondary-bg-hover);
+    border-color: var(--rb-button-secondary-border);
+  }
 }
 
-.rebear-button-success {
-  @include generate-button('success');
-}
+.rebear-button-tertiary:not(.disabled) {
+  color: var(--rb-button-tertiary-fg);
+  background-color: var(--rb-button-tertiary-bg);
+  border-color: var(--rb-button-tertiary-bg);
 
-.rebear-button-warning {
-  @include generate-button('warning');
-}
-
-.rebear-button-error {
-  @include generate-button('error');
-}
-
-.rebear-button-info {
-  @include generate-button('info');
-}
-
-.rebear-button-outline-primary {
-  @include generate-outline-button('primary');
-}
-
-.rebear-button-outline-secondary {
-  @include generate-outline-button('secondary');
-}
-
-.rebear-button-outline-success {
-  @include generate-outline-button('success');
-}
-
-.rebear-button-outline-warning {
-  @include generate-outline-button('warning');
-}
-
-.rebear-button-outline-error {
-  @include generate-outline-button('error');
-}
-
-.rebear-button-outline-info {
-  @include generate-outline-button('info');
+  &:hover {
+    color: var(--rb-button-tertiary-fg-hover);
+    background-color: var(--rb-button-tertiary-bg-hover);
+    border-color: var(--rb-button-tertiary-bg-hover);
+  }
 }

@@ -1,5 +1,3 @@
-@import '../../mixins.scss';
-
 .rebear-input-container {
   position: relative;
 
@@ -56,7 +54,6 @@
 }
 
 .rebear-input-small {
-  @include rb-paragraph-S;
   padding: 0.313rem 0.5rem;
 
   + .rebear-input-prefix-icon {
@@ -81,7 +78,6 @@
 }
 
 .rebear-input-medium {
-  @include rb-paragraph-L;
   padding: 0.438rem 0.75rem;
 
   + .rebear-input-prefix-icon {
@@ -106,7 +102,6 @@
 }
 
 .rebear-input-large {
-  @include rb-title-h5;
   padding: 0.5rem 1rem;
 
   + .rebear-input-prefix-icon {

@@ -1,4 +1,5 @@
 :root {
+  // LEVEL 1
   // BRAND COLORS
   --rb-brand-900: #021232;
   --rb-brand-800: #042564;
@@ -64,5 +65,11 @@
   --rb-black: #101828;
 
   // LEVEL 2
-  // FOREGROUND COLORS
+  // FOCUS RING
+  --rb-ring-brand: var(--rb-brand-500);
+  --rb-ring-error: var(--rb-error-500);
+  // DISABLED STATE
+  --rb-fg-disabled: var(--rb-gray-400);
+  --rb-bg-primary: var(--rb-white);
+  --rb-border-disabled: var(--rb-gray-300);
 }

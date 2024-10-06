@@ -1,5 +1,3 @@
-@import '../../mixins.scss';
-
 .rebear-text-area {
   width: 100%;
   border-width: 1px;
@@ -14,17 +12,14 @@
 }
 
 .rebear-text-area-small {
-  @include rb-paragraph-S;
   padding: 0.313rem 0.5rem;
 }
 
 .rebear-text-area-medium {
-  @include rb-paragraph-L;
   padding: 0.438rem 0.75rem;
 }
 
 .rebear-text-area-large {
-  @include rb-title-h5;
   padding: 0.5rem 1rem;
 }
 

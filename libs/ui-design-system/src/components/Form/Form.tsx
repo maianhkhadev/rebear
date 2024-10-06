@@ -64,11 +64,11 @@ export const Form = forwardRef<
           }}
         />
 
-        {/* <RadioGroup {...register('gender')}>
+        <RadioGroup {...register('gender')}>
           <Radio value="male">Male</Radio>
           <Radio value="female">Female</Radio>
           <Radio value="other">Other</Radio>
-        </RadioGroup> */}
+        </RadioGroup>
 
         {/* <CheckboxGroup {...register('languages')} /> */}
 

@@ -1,5 +1,3 @@
-@import '../../mixins.scss';
-
 .rb-accordions {
   display: flex;
   flex-direction: column;
@@ -20,7 +18,6 @@
     }
 
     .rb-accordion-header {
-      @include rb-paragraph-L;
       width: 100%;
       display: flex;
       align-items: center;

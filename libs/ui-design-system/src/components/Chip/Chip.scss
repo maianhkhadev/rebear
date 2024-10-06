@@ -1,7 +1,4 @@
-@import '../../mixins.scss';
-
 .rebear-chip {
-  @include rb-caption;
   display: inline-block;
   border-radius: 2rem;
   padding: 0.25rem 0.75rem;

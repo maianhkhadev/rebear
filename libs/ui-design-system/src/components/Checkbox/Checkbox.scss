@@ -1,5 +1,3 @@
-@import '../../mixins.scss';
-
 .rebear-checkbox-group {
 
 }
@@ -35,7 +33,7 @@
   }
 
   .rebear-checkbox-label {
-    @include rb-paragraph-S;
+
   }
 
   input:checked + .rebear-checkbox-marker svg {

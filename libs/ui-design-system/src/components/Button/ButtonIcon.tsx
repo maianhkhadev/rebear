@@ -39,7 +39,7 @@ export const ButtonIcon = forwardRef<
 
 ButtonIcon.defaultProps = {
   variant: ButtonVariant.Primary,
-  size: ButtonSize.Medium,
+  size: ButtonSize.MD,
 };
 
 export default ButtonIcon;

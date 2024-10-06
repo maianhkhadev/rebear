@@ -9,7 +9,7 @@ export type CheckboxGroupProps = {
   defaultValue?: string[] | number[];
   value?: string[] | number[];
   size?: CheckboxSizes;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (value: string[] | number[]) => void;
 };
 
 export const CheckboxGroup = forwardRef<
@@ -19,8 +19,12 @@ export const CheckboxGroup = forwardRef<
   const {
     className,
     children,
-    ...rest
+    onChange,
   } = props;
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event)
+  }
 
   const classes = clsx([ClassNames.CheckboxGroup, className]);
 
@@ -28,12 +32,12 @@ export const CheckboxGroup = forwardRef<
     <div className={classes} ref={ref}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          const aaaa = {
-            ...rest,
+          const props = {
             ...child.props,
+            onChange: handleChange
           };
 
-          return React.cloneElement(child, aaaa);
+          return React.cloneElement(child, props);
         }
         return child;
       })}
