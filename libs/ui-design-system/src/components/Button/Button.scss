@@ -35,22 +35,32 @@
   }
 
   &.rebear-button-sm {
+    font-size: var(--rb-text-sm-font-size);
+    line-height: var(--rb-text-sm-line-height);
     padding: var(--rb-spacing-4) var(--rb-spacing-5);
   }
 
   &.rebear-button-md {
+    font-size: var(--rb-text-sm-font-size);
+    line-height: var(--rb-text-sm-line-height);
     padding: 10px var(--rb-spacing-6);
   }
 
   &.rebear-button-lg {
+    font-size: var(--rb-text-md-font-size);
+    line-height: var(--rb-text-md-line-height);
     padding: 10px var(--rb-spacing-6);
   }
 
   &.rebear-button-xl {
+    font-size: var(--rb-text-md-font-size);
+    line-height: var(--rb-text-md-line-height);
     padding: var(--rb-spacing-5) var(--rb-spacing-6);
   }
 
   &.rebear-button-2xl {
+    font-size: var(--rb-text-lg-font-size);
+    line-height: var(--rb-text-lg-line-height);
     padding: var(--rb-spacing-6) var(--rb-spacing-8);
   }
 }
@@ -62,6 +72,11 @@
   border-radius: 50%;
   outline-offset: 1px;
   cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 
   &:focus {
     outline: 1px solid var(--rb-ring-brand);
