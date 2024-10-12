@@ -4,7 +4,7 @@ import {
   ClassNames,
   ParagraphSize,
   ParagraphSizes,
-  ClassNameSizeMapping,
+  ClassNameParagraphSizeMapping,
 } from './Typography.constants';
 import './Paragraph.scss';
 
@@ -20,7 +20,7 @@ export const Paragraph = forwardRef<
 
   const classes = clsx([
     ClassNames.Paragraph,
-    size && ClassNameSizeMapping.get(size),
+    size && ClassNameParagraphSizeMapping.get(size),
     className,
   ]);
 
