@@ -10,7 +10,8 @@ export const ClassNames = {
 export const ButtonVariant = {
   Primary: 'primary',
   Secondary: 'secondary',
-  Tertiary: 'tertiary'
+  Tertiary: 'tertiary',
+  Link: 'link'
 }
 
 export type ButtonVariants = typeof ButtonVariant[keyof typeof ButtonVariant];
@@ -19,6 +20,7 @@ export const ClassNameVariantMapping = new Map([
   [ButtonVariant.Primary, 'rebear-button-primary'],
   [ButtonVariant.Secondary, 'rebear-button-secondary'],
   [ButtonVariant.Tertiary, 'rebear-button-tertiary'],
+  [ButtonVariant.Link, 'rebear-button-link'],
 ]);
 
 export const ButtonSize = {

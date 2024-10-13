@@ -14,6 +14,11 @@
   --rb-button-tertiary-bg: transparent;
   --rb-button-tertiary-fg-hover: var(--rb-gray-700);
   --rb-button-tertiary-bg-hover: var(--rb-brand-50);
+
+  --rb-button-link-fg: var(--rb-gray-700);
+  --rb-button-link-bg: transparent;
+  --rb-button-link-fg-hover: var(--rb-gray-700);
+  --rb-button-link-bg-hover: transparent;
 }
 
 .rebear-button {
@@ -146,5 +151,25 @@
     color: var(--rb-button-tertiary-fg-hover);
     background-color: var(--rb-button-tertiary-bg-hover);
     border-color: var(--rb-button-tertiary-bg-hover);
+  }
+
+  &:focus {
+    background-color: var(--rb-bg-primary)
+  }
+}
+
+.rebear-button-link:not(.disabled) {
+  color: var(--rb-button-link-fg);
+  background-color: var(--rb-button-link-bg);
+  border-color: var(--rb-button-link-bg);
+
+  &:hover {
+    color: var(--rb-button-link-fg-hover);
+    background-color: var(--rb-button-link-bg-hover);
+    border-color: var(--rb-button-link-bg-hover);
+  }
+
+  &:focus {
+    background-color: var(--rb-bg-primary)
   }
 }
