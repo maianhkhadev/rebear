@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "rebear": ["libs/ui-design-system/src/index.ts"],
+      "rebear-auth": ["libs/util-auth/src/index.ts"],
       "rebear-icons": ["libs/ui-icons/src/index.ts"]
     }
   },
