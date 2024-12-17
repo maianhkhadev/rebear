@@ -5,6 +5,12 @@ import { IconClose } from 'rebear-icons';
 const meta: Meta<typeof Input> = {
   component: Input,
   title: 'Input',
+  argTypes: {
+    size: {
+      options: ['sm', 'md', 'lg', 'xl', '2xl'],
+      control: { type: 'radio' },
+    },
+  },
   render: ({ ...args }) => <Input {...args} suffixIcon={<IconClose />} />,
 };
 export default meta;
@@ -16,20 +22,8 @@ export const Default: Story = {
   },
 };
 
-export const SizeSmall: Story = {
+export const Error: Story = {
   args: {
-    size: 'small',
-  },
-};
-
-export const SizeMedium: Story = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const SizeLarge: Story = {
-  args: {
-    size: 'large',
+    variant: 'error',
   },
 };

@@ -10,44 +10,47 @@ import { ClassNames } from './Accordions.constants';
 import { AccordionContext, AccordionData } from './AccordionContext';
 import { useAccordionsContext } from './useAccordionsContext';
 
-export const Accordion = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>(
-  function Accordion(props, ref) {
-    const { className, children, ...rest } = props;
-    const { selectedId, subscribe, unsubscribe, getNextAccordionId } =
-      useAccordionsContext();
-    const accordionId = getNextAccordionId();
-    const idRef = useRef<number>(accordionId);
+type AccordionProps = {};
 
-    useEffect(() => {
-      const id = idRef.current;
-      subscribe(id);
+export const Accordion = forwardRef<
+  HTMLDivElement,
+  AccordionProps & HTMLProps<HTMLDivElement>
+>(function Accordion(props, ref) {
+  const { className, children, ...rest } = props;
+  const { selectedId, subscribe, unsubscribe, getNextAccordionId } =
+    useAccordionsContext();
+  const accordionId = getNextAccordionId();
+  const idRef = useRef<number>(accordionId);
 
-      return () => {
-        unsubscribe(id);
-      };
-    }, []);
+  useEffect(() => {
+    const id = idRef.current;
+    subscribe(id);
 
-    const value = useMemo<AccordionData>(
-      () => ({
-        accordionId: idRef.current,
-      }),
-      [idRef]
-    );
+    return () => {
+      unsubscribe(id);
+    };
+  }, []);
 
-    const classes = clsx(
-      ClassNames.Accordion,
-      selectedId === idRef.current && ClassNames.Active,
-      className
-    );
+  const value = useMemo<AccordionData>(
+    () => ({
+      accordionId: idRef.current,
+    }),
+    [idRef]
+  );
 
-    return (
-      <AccordionContext.Provider value={value}>
-        <div ref={ref} className={classes} {...rest}>
-          {children}
-        </div>
-      </AccordionContext.Provider>
-    );
-  }
-);
+  const classes = clsx(
+    ClassNames.Accordion,
+    selectedId === idRef.current && ClassNames.Active,
+    className
+  );
+
+  return (
+    <AccordionContext.Provider value={value}>
+      <div ref={ref} className={classes} {...rest}>
+        {children}
+      </div>
+    </AccordionContext.Provider>
+  );
+});
 
 export default Accordion;

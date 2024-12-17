@@ -2,7 +2,7 @@ export const ClassNames = {
   Display: 'rebear-display',
   Title: 'rebear-title',
   Paragraph: 'rebear-paragraph',
-  Caption: 'rebear-caption',
+  Footnote: 'rebear-footnote',
 };
 
 export const ParagraphSize = {

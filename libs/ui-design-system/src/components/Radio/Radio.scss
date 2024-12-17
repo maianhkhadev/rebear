@@ -18,7 +18,7 @@
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
-    border: 0.125rem solid var(--rb-brand-600);
+    border: 0.125rem solid var(--rb-primary-600);
     border-radius: 50%;
 
     &::before {
@@ -28,7 +28,7 @@
       left: 0.25rem;
       width: 0.5rem;
       height: 0.5rem;
-      background-color: var(--rb-brand-600);
+      background-color: var(--rb-primary-600);
       border-radius: 50%;
       transition: transform 0.2s ease-in-out;
       transform: scale(0);

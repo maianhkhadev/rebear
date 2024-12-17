@@ -4,13 +4,12 @@ import { Display } from './Display';
 const meta: Meta<typeof Display> = {
   component: Display,
   title: 'Typography/Display',
-  argTypes: {
-    size: {
-      options: ['md', 'sm'],
-      control: { type: 'radio' },
-    },
-  },
-  render: ({ ...args }) => <Display {...args}>Rebear Design.</Display>,
+  render: ({ ...args }) => (
+    <>
+      <Display size="md">Display MD: Rebear Design.</Display>
+      <Display size="sm">Display SM: Rebear Design.</Display>
+    </>
+  ),
 };
 export default meta;
 type Story = StoryObj<typeof Display>;

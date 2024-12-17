@@ -1,29 +1,29 @@
 :root {
   // LEVEL 1
-  // BRAND COLORS
-  --rb-brand-900: #021232;
-  --rb-brand-800: #042564;
-  --rb-brand-700: #063796;
-  --rb-brand-600: #0848c9;
-  --rb-brand-500: #0f5df5;
-  --rb-brand-400: #3f7df7;
-  --rb-brand-300: #7b9ff2;
-  --rb-brand-200: #9fbefb;
-  --rb-brand-100: #deebff;
-  --rb-brand-50: #f5f8ff;
-  --rb-brand-25: #fafbff;
-  // GRAY COLORS
-  --rb-gray-900: #101828;
-  --rb-gray-800: #1d2939;
-  --rb-gray-700: #344054;
-  --rb-gray-600: #475467;
-  --rb-gray-500: #667085;
-  --rb-gray-400: #98a2b3;
-  --rb-gray-300: #d0d5dd;
-  --rb-gray-200: #e1e4ea;
-  --rb-gray-100: #f2f4f7;
-  --rb-gray-50: #f9fafb;
-  --rb-gray-25: #fcfcfd;
+  // PRIMARY COLORS
+  --rb-primary-900: #021232;
+  --rb-primary-800: #042564;
+  --rb-primary-700: #063796;
+  --rb-primary-600: #0848c9;
+  --rb-primary-500: #0f5df5;
+  --rb-primary-400: #3f7df7;
+  --rb-primary-300: #7b9ff2;
+  --rb-primary-200: #9fbefb;
+  --rb-primary-100: #deebff;
+  --rb-primary-50: #f5f8ff;
+  --rb-primary-25: #fafbff;
+  // SECONDARY COLORS
+  --rb-secondary-900: #101828;
+  --rb-secondary-800: #1d2939;
+  --rb-secondary-700: #344054;
+  --rb-secondary-600: #475467;
+  --rb-secondary-500: #667085;
+  --rb-secondary-400: #98a2b3;
+  --rb-secondary-300: #d0d5dd;
+  --rb-secondary-200: #e1e4ea;
+  --rb-secondary-100: #f2f4f7;
+  --rb-secondary-50: #f9fafb;
+  --rb-secondary-25: #fcfcfd;
   // SUCCESS COLORS
   --rb-success-900: #032113;
   --rb-success-800: #074327;
@@ -66,10 +66,10 @@
 
   // LEVEL 2
   // FOCUS RING
-  --rb-ring-brand: var(--rb-brand-500);
+  --rb-ring-brand: var(--rb-primary-500);
   --rb-ring-error: var(--rb-error-500);
   // DISABLED STATE
-  --rb-fg-disabled: var(--rb-gray-400);
+  --rb-fg-disabled: var(--rb-secondary-400);
   --rb-bg-primary: var(--rb-white);
-  --rb-border-disabled: var(--rb-gray-300);
+  --rb-border-disabled: var(--rb-secondary-300);
 }

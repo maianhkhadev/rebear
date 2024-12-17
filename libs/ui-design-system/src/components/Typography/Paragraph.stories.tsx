@@ -4,17 +4,18 @@ import { Paragraph } from './Paragraph';
 const meta: Meta<typeof Paragraph> = {
   component: Paragraph,
   title: 'Typography/Paragraph',
-  argTypes: {
-    size: {
-      options: ['md', 'sm'],
-      control: { type: 'radio' },
-    },
-  },
   render: ({ ...args }) => (
-    <Paragraph {...args}>
-      Rebear Design, a design language for background applications, is refined
-      by Rebear Team.
-    </Paragraph>
+    <>
+      <Paragraph size="md">
+        Paragraph MD: Rebear Design, a design language for background applications, is refined
+        by Rebear Team.
+      </Paragraph>
+
+      <Paragraph size="sm">
+        Paragraph SM: Rebear Design, a design language for background applications, is refined
+        by Rebear Team.
+      </Paragraph>
+    </>
   ),
 };
 export default meta;

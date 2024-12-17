@@ -1,0 +1,51 @@
+.rebear-transform-slider {
+  position: relative;
+  width: 100%;
+  padding-top: 70%;
+  overflow: hidden;
+
+  .rebear-transform-slider-before-photo,
+  .rebear-transform-slider-after-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .rebear-transform-slider-before-photo {
+    z-index: 100;
+  }
+
+  .rebear-transform-slider-after-photo {
+    z-index: 101;
+  }
+
+  .rebear-transform-slider-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    background: transparent;
+    z-index: 1000;
+
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+    }
+  
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 0.25rem;
+      height: 100%;
+      background: var(--rb-secondary-900);
+      cursor: pointer;
+    }
+  }
+}

@@ -48,7 +48,7 @@ export const Input = forwardRef<
 
 Input.defaultProps = {
   variant: InputVariant.Primary,
-  size: InputSize.Medium,
+  size: InputSize.MD,
   prefixIcon: undefined,
   suffixIcon: undefined,
 };

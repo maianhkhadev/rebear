@@ -1,23 +1,23 @@
 :root {
-  --rb-button-primary-fg: var(--rb-gray-50);
-  --rb-button-primary-bg: var(--rb-brand-500);
-  --rb-button-primary-fg-hover: var(--rb-gray-50);
-  --rb-button-primary-bg-hover: var(--rb-brand-600);
+  --rb-button-primary-fg: var(--rb-secondary-50);
+  --rb-button-primary-bg: var(--rb-primary-500);
+  --rb-button-primary-fg-hover: var(--rb-secondary-50);
+  --rb-button-primary-bg-hover: var(--rb-primary-600);
 
-  --rb-button-secondary-fg: var(--rb-gray-700);
+  --rb-button-secondary-fg: var(--rb-secondary-700);
   --rb-button-secondary-bg: var(--rb-white);
-  --rb-button-secondary-border: var(--rb-gray-300);
-  --rb-button-secondary-fg-hover: var(--rb-gray-800);
-  --rb-button-secondary-bg-hover: var(--rb-gray-50);
+  --rb-button-secondary-border: var(--rb-secondary-300);
+  --rb-button-secondary-fg-hover: var(--rb-secondary-800);
+  --rb-button-secondary-bg-hover: var(--rb-secondary-50);
 
-  --rb-button-tertiary-fg: var(--rb-gray-700);
+  --rb-button-tertiary-fg: var(--rb-secondary-700);
   --rb-button-tertiary-bg: transparent;
-  --rb-button-tertiary-fg-hover: var(--rb-gray-700);
-  --rb-button-tertiary-bg-hover: var(--rb-brand-50);
+  --rb-button-tertiary-fg-hover: var(--rb-secondary-700);
+  --rb-button-tertiary-bg-hover: var(--rb-primary-50);
 
-  --rb-button-link-fg: var(--rb-gray-700);
+  --rb-button-link-fg: var(--rb-secondary-700);
   --rb-button-link-bg: transparent;
-  --rb-button-link-fg-hover: var(--rb-gray-700);
+  --rb-button-link-fg-hover: var(--rb-secondary-700);
   --rb-button-link-bg-hover: transparent;
 }
 

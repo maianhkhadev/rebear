@@ -1,23 +1,32 @@
-import { forwardRef, HTMLProps } from 'react';
+import { forwardRef, HTMLProps, useMemo } from 'react';
 import clsx from 'clsx';
 import { ClassNames } from './Typography.constants';
 import './Title.scss';
 
 export type TitleProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6;
+  weight?: 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100
 };
 
 export const Title = forwardRef<
   HTMLHeadingElement,
   TitleProps & HTMLProps<HTMLHeadingElement>
 >(function Title(props, ref) {
-  const { level, className, children, ...rest } = props;
+  const { level, weight, className, children, ...rest } = props;
+
+  const style = useMemo(() => {
+    if (weight) {
+      return { fontWeight: weight }
+    }
+
+    return {}
+  }, [weight])
 
   const classes = clsx([ClassNames.Title, className]);
 
   if (level === 1) {
     return (
-      <h1 ref={ref} className={classes} {...rest}>
+      <h1 ref={ref} className={classes} {...rest} style={style}>
         {children}
       </h1>
     );
@@ -25,7 +34,7 @@ export const Title = forwardRef<
 
   if (level === 2) {
     return (
-      <h2 ref={ref} className={classes} {...rest}>
+      <h2 ref={ref} className={classes} {...rest} style={style}>
         {children}
       </h2>
     );
@@ -33,7 +42,7 @@ export const Title = forwardRef<
 
   if (level === 3) {
     return (
-      <h3 ref={ref} className={classes} {...rest}>
+      <h3 ref={ref} className={classes} {...rest} style={style}>
         {children}
       </h3>
     );
@@ -41,7 +50,7 @@ export const Title = forwardRef<
 
   if (level === 4) {
     return (
-      <h4 ref={ref} className={classes} {...rest}>
+      <h4 ref={ref} className={classes} {...rest} style={style}>
         {children}
       </h4>
     );
@@ -49,14 +58,14 @@ export const Title = forwardRef<
 
   if (level === 5) {
     return (
-      <h5 ref={ref} className={classes} {...rest}>
+      <h5 ref={ref} className={classes} {...rest} style={style}>
         {children}
       </h5>
     );
   }
 
   return (
-    <h6 ref={ref} className={classes} {...rest}>
+    <h6 ref={ref} className={classes} {...rest} style={style}>
       {children}
     </h6>
   );

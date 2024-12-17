@@ -1,6 +1,5 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
-import { isChecked } from './utils';
 import { ClassNames, RadioSize, RadioSizes } from './Radio.constants';
 import './Radio.scss';
 
@@ -9,19 +8,19 @@ export type RadioGroupProps = {
   defaultValue?: string | number;
   value?: string | number;
   size?: RadioSizes;
-  onChange?: (value?: string | number) => void;
 };
 
 export const RadioGroup = forwardRef<
-  HTMLDivElement,
-  RadioGroupProps & Omit<HTMLProps<HTMLDivElement>, 'size' | 'onChange'>
+  HTMLInputElement,
+  RadioGroupProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function RadioGroup(props, ref) {
-  const { name, className, children, onChange } = props;
+  const { className, children, ...rest } = props;
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    onChange && onChange(value)
-  }
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   // const value = event.target.value;
+  //   // console.log(event.target)
+  //   onChange && onChange(event)
+  // }
 
   const classes = clsx([ClassNames.RadioGroup, className]);
 
@@ -30,9 +29,8 @@ export const RadioGroup = forwardRef<
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           const props = {
-            name,
             ...child.props,
-            onChange: handleChange
+            ...rest
           };
 
           return React.cloneElement(child, props);

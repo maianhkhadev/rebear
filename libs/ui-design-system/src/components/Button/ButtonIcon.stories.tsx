@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import { IconClose } from 'rebear-icons';
+import { ButtonIcon } from './ButtonIcon';
 
-const meta: Meta<typeof Button> = {
-  component: Button,
-  title: 'Button',
+const meta: Meta<typeof ButtonIcon> = {
+  component: ButtonIcon,
+  title: 'ButtonIcon',
   argTypes: {
     variant: {
       options: ['primary', 'secondary', 'tertiary'],
@@ -15,12 +16,14 @@ const meta: Meta<typeof Button> = {
     },
   },
   render: ({ ...args }) => (
-    <Button {...args}>Primary</Button>
+    <ButtonIcon {...args} />
   ),
 };
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof ButtonIcon>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    icon: <IconClose />
+  },
 };

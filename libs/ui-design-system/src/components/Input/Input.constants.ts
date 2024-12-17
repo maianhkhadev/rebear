@@ -19,15 +19,19 @@ export const ClassNameVariantMapping = new Map([
 ]);
 
 export const InputSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+  SM: 'sm',
+  MD: 'md',
+  LG: 'lg',
+  XL: 'xl',
+  XL2: '2xl'
 }
 
 export type InputSizes = typeof InputSize[keyof typeof InputSize];
 
 export const ClassNameSizeMapping = new Map([
-  [InputSize.Small, 'rebear-input-small'],
-  [InputSize.Medium, 'rebear-input-medium'],
-  [InputSize.Large, 'rebear-input-large'],
+  [InputSize.SM, 'rebear-input-sm'],
+  [InputSize.MD, 'rebear-input-md'],
+  [InputSize.LG, 'rebear-input-lg'],
+  [InputSize.XL, 'rebear-input-xl'],
+  [InputSize.XL2, 'rebear-input-2xl'],
 ]);

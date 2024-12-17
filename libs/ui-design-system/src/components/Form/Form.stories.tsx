@@ -2,41 +2,26 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Form } from './Form';
 import { FormItem } from './FormItem';
 import { Input } from '../Input';
-import { Select, SelectOption } from '../Select';
-import { RadioGroup, Radio } from '../Radio';
+import { TextArea } from '../TextArea';
+// import { RadioGroup, Radio } from '../Radio';
 import { Button } from '../Button';
 
 const DemoForm = () => {
+  const handleSubmit = (values: unknown) => {
+    console.log(values);
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <FormItem name="fullname" label="Full name">
         <Input />
       </FormItem>
 
-      <FormItem name="email" label="Email">
-        <Input />
+      <FormItem name="note" label="Note">
+        <TextArea />
       </FormItem>
 
-      {/* <FormItem name="country" label="Country">
-        <Select>
-          <SelectOption value="vn">Vietnam</SelectOption>
-          <SelectOption value="us">USA</SelectOption>
-          <SelectOption value="th">Thailand</SelectOption>
-          <SelectOption value="kr">Korea</SelectOption>
-        </Select>
-      </FormItem>
-
-      <FormItem name="gender" label="Gender">
-        <RadioGroup name="gender">
-          <Radio value="male">Male</Radio>
-          <Radio value="female">Female</Radio>
-          <Radio value="other">Other</Radio>
-        </RadioGroup>
-      </FormItem> */}
-
-      <Button type="submit" variant="success">
-        Submit
-      </Button>
+      <Button type="submit">Submit</Button>
     </Form>
   );
 };

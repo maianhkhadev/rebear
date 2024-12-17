@@ -41,7 +41,7 @@
   position: absolute;
 
   svg {
-    color: var(--rb-gray-800);
+    color: var(--rb-secondary-800);
   }
 }
 
@@ -54,7 +54,7 @@
   cursor: pointer;
 
   &::placeholder {
-    color: var(--rb-gray-600);
+    color: var(--rb-secondary-600);
   }
 }
 
@@ -134,27 +134,27 @@
 }
 
 .rebear-select-primary {
-  color: var(--rb-gray-800);
+  color: var(--rb-secondary-800);
   background-color: var(--rb-white);
-  border-color: var(--rb-gray-600);
+  border-color: var(--rb-secondary-600);
 
   &:hover {
-    border-color: var(--rb-gray-900);
+    border-color: var(--rb-secondary-900);
   }
 
   &:focus {
-    outline: 0.125rem solid var(--rb-brand-100);
-    border-color: var(--rb-brand-400);
+    outline: 0.125rem solid var(--rb-primary-100);
+    border-color: var(--rb-primary-400);
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-gray-50);
-    border-color: var(--rb-gray-500);
+    background-color: var(--rb-secondary-50);
+    border-color: var(--rb-secondary-500);
   }
 }
 
 .rebear-select-error {
-  color: var(--rb-gray-800);
+  color: var(--rb-secondary-800);
   background-color: var(--rb-white);
   border-color: var(--rb-error-700);
 
@@ -168,8 +168,8 @@
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-gray-50);
-    border-color: var(--rb-gray-500);
+    background-color: var(--rb-secondary-50);
+    border-color: var(--rb-secondary-500);
   }
 }
 
@@ -181,16 +181,16 @@
 }
 
 .rebear-select-option {
-  color: var(--rb-gray-800);
+  color: var(--rb-secondary-800);
   background-color: var(--rb-white);
   padding: 0.5rem 0.75rem;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--rb-gray-100);
+    background-color: var(--rb-secondary-100);
   }
 
   &:disabled, &.disabled {
-    background-color: var(--rb-gray-50);
+    background-color: var(--rb-secondary-50);
   }
 }
