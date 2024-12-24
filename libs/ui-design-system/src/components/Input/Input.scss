@@ -3,10 +3,6 @@
 
   &:has(.rebear-input-prefix-icon) {
 
-    .rebear-input-sm {
-      padding-left: 36px;
-    }
-
     .rebear-input-md {
       padding-left: 40px;
     }
@@ -14,21 +10,9 @@
     .rebear-input-lg {
       padding-left: 44px;
     }
-
-    .rebear-input-xl {
-      padding-left: 48px;
-    }
-
-    .rebear-input-2xl {
-      padding-left: 58px;
-    }
   }
 
   &:has(.rebear-input-suffix-icon) {
-    
-    .rebear-input-sm {
-      padding-right: 36px;
-    }
 
     .rebear-input-md {
       padding-right: 40px;
@@ -36,14 +20,6 @@
 
     .rebear-input-lg {
       padding-right: 44px;
-    }
-
-    .rebear-input-xl {
-      padding-right: 48px;
-    }
-
-    .rebear-input-2xl {
-      padding-right: 58px;
     }
   }
 }
@@ -61,47 +37,21 @@
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-radius: 0.25rem;
-  outline-offset: 1px;
+  border-radius: 8px;
 
   &::placeholder {
     color: var(--rb-secondary-600);
   }
 }
 
-.rebear-input-sm {
-  font-size: var(--rb-text-sm-font-size);
-  line-height: var(--rb-text-sm-line-height);
+.rebear-input-md {
+  font-size: var(--rb-text-md-font-size);
+  line-height: var(--rb-text-md-line-height);
   padding: var(--rb-spacing-4) var(--rb-spacing-5);
 
   + .rebear-input-prefix-icon {
-    top: 8px;
-    left: 8px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  + .rebear-input-suffix-icon {
-    top: 8px;
-    right: 8px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
-
-.rebear-input-md {
-  font-size: var(--rb-text-sm-font-size);
-  line-height: var(--rb-text-sm-line-height);
-  padding: 10px var(--rb-spacing-6);
-
-  + .rebear-input-prefix-icon {
-    top: 10px;
+    display: inline-block;
+    top: 12px;
     left: 10px;
 
     svg {
@@ -111,7 +61,8 @@
   }
 
   + .rebear-input-suffix-icon {
-    top: 10px;
+    display: inline-block;
+    top: 12px;
     right: 10px;
 
     svg {
@@ -127,7 +78,7 @@
   padding: 10px var(--rb-spacing-6);
 
   + .rebear-input-prefix-icon {
-    top: 12px;
+    top: 14px;
     left: 12px;
 
     svg {
@@ -137,64 +88,12 @@
   }
 
   + .rebear-input-suffix-icon {
-    top: 12px;
+    top: 14px;
     right: 12px;
 
     svg {
       width: 20px;
       height: 20px;
-    }
-  }
-}
-
-.rebear-input-xl {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
-  padding: var(--rb-spacing-5) var(--rb-spacing-6);
-
-  + .rebear-input-prefix-icon {
-    top: 14px;
-    left: 14px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
-  + .rebear-input-suffix-icon {
-    top: 14px;
-    right: 14px;
-
-    svg {
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
-
-.rebear-input-2xl {
-  font-size: var(--rb-text-lg-font-size);
-  line-height: var(--rb-text-lg-line-height);
-  padding: var(--rb-spacing-6) var(--rb-spacing-8);
-
-  + .rebear-input-prefix-icon {
-    top: 17px;
-    left: 17px;
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  + .rebear-input-suffix-icon {
-    top: 17px;
-    right: 17px;
-
-    svg {
-      width: 24px;
-      height: 24px;
     }
   }
 }

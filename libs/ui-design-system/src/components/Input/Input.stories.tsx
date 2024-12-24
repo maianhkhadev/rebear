@@ -7,7 +7,7 @@ const meta: Meta<typeof Input> = {
   title: 'Input',
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg', 'xl', '2xl'],
+      options: ['md', 'lg'],
       control: { type: 'radio' },
     },
   },

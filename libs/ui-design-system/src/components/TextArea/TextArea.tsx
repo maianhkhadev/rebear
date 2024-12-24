@@ -36,7 +36,7 @@ export const TextArea = forwardRef<
 
 TextArea.defaultProps = {
   variant: TextAreaVariant.Primary,
-  size: TextAreaSize.Medium,
+  size: TextAreaSize.MD,
 };
 
 export default TextArea;

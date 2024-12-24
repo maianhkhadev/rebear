@@ -15,15 +15,13 @@ export const ClassNameVariantMapping = new Map([
 ]);
 
 export const TextAreaSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+  MD: 'md',
+  LG: 'lg',
 }
 
 export type TextAreaSizes = typeof TextAreaSize[keyof typeof TextAreaSize];
 
 export const ClassNameSizeMapping = new Map([
-  [TextAreaSize.Small, 'rebear-text-area-small'],
-  [TextAreaSize.Medium, 'rebear-text-area-medium'],
-  [TextAreaSize.Large, 'rebear-text-area-large'],
+  [TextAreaSize.MD, 'rebear-text-area-md'],
+  [TextAreaSize.LG, 'rebear-text-area-lg'],
 ]);

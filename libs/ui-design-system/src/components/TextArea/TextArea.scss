@@ -2,25 +2,23 @@
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-radius: 0.25rem;
-  outline-offset: 1px;
-  cursor: pointer;
+  border-radius: 8px;
 
   &::placeholder {
     color: var(--rb-secondary-600);
   }
 }
 
-.rebear-text-area-small {
-  padding: 0.313rem 0.5rem;
+.rebear-text-area-md {
+  font-size: var(--rb-text-sm-font-size);
+  line-height: var(--rb-text-sm-line-height);
+  padding: var(--rb-spacing-4) var(--rb-spacing-5);
 }
 
-.rebear-text-area-medium {
-  padding: 0.438rem 0.75rem;
-}
-
-.rebear-text-area-large {
-  padding: 0.5rem 1rem;
+.rebear-text-area-lg {
+  font-size: var(--rb-text-md-font-size);
+  line-height: var(--rb-text-md-line-height);
+  padding: 10px var(--rb-spacing-5);
 }
 
 .rebear-text-area-primary {
@@ -33,11 +31,12 @@
   }
 
   &:focus {
-    outline: 0.125rem solid var(--rb-primary-100);
-    border-color: var(--rb-primary-400);
+    outline: 1px solid var(--rb-ring-brand);
+    border-color: var(--rb-ring-brand);
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: var(--rb-secondary-50);
     border-color: var(--rb-secondary-500);
   }
@@ -53,11 +52,12 @@
   }
 
   &:focus {
-    outline: 0.125rem solid var(--rb-error-100);
-    border-color: var(--rb-error-700);
+    outline: 1px solid var(--rb-ring-error);
+    border-color: var(--rb-ring-error);
   }
 
-  &:disabled, &.disabled {
+  &:disabled,
+  &.disabled {
     background-color: var(--rb-secondary-50);
     border-color: var(--rb-secondary-500);
   }

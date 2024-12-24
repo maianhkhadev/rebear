@@ -1,19 +1,20 @@
 import React, { forwardRef, HTMLProps, ReactNode } from 'react';
-import { RegisterOptions, FieldValues } from 'react-hook-form';
+import { RegisterOptions, FieldValues, useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
 import { FormLabel } from './FormLabel';
-import { useFormContext } from './useFormContext';
+import { FormError } from './FormError';
 import { ClassNames } from './Form.constants';
 
 export type FormItemProps = {
   name: string;
-  label?: ReactNode | string;
+  label?: ReactNode;
+  description?: string;
   rules?: RegisterOptions<FieldValues, string>;
 };
 
 export const FormItem = forwardRef<
   HTMLDivElement,
-  FormItemProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
+  FormItemProps & Omit<HTMLProps<HTMLDivElement>, 'size' | 'label'>
 >(function FormItem(props, ref) {
   const { name, label, rules, className, children, ...rest } = props;
   const { register } = useFormContext();
@@ -34,6 +35,8 @@ export const FormItem = forwardRef<
         }
         return child;
       })}
+
+      <FormError name={name} />
     </div>
   );
 });

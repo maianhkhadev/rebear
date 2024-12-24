@@ -1,7 +1,6 @@
-import { forwardRef, HTMLProps, useMemo } from 'react';
+import { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
-import { useForm } from 'react-hook-form';
-import { FormContext } from './FormContext';
+import { useForm, FormProvider } from 'react-hook-form';
 import { ClassNames } from './Form.constants';
 import './Form.scss';
 
@@ -14,28 +13,21 @@ export const Form = forwardRef<
   FormProps & HTMLProps<HTMLFormElement>
 >(function Form(props, ref) {
   const { className, onSubmit, children, ...rest } = props;
-  const { register, handleSubmit } = useForm();
-
-  const contextValue = useMemo(
-    () => ({
-      register,
-    }),
-    [register]
-  );
+  const methods = useForm();
 
   const classes = clsx([ClassNames.Form, className]);
 
   return (
-    <FormContext.Provider value={contextValue}>
+    <FormProvider {...methods}>
       <form
         ref={ref}
         className={classes}
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={methods.handleSubmit(onSubmit)}
         {...rest}
       >
         {children}
       </form>
-    </FormContext.Provider>
+    </FormProvider>
   );
 });
 

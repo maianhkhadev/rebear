@@ -4,6 +4,12 @@ import { TextArea } from './TextArea';
 const meta: Meta<typeof TextArea> = {
   component: TextArea,
   title: 'TextArea',
+  argTypes: {
+    size: {
+      options: ['md', 'lg'],
+      control: { type: 'radio' },
+    },
+  },
   render: ({ ...args }) => <TextArea {...args} />,
 };
 export default meta;
@@ -15,20 +21,8 @@ export const Default: Story = {
   },
 };
 
-export const SizeSmall: Story = {
+export const Error: Story = {
   args: {
-    size: 'small',
-  },
-};
-
-export const SizeMedium: Story = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const SizeLarge: Story = {
-  args: {
-    size: 'large',
+    variant: 'error',
   },
 };

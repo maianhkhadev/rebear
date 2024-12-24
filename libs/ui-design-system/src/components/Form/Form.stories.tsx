@@ -13,12 +13,16 @@ const DemoForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormItem name="fullname" label="Full name">
+      <FormItem
+        name="fullname"
+        label="Full name"
+        rules={{ required: 'Full name is required' }}
+      >
         <Input />
       </FormItem>
 
       <FormItem name="note" label="Note">
-        <TextArea />
+        <TextArea rows={4} />
       </FormItem>
 
       <Button type="submit">Submit</Button>
