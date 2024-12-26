@@ -1,0 +1,52 @@
+.rebear-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .rebear-carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .rebear-carousel-slide {
+    min-width: 100%;
+  }
+
+  .rebear-carousel-arrow-left,
+  .rebear-carousel-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .rebear-carousel-arrow-left {
+    left: 12px;
+  }
+
+  .rebear-carousel-arrow-right {
+    right: 12px;
+  }
+
+  .rebear-carousel-indicators {
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    
+    button {
+      width: 10px;
+      height: 10px;
+      background-color: var(--rb-secondary-400);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.active {
+        background-color: var(--rb-white);
+      }
+    }
+  }
+}
