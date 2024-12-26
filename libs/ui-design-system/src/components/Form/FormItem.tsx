@@ -8,7 +8,6 @@ import { ClassNames } from './Form.constants';
 export type FormItemProps = {
   name: string;
   label?: ReactNode;
-  description?: string;
   rules?: RegisterOptions<FieldValues, string>;
 };
 
