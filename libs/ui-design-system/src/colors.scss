@@ -65,11 +65,15 @@
   --rb-black: #101828;
 
   // LEVEL 2
+  --rb-bg-brand-solid: var(--rb-primary-500);
+  --rb-bg-brand-solid-hover: var(--rb-primary-600);
+  --rb-bg-tertiary: var(--rb-secondary-100);
   // FOCUS RING
   --rb-ring-brand: var(--rb-primary-500);
   --rb-ring-error: var(--rb-error-500);
   // DISABLED STATE
   --rb-fg-disabled: var(--rb-secondary-400);
+  --rb-bg-disabled: var(--rb-secondary-100)
   --rb-bg-primary: var(--rb-white);
   --rb-border-disabled: var(--rb-secondary-300);
 }

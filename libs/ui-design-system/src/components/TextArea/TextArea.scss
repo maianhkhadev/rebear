@@ -2,7 +2,7 @@
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-radius: 8px;
+  border-radius: var(--rb-radius-md);
 
   &::placeholder {
     color: var(--rb-secondary-600);
@@ -10,15 +10,15 @@
 }
 
 .rebear-text-area-md {
-  font-size: var(--rb-text-sm-font-size);
-  line-height: var(--rb-text-sm-line-height);
-  padding: var(--rb-spacing-4) var(--rb-spacing-5);
+  font-size: var(--rb-text-md-font-size);
+  line-height: var(--rb-text-md-line-height);
+  padding: var(--rb-field-v-padding-md) var(--rb-field-h-padding-md);
 }
 
 .rebear-text-area-lg {
   font-size: var(--rb-text-md-font-size);
   line-height: var(--rb-text-md-line-height);
-  padding: 10px var(--rb-spacing-5);
+  padding: var(--rb-field-v-padding-lg) var(--rb-field-h-padding-lg);
 }
 
 .rebear-text-area-primary {

@@ -4,6 +4,7 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
+    "./style.css": "./style.css",
     ".": {
       "import": "./index.mjs",
       "require": "./index.js",

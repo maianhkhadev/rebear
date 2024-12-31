@@ -7,7 +7,7 @@ import React, {
   useMemo,
 } from 'react';
 import clsx from 'clsx';
-import { IconArrowLeft, IconArrowRight } from 'rebear-icons';
+import { IconChevronLeft, IconChevronRight } from 'rebear-icons';
 import { ButtonIcon } from '../Button';
 import { ClassNames } from './Carousel.constants';
 import './Carousel.scss';
@@ -76,8 +76,9 @@ export const Carousel = forwardRef<
       {arrows && (
         <ButtonIcon
           className={ClassNames.CarouselArrowLeft}
-          variant="secondary"
-          icon={<IconArrowLeft />}
+          variant="tertiary"
+          size="xl"
+          icon={<IconChevronLeft />}
           onClick={handlePrevious}
         />
       )}
@@ -85,8 +86,9 @@ export const Carousel = forwardRef<
       {arrows && (
         <ButtonIcon
           className={ClassNames.CarouselArrowRight}
-          variant="secondary"
-          icon={<IconArrowRight />}
+          variant="tertiary"
+          size="xl"
+          icon={<IconChevronRight />}
           onClick={handleNext}
         />
       )}

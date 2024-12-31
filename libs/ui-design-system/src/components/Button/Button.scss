@@ -19,6 +19,21 @@
   --rb-button-link-bg: transparent;
   --rb-button-link-fg-hover: var(--rb-secondary-700);
   --rb-button-link-bg-hover: transparent;
+
+  --rb-button-v-padding-sm: calc(var(--rb-spacing-4) - 1px);
+  --rb-button-h-padding-sm: calc(var(--rb-spacing-5) - 1px);
+
+  --rb-button-v-padding-md: calc(var(--rb-spacing-4) + 1px);
+  --rb-button-h-padding-md: calc(var(--rb-spacing-6) - 1px);
+
+  --rb-button-v-padding-lg: calc(var(--rb-spacing-4) + 1px);
+  --rb-button-h-padding-lg: calc(var(--rb-spacing-6) - 1px);
+
+  --rb-button-v-padding-xl: calc(var(--rb-spacing-5) - 1px);
+  --rb-button-h-padding-xl: calc(var(--rb-spacing-6) - 1px);
+
+  --rb-button-v-padding-2xl: calc(var(--rb-spacing-6) - 1px);
+  --rb-button-h-padding-2xl: calc(var(--rb-spacing-8) - 1px);
 }
 
 .rebear-button {
@@ -42,31 +57,31 @@
   &.rebear-button-sm {
     font-size: var(--rb-text-sm-font-size);
     line-height: var(--rb-text-sm-line-height);
-    padding: var(--rb-spacing-4) var(--rb-spacing-5);
+    padding: var(--rb-button-v-padding-sm) var(--rb-button-h-padding-sm);
   }
 
   &.rebear-button-md {
     font-size: var(--rb-text-sm-font-size);
     line-height: var(--rb-text-sm-line-height);
-    padding: 10px var(--rb-spacing-6);
+    padding: var(--rb-button-v-padding-md) var(--rb-button-h-padding-md);
   }
 
   &.rebear-button-lg {
     font-size: var(--rb-text-md-font-size);
     line-height: var(--rb-text-md-line-height);
-    padding: 10px var(--rb-spacing-6);
+    padding: var(--rb-button-v-padding-lg) var(--rb-button-h-padding-lg);
   }
 
   &.rebear-button-xl {
     font-size: var(--rb-text-md-font-size);
     line-height: var(--rb-text-md-line-height);
-    padding: var(--rb-spacing-5) var(--rb-spacing-6);
+    padding: var(--rb-button-v-padding-xl) var(--rb-button-h-padding-xl);
   }
 
   &.rebear-button-2xl {
     font-size: var(--rb-text-lg-font-size);
     line-height: var(--rb-text-lg-line-height);
-    padding: var(--rb-spacing-6) var(--rb-spacing-8);
+    padding: var(--rb-button-v-padding-2xl) var(--rb-button-h-padding-2xl);
   }
 }
 
@@ -77,11 +92,6 @@
   border-radius: 50%;
   outline-offset: 1px;
   cursor: pointer;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
 
   &:focus {
     outline: 1px solid var(--rb-ring-brand);
@@ -94,23 +104,48 @@
   }
 
   &.rebear-button-sm {
-    padding: var(--rb-spacing-4);
+    padding: var(--rb-button-v-padding-sm);
+
+    svg {
+      width: var(--rb-text-sm-line-height);
+      height: var(--rb-text-sm-line-height);
+    }
   }
 
   &.rebear-button-md {
-    padding: 10px;
+    padding: var(--rb-button-v-padding-md);
+
+    svg {
+      width: var(--rb-text-sm-line-height);
+      height: var(--rb-text-sm-line-height);
+    }
   }
 
   &.rebear-button-lg {
-    padding: var(--rb-spacing-5);
+    padding: var(--rb-button-v-padding-lg);
+
+    svg {
+      width: var(--rb-text-md-line-height);
+      height: var(--rb-text-md-line-height);
+    }
   }
 
   &.rebear-button-xl {
-    padding: var(--rb-spacing-6);
+    padding: var(--rb-button-v-padding-xl);
+
+    svg {
+      width: var(--rb-text-md-line-height);
+      height: var(--rb-text-md-line-height);
+    }
   }
 
   &.rebear-button-2xl {
-    padding: var(--rb-spacing-8);
+    padding: var(--rb-button-v-padding-2xl);
+
+    svg {
+      width: var(--rb-text-lg-line-height);
+      height: var(--rb-text-lg-line-height);
+    }
   }
 }
 

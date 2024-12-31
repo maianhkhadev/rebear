@@ -11,6 +11,7 @@
   --rb-spacing-10: 24px;
   --rb-spacing-12: 32px;
   --rb-spacing-14: 40px;
+  --rb-spacing-15: 44px;
   --rb-spacing-16: 48px;
   --rb-spacing-20: 64px;
   --rb-spacing-24: 80px;
@@ -69,4 +70,15 @@
   --rb-container-max-width-desktop: $spacing-values-360;
 
   --rb-paragraph-max-width: $spacing-values-192;
+
+  // LEVEL 3
+  --rb-field-icon-container-padding-md: calc(var(--rb-spacing-14) - 2px);
+  --rb-field-icon-padding-md: calc(var(--rb-spacing-4) + 1px);
+  --rb-field-v-padding-md: calc(var(--rb-spacing-4) - 1px);
+  --rb-field-h-padding-md: calc(var(--rb-spacing-5) - 1px);
+
+  --rb-field-icon-container-padding-lg: calc(var(--rb-spacing-15) - 2px);
+  --rb-field-icon-padding-md: calc(var(--rb-spacing-5) - 1px);
+  --rb-field-v-padding-lg: calc(var(--rb-spacing-4) + 1px);
+  --rb-field-h-padding-lg: calc(var(--rb-spacing-5) - 1px);
 }

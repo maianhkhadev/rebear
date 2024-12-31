@@ -6,9 +6,9 @@ const meta: Meta<typeof Carousel> = {
   title: 'Carousel',
   render: ({ ...args }) => (
     <Carousel {...args}>
-      <div style={{ width: '100%', height: '50vh', backgroundColor: 'yellow' }} />
-      <div style={{ width: '100%', height: '50vh', backgroundColor: 'red' }} />
-      <div style={{ width: '100%', height: '50vh', backgroundColor: 'green' }} />
+      <div style={{ width: '100%', height: '50vh', backgroundColor: '#364d79' }} />
+      <div style={{ width: '100%', height: '50vh', backgroundColor: '#364d79' }} />
+      <div style={{ width: '100%', height: '50vh', backgroundColor: '#364d79' }} />
     </Carousel>
   ),
 };

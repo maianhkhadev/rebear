@@ -16,6 +16,7 @@
   .rebear-carousel-arrow-right {
     position: absolute;
     top: 50%;
+    color: var(--rb-white);
     transform: translateY(-50%);
     z-index: 10;
   }
