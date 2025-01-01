@@ -6,7 +6,7 @@ const meta: Meta<typeof Checkbox> = {
   title: 'Checkbox',
   render: ({ ...args }) => (
     <>
-      <Checkbox name="languages" value="vi">Tiếng Việt</Checkbox>
+      <Checkbox name="languages" value="vi" disabled checked>Tiếng Việt</Checkbox>
       <Checkbox name="languages" value="en">English</Checkbox>
     </>
   ),

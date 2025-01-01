@@ -73,7 +73,9 @@
   --rb-ring-error: var(--rb-error-500);
   // DISABLED STATE
   --rb-fg-disabled: var(--rb-secondary-400);
-  --rb-bg-disabled: var(--rb-secondary-100)
-  --rb-bg-primary: var(--rb-white);
+  --rb-bg-disabled: var(--rb-secondary-100);
   --rb-border-disabled: var(--rb-secondary-300);
+
+  --rb-bg-primary: var(--rb-white);
+  --rb-border-primary: var(--rb-secondary-300);
 }

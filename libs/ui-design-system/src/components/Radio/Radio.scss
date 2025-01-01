@@ -5,9 +5,7 @@
 .rebear-radio {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  gap: var(--rb-spacing-5);
 
   input {
     display: none;
@@ -16,19 +14,20 @@
   .rebear-radio-marker {
     position: relative;
     display: inline-block;
-    width: 1.25rem;
-    height: 1.25rem;
-    border: 0.125rem solid var(--rb-primary-600);
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--rb-border-primary);
     border-radius: 50%;
+    outline-offset: 1px;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0.25rem;
-      left: 0.25rem;
-      width: 0.5rem;
-      height: 0.5rem;
-      background-color: var(--rb-primary-600);
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--rb-white);
       border-radius: 50%;
       transition: transform 0.2s ease-in-out;
       transform: scale(0);
@@ -39,7 +38,25 @@
 
   }
 
-  input:checked + .rebear-radio-marker:before {
-    transform: scale(1);
+  input:checked + .rebear-radio-marker {
+    background-color: var(--rb-primary-500);
+    border: 1px solid var(--rb-primary-500);
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  input:focus + .rebear-checkbox-marker {
+    outline: 1px solid var(--rb-ring-brand);
+  }
+
+  input:disabled + .rebear-checkbox-marker {
+    background-color: var(--rb-bg-disabled);
+    border: 1px solid var(--rb-border-disabled);
+
+    &::before {
+      background-color: var(--rb-border-disabled);
+    }
   }
 }
