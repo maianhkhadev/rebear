@@ -1,19 +1,12 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 
-const IconArrowUp = ({
-  size = 20,
-  ...props
-}: SVGProps<SVGSVGElement> & {
-  size?: number;
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M11 19a1 1 0 1 0 2 0V7.414l4.293 4.293a1 1 0 0 0 1.414-1.414l-6-6a1 1 0 0 0-1.414 0l-.005.005-5.995 5.995a1 1 0 0 0 1.414 1.414L11 7.414V19Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+          const IconArrowUp = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5M12 5L5 12M12 5L19 12"/></svg>
+          );
 
-export default IconArrowUp;
+          export default IconArrowUp;

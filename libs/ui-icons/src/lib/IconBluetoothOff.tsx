@@ -1,0 +1,12 @@
+import React, { SVGProps } from 'react';
+
+          const IconBluetoothOff = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 17L12 12V22L17.4398 17.4668M12 7V2L18 7L15.0817 9.43194M21 21L3 3"/></svg>
+          );
+
+          export default IconBluetoothOff;

@@ -1,19 +1,12 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 
-const IconScan = ({
-  size = 20,
-  ...props
-}: SVGProps<SVGSVGElement> & {
-  size?: number;
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M5 6a1 1 0 0 1 1-1h2V3H6a3 3 0 0 0-3 3v2h2V6Zm14 0a1 1 0 0 0-1-1h-2V3h2a3 3 0 0 1 3 3v2h-2V6Zm-1 13a1 1 0 0 0 1-1v-2h2v2a3 3 0 0 1-3 3h-2v-2h2ZM5 16v2a1 1 0 0 0 1 1h2v2H6a3 3 0 0 1-3-3v-2h2Zm2-7.541a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1ZM2 12a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm5 3.459a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+          const IconScan = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V8M8 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V16M21 8V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H16M21 16V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H16M3 12H3.01M7.5 12H7.51M16.5 12H16.51M12 12H12.01M21 12H21.01"/></svg>
+          );
 
-export default IconScan;
+          export default IconScan;

@@ -1,19 +1,12 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 
-const IconPassport = ({
-  size = 20,
-  ...props
-}: SVGProps<SVGSVGElement> & {
-  size?: number;
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M2 2a2 2 0 0 1 2-2h14a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a2 2 0 0 1-2-2V2Zm16 0H4v20h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM9 18.5a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1ZM9 10a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+          const IconPassport = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 16H14M8.8 22H15.2C16.8802 22 17.7202 22 18.362 21.673C18.9265 21.3854 19.3854 20.9265 19.673 20.362C20 19.7202 20 18.8802 20 17.2V6.8C20 5.11984 20 4.27976 19.673 3.63803C19.3854 3.07354 18.9265 2.6146 18.362 2.32698C17.7202 2 16.8802 2 15.2 2H8.8C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22ZM15 9C15 10.6569 13.6569 12 12 12C10.3431 12 9 10.6569 9 9C9 7.34315 10.3431 6 12 6C13.6569 6 15 7.34315 15 9Z"/></svg>
+          );
 
-export default IconPassport;
+          export default IconPassport;

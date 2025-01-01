@@ -1,19 +1,12 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 
-const IconCalendar = ({
-  size = 20,
-  ...props
-}: SVGProps<SVGSVGElement> & {
-  size?: number;
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M10 2.998a.999.999 0 0 0-2 0v1.039H5c-1.105 0-2 .894-2 1.996v13.971C3 21.106 3.895 22 5 22h14c1.105 0 2-.894 2-1.996V6.033a1.998 1.998 0 0 0-2-1.996h-3V2.998a.999.999 0 0 0-2 0v1.039h-4V2.998ZM8 6.033v.957a.999.999 0 0 0 2 0v-.957h4v.957a.999.999 0 0 0 2 0v-.957h3v3.95H5v-3.95h3Zm-3 5.946v8.025h14V11.98H5Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+          const IconCalendar = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10H3M16 2V6M8 2V6M7.8 22H16.2C17.8802 22 18.7202 22 19.362 21.673C19.9265 21.3854 20.3854 20.9265 20.673 20.362C21 19.7202 21 18.8802 21 17.2V8.8C21 7.11984 21 6.27976 20.673 5.63803C20.3854 5.07354 19.9265 4.6146 19.362 4.32698C18.7202 4 17.8802 4 16.2 4H7.8C6.11984 4 5.27976 4 4.63803 4.32698C4.07354 4.6146 3.6146 5.07354 3.32698 5.63803C3 6.27976 3 7.11984 3 8.8V17.2C3 18.8802 3 19.7202 3.32698 20.362C3.6146 20.9265 4.07354 21.3854 4.63803 21.673C5.27976 22 6.11984 22 7.8 22Z"/></svg>
+          );
 
-export default IconCalendar;
+          export default IconCalendar;

@@ -1,11 +1,8 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import { clsx } from 'clsx';
 import {
-  IconClose,
-  IconAlertSystemInfo,
-  IconAlertSystemWarning,
-  IconAlertSystemError,
-  IconAlertSystemSuccess,
+  IconXClose,
+  IconAlertCircle,
 } from 'rebear-icons';
 import { ButtonIcon } from '../Button';
 import {
@@ -17,10 +14,10 @@ import {
 import './Alert.scss';
 
 export const AlertIconsMapping = new Map<AlertType, JSX.Element>([
-  [AlertTypes.Info, <IconAlertSystemInfo key="info" role="img" />],
-  [AlertTypes.Warning, <IconAlertSystemWarning key="warning" role="img" />],
-  [AlertTypes.Error, <IconAlertSystemError key="error" role="img" />],
-  [AlertTypes.Success, <IconAlertSystemSuccess key="success" role="img" />],
+  [AlertTypes.Info, <IconAlertCircle key="info" role="img" />],
+  [AlertTypes.Warning, <IconAlertCircle key="warning" role="img" />],
+  [AlertTypes.Error, <IconAlertCircle key="error" role="img" />],
+  [AlertTypes.Success, <IconAlertCircle key="success" role="img" />],
 ]);
 
 export type AlertProps = {
@@ -54,7 +51,7 @@ export const Alert = forwardRef<
         {onClose && (
           <ButtonIcon
             className={ClassNames.Dismiss}
-            icon={<IconClose />}
+            icon={<IconXClose />}
             onClick={onClose}
           />
         )}

@@ -1,19 +1,12 @@
-import { SVGProps } from 'react';
+import React, { SVGProps } from 'react';
 
-const IconZoomIn = ({
-  size = 20,
-  ...props
-}: SVGProps<SVGSVGElement> & {
-  size?: number;
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}>
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M11 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2a6.97 6.97 0 0 0 4.192-1.394l3.1 3.101a1 1 0 0 0 1.415-1.414l-3.1-3.1A7 7 0 1 0 11 18Zm1-9.541a1 1 0 1 0-2 0v1.5H8.5a1 1 0 0 0 0 2H10v1.5a1 1 0 0 0 2 0v-1.5h1.5a1 1 0 0 0 0-2H12v-1.5Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+          const IconZoomIn = ({
+            size = 20,
+            ...props
+          }: SVGProps<SVGSVGElement> & {
+            size?: number;
+          }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" {...props}><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21L16.65 16.65M11 8V14M8 11H14M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"/></svg>
+          );
 
-export default IconZoomIn;
+          export default IconZoomIn;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconClose } from 'rebear-icons';
+import { IconXClose } from 'rebear-icons';
 import { ButtonIcon } from './ButtonIcon';
 
 const meta: Meta<typeof ButtonIcon> = {
@@ -24,6 +24,6 @@ type Story = StoryObj<typeof ButtonIcon>;
 
 export const Default: Story = {
   args: {
-    icon: <IconClose />
+    icon: <IconXClose />
   },
 };
