@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IconXClose } from 'rebear-icons';
+import { IconInfoCircle } from 'rebear-icons';
 import { ButtonIcon } from './ButtonIcon';
 
 const meta: Meta<typeof ButtonIcon> = {
   component: ButtonIcon,
-  title: 'ButtonIcon',
+  title: 'Button/ButtonIcon',
   argTypes: {
     variant: {
       options: ['primary', 'secondary', 'tertiary'],
@@ -15,15 +15,13 @@ const meta: Meta<typeof ButtonIcon> = {
       control: { type: 'radio' },
     },
   },
-  render: ({ ...args }) => (
-    <ButtonIcon {...args} />
-  ),
+  render: ({ ...args }) => <ButtonIcon {...args} />,
 };
 export default meta;
 type Story = StoryObj<typeof ButtonIcon>;
 
 export const Default: Story = {
   args: {
-    icon: <IconXClose />
+    icon: <IconInfoCircle />,
   },
 };

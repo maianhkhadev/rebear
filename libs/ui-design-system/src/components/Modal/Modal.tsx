@@ -8,42 +8,38 @@ import {
 } from '@floating-ui/react';
 import { useInstallFloating } from './useInstallFloating';
 import { ModalDismiss } from './ModalDismiss';
-import {
-  ClassNames,
-  ModalSize,
-  ModalSizes,
-  ClassNameSizeMapping,
-} from './Modal.constants';
+import { ClassNames, ClassNameSizeMapping } from './Modal.constants';
 import './Modal.scss';
 
 export interface ModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  size?: ModalSizes;
+  width?: number;
 }
 
 export const Modal = forwardRef<
   HTMLDivElement,
   ModalProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
 >(function Modal(props, ref) {
-  const { open, onOpenChange, size, className, children } = props;
+  const { open, onOpenChange, width, className, children } = props;
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, floatingProps } = floatingData;
 
   const mergeRef = useMergeRefs([refs.setFloating, ref]);
 
-  const classes = clsx([
-    ClassNames.Modal,
-    size && ClassNameSizeMapping.get(size),
-    className,
-  ]);
+  const classes = clsx([ClassNames.Modal, className]);
 
   return (
     <FloatingPortal>
       {open && (
         <FloatingOverlay className={ClassNames.Backdrop} lockScroll>
           <FloatingFocusManager context={context}>
-            <div ref={mergeRef} className={classes} {...floatingProps}>
+            <div
+              ref={mergeRef}
+              className={classes}
+              {...floatingProps}
+              style={{ width: `${width}px` }}
+            >
               <ModalDismiss onOpenChange={onOpenChange} />
 
               {children}
@@ -56,7 +52,7 @@ export const Modal = forwardRef<
 });
 
 Modal.defaultProps = {
-  size: ModalSize.Medium,
+  width: 520,
 };
 
 export default Modal;

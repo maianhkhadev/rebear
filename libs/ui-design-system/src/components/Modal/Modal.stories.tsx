@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Title } from '../Typography';
 import { Modal } from './Modal';
 import { ModalTitle } from './ModalTitle';
 import { ModalContent } from './ModalContent';
@@ -24,13 +25,15 @@ const Demo = () => {
       </Button>
 
       <Modal open={open} onOpenChange={onOpenChange}>
-        <ModalTitle>Modal title</ModalTitle>
+        <ModalTitle>
+          <Title level={5}>Modal title</Title>
+        </ModalTitle>
         <ModalContent>Modal content</ModalContent>
         <ModalActions>
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary">Confirm</Button>
+          <Button variant="primary">Submit</Button>
         </ModalActions>
       </Modal>
     </>
@@ -39,7 +42,7 @@ const Demo = () => {
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
-  title: 'Modal',
+  title: 'Modal/Modal',
   render: ({ ...args }) => <Demo {...args} />,
 };
 export default meta;
@@ -47,22 +50,4 @@ type Story = StoryObj<typeof Modal>;
 
 export const Default: Story = {
   args: {},
-};
-
-export const SizeSmall: Story = {
-  args: {
-    size: 'small',
-  },
-};
-
-export const SizeMedium: Story = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const SizeLarge: Story = {
-  args: {
-    size: 'large',
-  },
 };

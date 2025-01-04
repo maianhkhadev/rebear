@@ -1,5 +1,5 @@
-import { ButtonIcon } from '../Button';
-import { IconXClose } from 'rebear-icons';
+import { ButtonIcon, ButtonVariant, ButtonSize } from '../Button';
+import { IconX } from 'rebear-icons';
 import { ClassNames } from './Modal.constants';
 
 export interface ModalDismissProps {
@@ -16,9 +16,9 @@ export const ModalDismiss = (props: ModalDismissProps) => {
   return (
     <ButtonIcon
       className={ClassNames.ModalDismiss}
-      variant="secondary"
-      size="small"
-      icon={<IconXClose />}
+      variant={ButtonVariant.Tertiary}
+      size={ButtonSize.SM}
+      icon={<IconX />}
       onClick={handleClick}
     />
   );

@@ -1,5 +1,7 @@
 export const ClassNames = {
   Modal: 'rebear-modal',
+  ConfirmationModal: 'rebear-confirmation-modal',
+  ModalIcon: 'rebear-modal-icon',
   ModalDismiss: 'rebear-modal-dismiss',
   ModalTitle: 'rebear-modal-header',
   ModalContent: 'rebear-modal-content',
@@ -7,16 +9,18 @@ export const ClassNames = {
   Backdrop: 'rebear-modal-backdrop',
 };
 
-export const ModalSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+export const ModalVariant = {
+  Info: 'info',
+  Warning: 'warning',
+  Success: 'success',
+  Error: 'error',
 };
 
-export type ModalSizes = (typeof ModalSize)[keyof typeof ModalSize];
+export type ModalVariants = (typeof ModalVariant)[keyof typeof ModalVariant];
 
-export const ClassNameSizeMapping = new Map([
-  [ModalSize.Small, 'rebear-modal-small'],
-  [ModalSize.Medium, 'rebear-modal-medium'],
-  [ModalSize.Large, 'rebear-modal-large'],
+export const ClassNameVariantMapping = new Map([
+  [ModalVariant.Info, 'rebear-modal-info'],
+  [ModalVariant.Warning, 'rebear-modal-warning'],
+  [ModalVariant.Success, 'rebear-modal-success'],
+  [ModalVariant.Error, 'rebear-modal-error'],
 ]);

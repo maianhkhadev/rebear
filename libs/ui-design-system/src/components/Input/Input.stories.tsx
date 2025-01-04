@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './Input';
-import { IconXClose } from 'rebear-icons';
+import { IconX } from 'rebear-icons';
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -11,7 +11,7 @@ const meta: Meta<typeof Input> = {
       control: { type: 'radio' },
     },
   },
-  render: ({ ...args }) => <Input {...args} suffixIcon={<IconXClose />} />,
+  render: ({ ...args }) => <Input {...args} suffixIcon={<IconX />} />,
 };
 export default meta;
 type Story = StoryObj<typeof Input>;

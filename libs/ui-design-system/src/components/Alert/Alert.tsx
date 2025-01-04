@@ -1,9 +1,6 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import { clsx } from 'clsx';
-import {
-  IconXClose,
-  IconAlertCircle,
-} from 'rebear-icons';
+import { IconX, IconAlertCircle } from 'rebear-icons';
 import { ButtonIcon } from '../Button';
 import {
   ClassNames,
@@ -51,7 +48,7 @@ export const Alert = forwardRef<
         {onClose && (
           <ButtonIcon
             className={ClassNames.Dismiss}
-            icon={<IconXClose />}
+            icon={<IconX />}
             onClick={onClose}
           />
         )}

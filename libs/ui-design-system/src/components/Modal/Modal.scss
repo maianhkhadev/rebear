@@ -1,43 +1,103 @@
 .rebear-modal-backdrop {
-  background-color: rgba(#212529, 0.5);
+  background-color: rgba(#101828, 0.16);
 }
 
 .rebear-modal {
   position: relative;
   background-color: var(--rb-white);
   border-radius: 0.25rem;
+  box-shadow: 0 8px 8px -4px #10182808, 0 20px 24px -4px #10182814;
   margin: 2rem auto;
 
   .rebear-modal-dismiss {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 16px;
+    right: 16px;
   }
   
   .rebear-modal-header {
-    padding: 1rem;
+    padding: 21px 16px;
   }
 
   .rebear-modal-content {
-    padding: 1rem;
+    padding: 0 16px 16px;
   }
 
   .rebear-modal-actions {
     display: flex;
     justify-content: end;
-    gap: 0.5rem;
-    padding: 1rem;
+    gap: 8px;
+    padding: 16px;
   }
 }
 
-.rebear-modal-small {
-  width: 31.25rem;
-}
+.rebear-confirmation-modal {
+  position: relative;
+  background-color: var(--rb-white);
+  border-radius: var(--rb-radius-xl);
+  box-shadow: 0 8px 8px -4px #10182808, 0 20px 24px -4px #10182814;
+  padding-left: 44px;
+  margin: 32px auto;
 
-.rebear-modal-medium {
-  width: 40.625rem;
-}
+  .rebear-modal-icon {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    line-height: 0;
+    border-radius: 50%;
+    padding: 8px;
+  }
 
-.rebear-modal-large {
-  width: 50rem;
+  .rebear-modal-dismiss {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  
+  .rebear-modal-header {
+    padding: 21px 16px;
+  }
+
+  .rebear-modal-content {
+    padding: 0 16px 16px;
+  }
+
+  .rebear-modal-actions {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  &.rebear-modal-info {
+    
+    .rebear-modal-icon {
+      background-color: var(--rb-primary-50);
+      color: var(--rb-primary-500);
+    }
+  }
+
+  &.rebear-modal-warning {
+
+    .rebear-modal-icon {
+      background-color: var(--rb-warning-50);
+      color: var(--rb-warning-500);
+    }
+  }
+
+  &.rebear-modal-success {
+
+    .rebear-modal-icon {
+      background-color: var(--rb-success-50);
+      color: var(--rb-success-500);
+    }
+  }
+
+  &.rebear-modal-error {
+
+    .rebear-modal-icon {
+      background-color: var(--rb-error-50);
+      color: var(--rb-error-500);
+    }
+  }
 }
