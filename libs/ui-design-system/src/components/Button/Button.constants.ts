@@ -4,6 +4,7 @@ export const ClassNames = {
   PrefixIcon: 'rebear-button-prefix-icon',
   SuffixIcon: 'rebear-button-suffix-icon',
   Block: 'rebear-button-block',
+  Danger: 'rebear-button-danger',
   ButtonIcon: 'rebear-button-icon',
 };
 

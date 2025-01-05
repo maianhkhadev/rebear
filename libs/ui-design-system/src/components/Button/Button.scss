@@ -20,6 +20,22 @@
   --rb-button-link-fg-hover: var(--rb-secondary-700);
   --rb-button-link-bg-hover: transparent;
 
+  --rb-button-primary-error-fg: var(--rb-white);
+  --rb-button-primary-error-bg: var(--rb-error-600);
+  --rb-button-primary-error-fg-hover: var(--rb-white);
+  --rb-button-primary-error-bg-hover: var(--rb-error-700);
+
+  --rb-button-secondary-error-fg: var(--rb-error-700);
+  --rb-button-secondary-error-bg: var(--rb-white);
+  --rb-button-secondary-error-border: var(--rb-error-300);
+  --rb-button-secondary-error-fg-hover: var(--rb-error-800);
+  --rb-button-secondary-error-bg-hover: var(--rb-error-50);
+
+  --rb-button-tertiary-error-fg: var(--rb-error-700);
+  --rb-button-tertiary-error-bg: transparent;
+  --rb-button-tertiary-error-fg-hover: var(--rb-error-800);
+  --rb-button-tertiary-error-bg-hover: var(--rb-error-50);
+
   --rb-button-v-padding-sm: calc(var(--rb-spacing-4) - 1px);
   --rb-button-h-padding-sm: calc(var(--rb-spacing-5) - 1px);
 
@@ -193,18 +209,45 @@
   }
 }
 
-.rebear-button-link:not(.disabled) {
-  color: var(--rb-button-link-fg);
-  background-color: var(--rb-button-link-bg);
-  border-color: var(--rb-button-link-bg);
+.rebear-button-danger {
 
-  &:hover {
-    color: var(--rb-button-link-fg-hover);
-    background-color: var(--rb-button-link-bg-hover);
-    border-color: var(--rb-button-link-bg-hover);
+  &.rebear-button-primary:not(.disabled) {
+    color: var(--rb-button-primary-error-fg);
+    background-color: var(--rb-button-primary-error-bg);
+    border-color: var(--rb-button-primary-error-bg);
+  
+    &:hover {
+      color: var(--rb-button-primary-error-fg-hover);
+      background-color: var(--rb-button-primary-error-bg-hover);
+      border-color: var(--rb-button-primary-error-bg-hover);
+    }
   }
-
-  &:focus {
-    background-color: var(--rb-bg-primary)
+  
+  &.rebear-button-secondary:not(.disabled) {
+    color: var(--rb-button-secondary-error-fg);
+    background-color: var(--rb-button-secondary-error-bg);
+    border-color: var(--rb-button-secondary-error-border);
+  
+    &:hover {
+      color: var(--rb-button-secondary-error-fg-hover);
+      background-color: var(--rb-button-secondary-error-bg-hover);
+      border-color: var(--rb-button-secondary-error-border);
+    }
+  }
+  
+  &.rebear-button-tertiary:not(.disabled) {
+    color: var(--rb-button-tertiary-error-fg);
+    background-color: var(--rb-button-tertiary-error-bg);
+    border-color: var(--rb-button-tertiary-error-bg);
+  
+    &:hover {
+      color: var(--rb-button-tertiary-error-fg-hover);
+      background-color: var(--rb-button-tertiary-error-bg-hover);
+      border-color: var(--rb-button-tertiary-error-bg-hover);
+    }
+  
+    &:focus {
+      background-color: var(--rb-bg-primary)
+    }
   }
 }

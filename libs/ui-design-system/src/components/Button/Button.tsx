@@ -16,6 +16,7 @@ export type ButtonProps = {
   variant?: ButtonVariants;
   size?: ButtonSizes;              
   block?: boolean;
+  danger?: boolean;
   prefixIcon?: ReactElement;
   suffixIcon?: ReactElement;
 };
@@ -29,6 +30,7 @@ export const Button = forwardRef<
     variant,
     size,
     block,
+    danger,
     prefixIcon,
     suffixIcon,
     className,
@@ -41,6 +43,7 @@ export const Button = forwardRef<
     variant && ClassNameVariantMapping.get(variant),
     size && ClassNameSizeMapping.get(size),
     block && ClassNames.Block,
+    danger && ClassNames.Danger,
     className,
   ]);
 
@@ -64,6 +67,7 @@ Button.defaultProps = {
   variant: ButtonVariant.Primary,
   size: ButtonSize.MD,
   block: false,
+  danger: false,
   prefixIcon: undefined,
   suffixIcon: undefined,
 };

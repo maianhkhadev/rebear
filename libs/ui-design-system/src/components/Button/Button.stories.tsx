@@ -24,3 +24,9 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {},
 };
+
+export const Error: Story = {
+  args: {
+    danger: true
+  },
+};

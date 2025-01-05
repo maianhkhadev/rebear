@@ -25,3 +25,10 @@ export const Default: Story = {
     icon: <IconInfoCircle />,
   },
 };
+
+export const Error: Story = {
+  args: {
+    icon: <IconInfoCircle />,
+    danger: true
+  },
+};
