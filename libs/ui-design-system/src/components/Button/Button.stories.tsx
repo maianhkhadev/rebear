@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { IconInfoCircle } from 'rebear-icons';
 import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -6,7 +7,13 @@ const meta: Meta<typeof Button> = {
   title: 'Button/Button',
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'tertiary'],
+      options: [
+        'primary',
+        'secondary',
+        'secondary-color',
+        'tertiary',
+        'tertiary-color',
+      ],
       control: { type: 'radio' },
     },
     size: {
@@ -15,7 +22,13 @@ const meta: Meta<typeof Button> = {
     },
   },
   render: ({ ...args }) => (
-    <Button {...args}>Primary</Button>
+    <Button
+      prefixIcon={<IconInfoCircle />}
+      suffixIcon={<IconInfoCircle />}
+      {...args}
+    >
+      Primary
+    </Button>
   ),
 };
 export default meta;
@@ -27,6 +40,6 @@ export const Default: Story = {
 
 export const Error: Story = {
   args: {
-    danger: true
+    error: true,
   },
 };

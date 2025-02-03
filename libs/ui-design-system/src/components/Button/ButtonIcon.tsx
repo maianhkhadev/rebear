@@ -14,7 +14,7 @@ import './Button.scss';
 export type ButtonIconProps = {
   variant?: ButtonVariants;
   size?: ButtonSizes;
-  danger?: boolean;
+  error?: boolean;
   icon: ReactElement;
 };
 
@@ -22,13 +22,13 @@ export const ButtonIcon = forwardRef<
   HTMLButtonElement,
   ButtonIconProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function ButtonIcon(props, ref) {
-  const { variant, size, danger, icon, className, ...rest } = props;
+  const { variant, size, error, icon, className, ...rest } = props;
 
   const classes = clsx([
     ClassNames.ButtonIcon,
     variant && ClassNameVariantMapping.get(variant),
     size && ClassNameSizeMapping.get(size),
-    danger && ClassNames.Danger,
+    error && ClassNames.Error,
     className,
   ]);
 
@@ -42,7 +42,7 @@ export const ButtonIcon = forwardRef<
 ButtonIcon.defaultProps = {
   variant: ButtonVariant.Primary,
   size: ButtonSize.MD,
-  danger: false,
+  error: false,
 };
 
 export default ButtonIcon;

@@ -1,24 +1,30 @@
 :root {
-  --rb-button-primary-fg: var(--rb-secondary-50);
-  --rb-button-primary-bg: var(--rb-primary-500);
-  --rb-button-primary-fg-hover: var(--rb-secondary-50);
-  --rb-button-primary-bg-hover: var(--rb-primary-600);
-
-  --rb-button-secondary-fg: var(--rb-secondary-700);
+  --rb-button-primary-fg: var(--rb-white);
+  --rb-button-primary-bg: var(--rb-brand-600);
+  --rb-button-primary-fg-hover: var(--rb-white);
+  --rb-button-primary-bg-hover: var(--rb-brand-700);
+  
+  --rb-button-secondary-fg: var(--rb-gray-700);
   --rb-button-secondary-bg: var(--rb-white);
-  --rb-button-secondary-border: var(--rb-secondary-300);
-  --rb-button-secondary-fg-hover: var(--rb-secondary-800);
-  --rb-button-secondary-bg-hover: var(--rb-secondary-50);
+  --rb-button-secondary-border: var(--rb-gray-300);
+  --rb-button-secondary-fg-hover: var(--rb-gray-800);
+  --rb-button-secondary-bg-hover: var(--rb-gray-50);
+  --rb-button-secondary-border-hover: var(--rb-gray-300);
 
-  --rb-button-tertiary-fg: var(--rb-secondary-700);
-  --rb-button-tertiary-bg: transparent;
-  --rb-button-tertiary-fg-hover: var(--rb-secondary-700);
-  --rb-button-tertiary-bg-hover: var(--rb-primary-50);
+  --rb-button-secondary-color-fg: var(--rb-brand-700);
+  --rb-button-secondary-color-bg: var(--rb-white);
+  --rb-button-secondary-color-border: var(--rb-brand-300);
+  --rb-button-secondary-color-fg-hover: var(--rb-brand-800);
+  --rb-button-secondary-color-bg-hover: var(--rb-brand-50);
+  --rb-button-secondary-color-border-hover: var(--rb-brand-300);
 
-  --rb-button-link-fg: var(--rb-secondary-700);
-  --rb-button-link-bg: transparent;
-  --rb-button-link-fg-hover: var(--rb-secondary-700);
-  --rb-button-link-bg-hover: transparent;
+  --rb-button-tertiary-fg: var(--rb-gray-600);
+  --rb-button-tertiary-fg-hover: var(--rb-gray-700);
+  --rb-button-tertiary-bg-hover: var(--rb-gray-50);
+  
+  --rb-button-tertiary-color-fg: var(--rb-brand-700);
+  --rb-button-tertiary-color-fg-hover: var(--rb-brand-800);
+  --rb-button-tertiary-color-bg-hover: var(--rb-brand-50);
 
   --rb-button-primary-error-fg: var(--rb-white);
   --rb-button-primary-error-bg: var(--rb-error-600);
@@ -32,27 +38,25 @@
   --rb-button-secondary-error-bg-hover: var(--rb-error-50);
 
   --rb-button-tertiary-error-fg: var(--rb-error-700);
-  --rb-button-tertiary-error-bg: transparent;
   --rb-button-tertiary-error-fg-hover: var(--rb-error-800);
   --rb-button-tertiary-error-bg-hover: var(--rb-error-50);
 
-  --rb-button-v-padding-sm: calc(var(--rb-spacing-4) - 1px);
-  --rb-button-h-padding-sm: calc(var(--rb-spacing-5) - 1px);
+  --rb-button-padding-sm: calc(var(--rb-spacing-2) - 1px) calc(var(--rb-spacing-3) - 1px);
+  --rb-button-padding-md: calc(var(--rb-spacing-2) + 1px) calc(var(--rb-spacing-3) + 1px);
+  --rb-button-padding-lg: calc(var(--rb-spacing-2) + 1px) calc(var(--rb-spacing-4) - 1px);
+  --rb-button-padding-xl: calc(var(--rb-spacing-3) - 1px) calc(var(--rb-spacing-4) + 1px);
+  --rb-button-padding-2xl: calc(var(--rb-spacing-4) - 1px) calc(var(--rb-spacing-5) + 1px);
 
-  --rb-button-v-padding-md: calc(var(--rb-spacing-4) + 1px);
-  --rb-button-h-padding-md: calc(var(--rb-spacing-6) - 1px);
-
-  --rb-button-v-padding-lg: calc(var(--rb-spacing-4) + 1px);
-  --rb-button-h-padding-lg: calc(var(--rb-spacing-6) - 1px);
-
-  --rb-button-v-padding-xl: calc(var(--rb-spacing-5) - 1px);
-  --rb-button-h-padding-xl: calc(var(--rb-spacing-6) - 1px);
-
-  --rb-button-v-padding-2xl: calc(var(--rb-spacing-6) - 1px);
-  --rb-button-h-padding-2xl: calc(var(--rb-spacing-8) - 1px);
+  --rb-button-icon-padding-sm: calc(var(--rb-spacing-2) - 1px);
+  --rb-button-icon-padding-md: calc(var(--rb-spacing-2) + 1px);
+  --rb-button-icon-padding-lg: calc(var(--rb-spacing-2) + 1px);
+  --rb-button-icon-padding-xl: calc(var(--rb-spacing-3) - 1px);
+  --rb-button-icon-padding-2xl: calc(var(--rb-spacing-4) - 1px);
 }
 
 .rebear-button {
+  display: inline-flex;
+  align-items: center;
   font-weight: 600;
   border-width: 1px;
   border-style: solid;
@@ -60,44 +64,87 @@
   outline-offset: 1px;
   cursor: pointer;
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-brand);
+  .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+    line-height: 0;
   }
 
-  &.disabled, &:disabled {
-    color: var(--rb-fg-disabled);
-    background-color: var(--rb-bg-primary);
-    border-color: var(--rb-border-disabled);
+  &.rebear-button-block {
+    width: 100%;
   }
 
   &.rebear-button-sm {
+    gap: var(--rb-spacing-sm);
     font-size: var(--rb-text-sm-font-size);
     line-height: var(--rb-text-sm-line-height);
-    padding: var(--rb-button-v-padding-sm) var(--rb-button-h-padding-sm);
+    padding: var(--rb-button-padding-sm);
+
+    .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+
+      svg {
+        width: var(--rb-text-sm-line-height);
+        height: var(--rb-text-sm-line-height);
+      }
+    }
   }
 
   &.rebear-button-md {
+    gap: var(--rb-spacing-sm);
     font-size: var(--rb-text-sm-font-size);
     line-height: var(--rb-text-sm-line-height);
-    padding: var(--rb-button-v-padding-md) var(--rb-button-h-padding-md);
+    padding: var(--rb-button-padding-md);
+
+    .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+
+      svg {
+        width: var(--rb-text-sm-line-height);
+        height: var(--rb-text-sm-line-height);
+      }
+    }
   }
 
   &.rebear-button-lg {
+    gap: var(--rb-spacing-md);
     font-size: var(--rb-text-md-font-size);
     line-height: var(--rb-text-md-line-height);
-    padding: var(--rb-button-v-padding-lg) var(--rb-button-h-padding-lg);
+    padding: var(--rb-button-padding-lg);
+
+    .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+
+      svg {
+        width: var(--rb-text-md-line-height);
+        height: var(--rb-text-md-line-height);
+      }
+    }
   }
 
   &.rebear-button-xl {
+    gap: var(--rb-spacing-md);
     font-size: var(--rb-text-md-font-size);
     line-height: var(--rb-text-md-line-height);
-    padding: var(--rb-button-v-padding-xl) var(--rb-button-h-padding-xl);
+    padding: var(--rb-button-padding-xl);
+
+    .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+
+      svg {
+        width: var(--rb-text-md-line-height);
+        height: var(--rb-text-md-line-height);
+      }
+    }
   }
 
   &.rebear-button-2xl {
+    gap: var(--rb-spacing-lg);
     font-size: var(--rb-text-lg-font-size);
     line-height: var(--rb-text-lg-line-height);
-    padding: var(--rb-button-v-padding-2xl) var(--rb-button-h-padding-2xl);
+    padding: var(--rb-button-padding-2xl);
+
+    .rebear-button-prefix-icon, .rebear-button-suffix-icon {
+
+      svg {
+        width: var(--rb-text-lg-line-height);
+        height: var(--rb-text-lg-line-height);
+      }
+    }
   }
 }
 
@@ -105,22 +152,12 @@
   line-height: 0;
   border-width: 1px;
   border-style: solid;
-  border-radius: 50%;
+  border-radius: var(--rb-radius-md);
   outline-offset: 1px;
   cursor: pointer;
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-brand);
-  }
-
-  &.disabled, &:disabled {
-    color: var(--rb-fg-disabled);
-    background-color: var(--rb-bg-primary);
-    border-color: var(--rb-border-disabled);
-  }
-
   &.rebear-button-sm {
-    padding: var(--rb-button-v-padding-sm);
+    padding: var(--rb-button-icon-padding-sm);
 
     svg {
       width: var(--rb-text-sm-line-height);
@@ -129,7 +166,7 @@
   }
 
   &.rebear-button-md {
-    padding: var(--rb-button-v-padding-md);
+    padding: var(--rb-button-icon-padding-md);
 
     svg {
       width: var(--rb-text-sm-line-height);
@@ -138,7 +175,7 @@
   }
 
   &.rebear-button-lg {
-    padding: var(--rb-button-v-padding-lg);
+    padding: var(--rb-button-icon-padding-lg);
 
     svg {
       width: var(--rb-text-md-line-height);
@@ -147,7 +184,7 @@
   }
 
   &.rebear-button-xl {
-    padding: var(--rb-button-v-padding-xl);
+    padding: var(--rb-button-icon-padding-xl);
 
     svg {
       width: var(--rb-text-md-line-height);
@@ -156,7 +193,7 @@
   }
 
   &.rebear-button-2xl {
-    padding: var(--rb-button-v-padding-2xl);
+    padding: var(--rb-button-icon-padding-2xl);
 
     svg {
       width: var(--rb-text-lg-line-height);
@@ -165,53 +202,104 @@
   }
 }
 
-.rebear-button-block {
-  width: 100%;
-}
-
-.rebear-button-primary:not(.disabled) {
-  color: var(--rb-button-primary-fg);
-  background-color: var(--rb-button-primary-bg);
-  border-color: var(--rb-button-primary-bg);
-
-  &:hover {
-    color: var(--rb-button-primary-fg-hover);
-    background-color: var(--rb-button-primary-bg-hover);
-    border-color: var(--rb-button-primary-bg-hover);
-  }
-}
-
-.rebear-button-secondary:not(.disabled) {
-  color: var(--rb-button-secondary-fg);
-  background-color: var(--rb-button-secondary-bg);
-  border-color: var(--rb-button-secondary-border);
-
-  &:hover {
-    color: var(--rb-button-secondary-fg-hover);
-    background-color: var(--rb-button-secondary-bg-hover);
-    border-color: var(--rb-button-secondary-border);
-  }
-}
-
-.rebear-button-tertiary:not(.disabled) {
-  color: var(--rb-button-tertiary-fg);
-  background-color: var(--rb-button-tertiary-bg);
-  border-color: var(--rb-button-tertiary-bg);
-
-  &:hover {
-    color: var(--rb-button-tertiary-fg-hover);
-    background-color: var(--rb-button-tertiary-bg-hover);
-    border-color: var(--rb-button-tertiary-bg-hover);
-  }
+:not(.rebear-button-error) {
 
   &:focus {
-    background-color: var(--rb-bg-primary)
+    outline: 1px solid var(--rb-focus-ring);
+  }
+
+  &.rebear-button-primary {
+    color: var(--rb-button-primary-fg);
+    background-color: var(--rb-button-primary-bg);
+    border-color: var(--rb-button-primary-bg);
+  
+    &:hover {
+      color: var(--rb-button-primary-fg-hover);
+      background-color: var(--rb-button-primary-bg-hover);
+      border-color: var(--rb-button-primary-bg-hover);
+    }
+
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-bg-disabled);
+      border-color: var(--rb-border-disabled-subtle);
+    }
+  }
+  
+  &.rebear-button-secondary {
+    color: var(--rb-button-secondary-fg);
+    background-color: var(--rb-button-secondary-bg);
+    border-color: var(--rb-button-secondary-border);
+  
+    &:hover {
+      color: var(--rb-button-secondary-fg-hover);
+      background-color: var(--rb-button-secondary-bg-hover);
+      border-color: var(--rb-button-secondary-border-hover);
+    }
+  }
+
+  &.rebear-button-secondary-color {
+    color: var(--rb-button-secondary-color-fg);
+    background-color: var(--rb-button-secondary-color-bg);
+    border-color: var(--rb-button-secondary-color-border);
+  
+    &:hover {
+      color: var(--rb-button-secondary-color-fg-hover);
+      background-color: var(--rb-button-secondary-color-bg-hover);
+      border-color: var(--rb-button-secondary-color-border-hover);
+    }
+  }
+
+  &.rebear-button-secondary, &.rebear-button-secondary-color {
+    
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-bg-primary);
+      border-color: var(--rb-border-disabled-subtle);
+    }
+  }
+  
+  &.rebear-button-tertiary {
+    color: var(--rb-button-tertiary-fg);
+    background-color: var(--rb-transparent);
+    border-color: var(--rb-transparent);
+  
+    &:hover {
+      color: var(--rb-button-tertiary-fg-hover);
+      background-color: var(--rb-button-tertiary-bg-hover);
+      border-color: var(--rb-button-tertiary-bg-hover);
+    }
+  }
+
+  &.rebear-button-tertiary-color {
+    color: var(--rb-button-tertiary-color-fg);
+    background-color: var(--rb-transparent);
+    border-color: var(--rb-transparent);
+  
+    &:hover {
+      color: var(--rb-button-tertiary-color-fg-hover);
+      background-color: var(--rb-button-tertiary-color-bg-hover);
+      border-color: var(--rb-button-tertiary-color-bg-hover);
+    }
+  }
+
+  &.rebear-button-tertiary, &.rebear-button-tertiary-color {
+    
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-transparent);
+      border-color: var(--rb-transparent);
+    }
   }
 }
 
-.rebear-button-danger {
+.rebear-button-error {
 
-  &.rebear-button-primary:not(.disabled) {
+  &:focus {
+    outline: 1px solid var(--rb-focus-ring-error);
+  }
+
+  &.rebear-button-primary {
     color: var(--rb-button-primary-error-fg);
     background-color: var(--rb-button-primary-error-bg);
     border-color: var(--rb-button-primary-error-bg);
@@ -221,9 +309,15 @@
       background-color: var(--rb-button-primary-error-bg-hover);
       border-color: var(--rb-button-primary-error-bg-hover);
     }
+
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-bg-disabled);
+      border-color: var(--rb-border-disabled-subtle);
+    }
   }
   
-  &.rebear-button-secondary:not(.disabled) {
+  &.rebear-button-secondary {
     color: var(--rb-button-secondary-error-fg);
     background-color: var(--rb-button-secondary-error-bg);
     border-color: var(--rb-button-secondary-error-border);
@@ -231,23 +325,31 @@
     &:hover {
       color: var(--rb-button-secondary-error-fg-hover);
       background-color: var(--rb-button-secondary-error-bg-hover);
-      border-color: var(--rb-button-secondary-error-border);
+      border-color: var(--rb-button-secondary-error-border-hover);
+    }
+
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-bg-primary);
+      border-color: var(--rb-border-disabled-subtle);
     }
   }
   
-  &.rebear-button-tertiary:not(.disabled) {
+  &.rebear-button-tertiary {
     color: var(--rb-button-tertiary-error-fg);
-    background-color: var(--rb-button-tertiary-error-bg);
-    border-color: var(--rb-button-tertiary-error-bg);
+    background-color: var(--rb-transparent);
+    border-color: var(--rb-transparent);
   
     &:hover {
       color: var(--rb-button-tertiary-error-fg-hover);
       background-color: var(--rb-button-tertiary-error-bg-hover);
       border-color: var(--rb-button-tertiary-error-bg-hover);
     }
-  
-    &:focus {
-      background-color: var(--rb-bg-primary)
+
+    &.disabled, &:disabled {
+      color: var(--rb-fg-disabled);
+      background-color: var(--rb-transparent);
+      border-color: var(--rb-transparent);
     }
   }
 }

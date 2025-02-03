@@ -1,0 +1,25 @@
+:root {
+  --rb-shadow-xs: 0 1px 2px 0 #0A0D120D;
+  --rb-shadow-sm2: 0 1px 2px -1px #0A0D121A;
+  --rb-shadow-sm1: 0 1px 3px 0 #0A0D121A;
+  --rb-shadow-md2: 0 2px 4px -2px #0A0D120F;
+  --rb-shadow-md2: 0 4px 6px -1px #0A0D121A;
+  --rb-shadow-lg3: 0 2px 2px -1px #0A0D120A;
+  --rb-shadow-lg2: 0 4px 6px -2px #0A0D1208;
+  --rb-shadow-lg1: 0 12px 16px -4px #0A0D1214;
+  --rb-shadow-xl3: 0 3px 3px -1.5px #0A0D120A;
+  --rb-shadow-xl2: 0 8px 8px -4px #0A0D1208;
+  --rb-shadow-xl1: 0 20px 24px -4px #0A0D1214;
+  --rb-shadow-2xl2: 0 4px 4px -2px #0A0D120A;
+  --rb-shadow-2xl1: 0 24px 48px -12px #0A0D122E;
+  --rb-shadow-3xl2: 0px 5px 5px -2.5px #0A0D120A;
+  --rb-shadow-3xl2: 0px 32px 64px -12px #0A0D1224;
+
+  --rb-focus-ring: var(--rb-brand-500);
+  --rb-focus-ring-error: var(--rb-error-500);
+
+  --rb-backdrop-blur-sm: blur(8px);
+  --rb-backdrop-blur-md: blur(16px);
+  --rb-backdrop-blur-lg: blur(24px);
+  --rb-backdrop-blur-xl: blur(40px);
+}

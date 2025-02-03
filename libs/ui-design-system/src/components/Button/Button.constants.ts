@@ -4,15 +4,16 @@ export const ClassNames = {
   PrefixIcon: 'rebear-button-prefix-icon',
   SuffixIcon: 'rebear-button-suffix-icon',
   Block: 'rebear-button-block',
-  Danger: 'rebear-button-danger',
+  Error: 'rebear-button-error',
   ButtonIcon: 'rebear-button-icon',
 };
 
 export const ButtonVariant = {
   Primary: 'primary',
   Secondary: 'secondary',
+  SecondaryColor: 'secondary-color',
   Tertiary: 'tertiary',
-  Link: 'link'
+  TertiaryColor: 'tertiary-color',
 }
 
 export type ButtonVariants = typeof ButtonVariant[keyof typeof ButtonVariant];
@@ -20,8 +21,9 @@ export type ButtonVariants = typeof ButtonVariant[keyof typeof ButtonVariant];
 export const ClassNameVariantMapping = new Map([
   [ButtonVariant.Primary, 'rebear-button-primary'],
   [ButtonVariant.Secondary, 'rebear-button-secondary'],
+  [ButtonVariant.SecondaryColor, 'rebear-button-secondary-color'],
   [ButtonVariant.Tertiary, 'rebear-button-tertiary'],
-  [ButtonVariant.Link, 'rebear-button-link'],
+  [ButtonVariant.TertiaryColor, 'rebear-button-tertiary-color'],
 ]);
 
 export const ButtonSize = {

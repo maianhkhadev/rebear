@@ -7,7 +7,7 @@ const meta: Meta<typeof ButtonIcon> = {
   title: 'Button/ButtonIcon',
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'tertiary'],
+      options: ['primary', 'secondary', 'secondary-color', 'tertiary', 'tertiary-color'],
       control: { type: 'radio' },
     },
     size: {
@@ -29,6 +29,6 @@ export const Default: Story = {
 export const Error: Story = {
   args: {
     icon: <IconInfoCircle />,
-    danger: true
+    error: true
   },
 };

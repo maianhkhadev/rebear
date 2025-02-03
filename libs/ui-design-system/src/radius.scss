@@ -1,6 +1,14 @@
 :root {
   // LEVEL 1
+  --rb-radius-none: 0;
+  --rb-radius-xxs: 2px;
   --rb-radius-xs: 4px;
+  --rb-radius-sm: 6px;
   --rb-radius-md: 8px;
+  --rb-radius-lg: 10px
   --rb-radius-xl: 12px;
+  --rb-radius-2xl: 16px;
+  --rb-radius-3xl: 20px;
+  --rb-radius-4xl: 24px;
+  --rb-radius-full: 9999px;
 }
