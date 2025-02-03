@@ -36,7 +36,6 @@ export const CloseButton = forwardRef<
 });
 
 CloseButton.defaultProps = {
-  variant: ButtonVariant.Primary,
   size: ButtonSize.MD,
 };
 

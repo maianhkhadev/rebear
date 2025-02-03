@@ -8,7 +8,7 @@ import {
 } from '@floating-ui/react';
 import { useInstallFloating } from './useInstallFloating';
 import { ModalDismiss } from './ModalDismiss';
-import { ClassNames, ClassNameSizeMapping } from './Modal.constants';
+import { ClassNames } from './Modal.constants';
 import './Modal.scss';
 
 export interface ModalProps {
