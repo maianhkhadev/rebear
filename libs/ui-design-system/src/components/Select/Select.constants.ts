@@ -21,15 +21,13 @@ export const ClassNameVariantMapping = new Map([
 ]);
 
 export const SelectSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+  MD: 'md',
+  LG: 'lg',
 }
 
 export type SelectSizes = typeof SelectSize[keyof typeof SelectSize];
 
 export const ClassNameSizeMapping = new Map([
-  [SelectSize.Small, 'rebear-select-small'],
-  [SelectSize.Medium, 'rebear-select-medium'],
-  [SelectSize.Large, 'rebear-select-large'],
+  [SelectSize.MD, 'rebear-select-md'],
+  [SelectSize.LG, 'rebear-select-lg'],
 ]);

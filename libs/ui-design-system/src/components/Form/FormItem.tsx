@@ -1,5 +1,5 @@
-import React, { forwardRef, HTMLProps, ReactNode } from 'react';
-import { RegisterOptions, FieldValues, useFormContext } from 'react-hook-form';
+import React, { ReactElement, ReactNode,  } from 'react';
+import { Controller, RegisterOptions, FieldValues, useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
 import { FormLabel } from './FormLabel';
 import { FormError } from './FormError';
@@ -8,37 +8,35 @@ import { ClassNames } from './Form.constants';
 export type FormItemProps = {
   name: string;
   label?: ReactNode;
+  element: ReactElement;
   rules?: RegisterOptions<FieldValues, string>;
 };
 
-export const FormItem = forwardRef<
-  HTMLDivElement,
-  FormItemProps & Omit<HTMLProps<HTMLDivElement>, 'size' | 'label'>
->(function FormItem(props, ref) {
-  const { name, label, rules, className, children, ...rest } = props;
-  const { register } = useFormContext();
+export const FormItem = (props: FormItemProps) => {
+  const { name, label, element } = props;
+  const { control } = useFormContext();
 
-  const classes = clsx([ClassNames.FormItem, className]);
+  const classes = clsx([ClassNames.FormItem]);
 
   return (
-    <div ref={ref} className={classes} {...rest}>
+    <div className={classes}>
       {label && <FormLabel>{label}</FormLabel>}
 
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          const props = {
-            ...child.props,
-            ...register(name, rules),
-          };
-          return React.cloneElement(child, props);
-        }
-        return child;
-      })}
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => {
+
+          return (
+            React.cloneElement(element, field)
+          )
+        }}
+      />
 
       <FormError name={name} />
     </div>
   );
-});
+};
 
 FormItem.defaultProps = {
   label: undefined,

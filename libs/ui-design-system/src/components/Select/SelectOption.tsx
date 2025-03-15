@@ -1,29 +1,15 @@
-import { useEffect, forwardRef, HTMLProps } from 'react';
+import { HTMLProps } from 'react';
 import clsx from 'clsx';
-import { useSelectContext } from './useSelectContext';
 import { ClassNames } from './Select.constants';
 import './Select.scss';
 
 export type SelectOptionProps = {
   value: string | number;
-  label: string;
-};
+  onSelect: (value: string | number) => void;
+} & Omit<HTMLProps<HTMLOptionElement>, 'onSelect'>;
 
-export const SelectOption = forwardRef<
-  HTMLOptionElement,
-  SelectOptionProps & HTMLProps<HTMLOptionElement>
->(function SelectOption(props, ref) {
-  const { value, className, label, children, ...rest } = props;
-  const { onSelect, register, unregister } = useSelectContext();
-
-  useEffect(() => {
-    register(value, label);
-
-    return () => {
-      unregister(value);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value]);
+export const SelectOption = (props: SelectOptionProps) => {
+  const { value, className, children, onSelect, ...rest } = props;
 
   const handleClick = () => {
     onSelect(value);
@@ -32,16 +18,10 @@ export const SelectOption = forwardRef<
   const classes = clsx([ClassNames.SelectOption, className]);
 
   return (
-    <option
-      ref={ref}
-      className={classes}
-      value={value}
-      onClick={handleClick}
-      {...rest}
-    >
-      {children || label}
+    <option className={classes} value={value} onClick={handleClick} {...rest}>
+      {children}
     </option>
   );
-});
+};
 
 export default SelectOption;

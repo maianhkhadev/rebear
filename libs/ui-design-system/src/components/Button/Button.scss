@@ -70,6 +70,7 @@
 
   &.rebear-button-block {
     width: 100%;
+    justify-content: center;
   }
 
   &.rebear-button-sm {
@@ -202,7 +203,7 @@
   }
 }
 
-:not(.rebear-button-error) {
+.rebear-button:not(.rebear-button-error), .rebear-button-icon:not(.rebear-button-error) {
 
   &:focus {
     outline: 1px solid var(--rb-focus-ring);
@@ -293,7 +294,7 @@
   }
 }
 
-.rebear-button-error {
+.rebear-button.rebear-button-error, .rebear-button-icon.rebear-button-error {
 
   &:focus {
     outline: 1px solid var(--rb-focus-ring-error);

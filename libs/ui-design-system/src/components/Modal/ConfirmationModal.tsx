@@ -19,20 +19,29 @@ import {
 } from './Modal.constants';
 import './Modal.scss';
 
-export interface ModalProps {
+export interface ConfirmationModalProps {
+  isLoading?: boolean;
+  showIcon?: boolean;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   variant?: ModalVariants;
-  width?: number;
   onConfirm?: () => void;
 }
 
 export const ConfirmationModal = forwardRef<
   HTMLDivElement,
-  ModalProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
+  ConfirmationModalProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
 >(function ConfirmationModal(props, ref) {
-  const { open, onOpenChange, width, variant, onConfirm, className, children } =
-    props;
+  const {
+    open,
+    onOpenChange,
+    isLoading,
+    variant,
+    showIcon,
+    onConfirm,
+    className,
+    children,
+  } = props;
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, floatingProps } = floatingData;
 
@@ -53,15 +62,12 @@ export const ConfirmationModal = forwardRef<
       {open && (
         <FloatingOverlay className={ClassNames.Backdrop} lockScroll>
           <FloatingFocusManager context={context}>
-            <div
-              ref={mergeRef}
-              className={classes}
-              {...floatingProps}
-              style={{ width: `${width}px` }}
-            >
-              <span className={ClassNames.ModalIcon}>
-                <IconInfoCircle />
-              </span>
+            <div ref={mergeRef} className={classes} {...floatingProps}>
+              {showIcon && (
+                <span className={ClassNames.ModalIcon}>
+                  <IconInfoCircle />
+                </span>
+              )}
 
               <ModalDismiss onOpenChange={onOpenChange} />
 
@@ -73,7 +79,11 @@ export const ConfirmationModal = forwardRef<
                 </Button>
 
                 {onConfirm && (
-                  <Button variant="primary" onClick={onConfirm}>
+                  <Button
+                    variant="primary"
+                    disabled={isLoading}
+                    onClick={onConfirm}
+                  >
                     Confirm
                   </Button>
                 )}
@@ -87,8 +97,9 @@ export const ConfirmationModal = forwardRef<
 });
 
 ConfirmationModal.defaultProps = {
+  isLoading: false,
   variant: ModalVariant.Info,
-  width: 400,
+  showIcon: true,
 };
 
 export default ConfirmationModal;

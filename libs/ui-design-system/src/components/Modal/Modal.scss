@@ -4,6 +4,7 @@
 
 .rebear-modal {
   position: relative;
+  width: 520px;
   background-color: var(--rb-white);
   border-radius: 0.25rem;
   box-shadow: 0 8px 8px -4px #10182808, 0 20px 24px -4px #10182814;
@@ -33,6 +34,7 @@
 
 .rebear-confirmation-modal {
   position: relative;
+  width: 520px;
   background-color: var(--rb-white);
   border-radius: var(--rb-radius-xl);
   box-shadow: 0 8px 8px -4px #10182808, 0 20px 24px -4px #10182814;

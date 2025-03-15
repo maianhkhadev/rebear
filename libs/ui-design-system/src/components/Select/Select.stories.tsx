@@ -4,19 +4,23 @@ import { Select } from './Select';
 import { SelectOption } from './SelectOption';
 
 const Demo = () => {
-  const [value, setValue] = useState<string | number | undefined>();
+  const [value, setValue] = useState<string | number | undefined>(1);
 
   const handleChange = (value: string | number) => {
     setValue(value);
   };
 
   return (
-    <Select value={value} onChange={handleChange}>
-      <SelectOption value={1} label="Option 1" />
-      <SelectOption value={2} label="Option 2" />
-      <SelectOption value={3} label="Option 3" />
-      <SelectOption value={4} label="Option 4" />
-    </Select>
+    <Select
+      value={value}
+      options={[
+        { value: 1, label: 'Option 1' },
+        { value: 2, label: 'Option 2' },
+        { value: 3, label: 'Option 3' },
+        { value: 4, label: 'Option 4' },
+      ]}
+      onChange={handleChange}
+    />
   );
 };
 

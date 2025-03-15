@@ -3,6 +3,7 @@ import { Form } from './Form';
 import { FormItem } from './FormItem';
 import { Input } from '../Input';
 import { TextArea } from '../TextArea';
+import { Select, SelectOption } from '../Select';
 // import { RadioGroup, Radio } from '../Radio';
 import { Button } from '../Button';
 
@@ -12,18 +13,33 @@ const DemoForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form
+      defaultValues={{ fullname: '', note: '', country: '' }}
+      onSubmit={handleSubmit}
+    >
       <FormItem
         name="fullname"
         label="Full name"
+        element={<Input />}
         rules={{ required: 'Full name is required' }}
-      >
-        <Input />
-      </FormItem>
+      />
 
-      <FormItem name="note" label="Note">
-        <TextArea rows={4} />
-      </FormItem>
+      <FormItem name="note" label="Note" element={<TextArea rows={4} />} />
+
+      <FormItem
+        name="country"
+        label="Country"
+        element={
+          <Select
+            options={[
+              { value: 'vn', label: 'Vietnam' },
+              { value: 'th', label: 'Thailand' },
+              { value: 'ro', label: 'Romania' },
+              { value: 'sg', label: 'Singapore' },
+            ]}
+          />
+        }
+      />
 
       <Button type="submit">Submit</Button>
     </Form>

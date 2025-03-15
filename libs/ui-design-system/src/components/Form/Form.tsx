@@ -1,10 +1,11 @@
 import { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
-import { useForm, FormProvider } from 'react-hook-form';
+import { useForm, FormProvider, FieldValues } from 'react-hook-form';
 import { ClassNames } from './Form.constants';
 import './Form.scss';
 
 export type FormProps = {
+  defaultValues: FieldValues;
   onSubmit: (values: unknown) => void;
 };
 
@@ -12,8 +13,8 @@ export const Form = forwardRef<
   HTMLFormElement,
   FormProps & HTMLProps<HTMLFormElement>
 >(function Form(props, ref) {
-  const { className, onSubmit, children, ...rest } = props;
-  const methods = useForm();
+  const { defaultValues, className, onSubmit, children, ...rest } = props;
+  const methods = useForm({ defaultValues });
 
   const classes = clsx([ClassNames.Form, className]);
 

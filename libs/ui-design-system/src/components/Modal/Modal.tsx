@@ -14,14 +14,13 @@ import './Modal.scss';
 export interface ModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  width?: number;
 }
 
 export const Modal = forwardRef<
   HTMLDivElement,
   ModalProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
 >(function Modal(props, ref) {
-  const { open, onOpenChange, width, className, children } = props;
+  const { open, onOpenChange, className, children } = props;
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, floatingProps } = floatingData;
 
@@ -38,7 +37,6 @@ export const Modal = forwardRef<
               ref={mergeRef}
               className={classes}
               {...floatingProps}
-              style={{ width: `${width}px` }}
             >
               <ModalDismiss onOpenChange={onOpenChange} />
 
@@ -50,9 +48,5 @@ export const Modal = forwardRef<
     </FloatingPortal>
   );
 });
-
-Modal.defaultProps = {
-  width: 520,
-};
 
 export default Modal;

@@ -1,16 +1,9 @@
-import {
-  forwardRef,
-  HTMLProps,
-  ReactElement,
-  useState,
-  useMemo,
-  useRef,
-} from 'react';
+import { forwardRef, HTMLProps, ReactElement, useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { IconChevronDown } from 'rebear-icons';
 import { FloatingPortal, FloatingFocusManager } from '@floating-ui/react';
+import { SelectOption } from './SelectOption';
 import { useInstallFloating } from './useInstallFloating';
-import { SelectContext } from './SelectContext';
 import {
   ClassNames,
   SelectVariant,
@@ -22,13 +15,19 @@ import {
 } from './Select.constants';
 import './Select.scss';
 
+export type SelectOptions = {
+  value: string | number;
+  label: string;
+};
+
 export type SelectProps = {
-  value: string | number | undefined;
+  value?: string | number | undefined;
   variant?: SelectVariants;
   size?: SelectSizes;
   prefixIcon?: ReactElement;
   multiple?: boolean;
-  onChange: (value: string | number) => void;
+  options: SelectOptions[];
+  onChange?: (value: string | number) => void;
 };
 
 export const Select = forwardRef<
@@ -37,41 +36,28 @@ export const Select = forwardRef<
 >(function Select(props, ref) {
   const {
     className,
+    value,
     variant,
     size,
     prefixIcon,
     children,
+    options = [],
     onChange,
     ...rest
   } = props;
   const [open, onOpenChange] = useState(false);
   const floatingData = useInstallFloating({ open, onOpenChange });
   const { context, refs, referenceProps, floatingProps } = floatingData;
-  const optionsRef = useRef<Map<string | number, string>>(new Map());
-
-  const contextValue = useMemo(
-    () => ({
-      onSelect: (value: string | number) => {
-        onChange && onChange(value);
-        onOpenChange(false);
-      },
-      register: (value: string | number, text: string) => {
-        optionsRef.current.set(value, text);
-      },
-      unregister: (value: string | number) => {
-        optionsRef.current.delete(value);
-      },
-    }),
-    []
-  );
 
   const selectedText = useMemo(() => {
-    if (rest.value) {
-      return optionsRef.current.get(rest.value);
-    }
+    const option = options.find((option) => option.value === value);
+    return option?.label ?? '';
+  }, [value, options]);
 
-    return '';
-  }, [rest.value]);
+  const onSelect = (value: string | number) => {
+    onChange && onChange(value);
+    onOpenChange(false);
+  };
 
   const classes = clsx([
     ClassNames.Select,
@@ -81,8 +67,8 @@ export const Select = forwardRef<
   ]);
 
   return (
-    <SelectContext.Provider value={contextValue}>
-      <select ref={ref} hidden {...rest} />
+    <div>
+      <select ref={ref} value={value} hidden onChange={() => {}} {...rest} />
 
       <div className={ClassNames.Container}>
         {prefixIcon && (
@@ -106,18 +92,26 @@ export const Select = forwardRef<
               className={ClassNames.SelectDropdown}
               {...floatingProps}
             >
-              {children}
+              {options.map((option) => (
+                <SelectOption
+                  key={option.value}
+                  value={option.value}
+                  onSelect={onSelect}
+                >
+                  {option.label}
+                </SelectOption>
+              ))}
             </div>
           </FloatingFocusManager>
         </FloatingPortal>
       )}
-    </SelectContext.Provider>
+    </div>
   );
 });
 
 Select.defaultProps = {
   variant: SelectVariant.Primary,
-  size: SelectSize.Medium,
+  size: SelectSize.MD,
   prefixIcon: undefined,
   multiple: false,
 };

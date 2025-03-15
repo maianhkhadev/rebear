@@ -1,3 +1,8 @@
+:root {
+  --rb-input-padding-md: calc(var(--rb-spacing-md) - 1px) calc(var(--rb-spacing-lg) - 1px);
+  --rb-input-padding-lg: calc(var(--rb-spacing-md) + 1px) calc(var(--rb-spacing-lg) + 1px);
+}
+
 .rebear-input-container {
   position: relative;
 
@@ -8,21 +13,21 @@
 
   &:has(.rebear-input-prefix-icon) {
     .rebear-input-md {
-      padding-left: var(--rb-field-icon-container-padding-md);
+      padding-left: var(--rb-spacing-5xl);
     }
 
     .rebear-input-lg {
-      padding-left: var(--rb-field-icon-container-padding-lg);
+      padding-left: var(--rb-spacing-6xl);
     }
   }
 
   &:has(.rebear-input-suffix-icon) {
     .rebear-input-md {
-      padding-right: var(--rb-field-icon-container-padding-md);
+      padding-right: var(--rb-spacing-5xl);
     }
 
     .rebear-input-lg {
-      padding-right: var(--rb-field-icon-container-padding-lg);
+      padding-right: var(--rb-spacing-6xl);
     }
   }
 }
@@ -32,84 +37,81 @@
   border-width: 1px;
   border-style: solid;
   border-radius: var(--rb-radius-md);
+  outline-offset: 1px;
 
   &::placeholder {
-    color: var(--rb-secondary-600);
+    color: var(--rb-text-placeholder);
   }
 }
 
 .rebear-input-md {
+  height: var(--rb-spacing-5xl);
   font-size: var(--rb-text-md-font-size);
   line-height: var(--rb-text-md-line-height);
-  padding: var(--rb-field-v-padding-md) var(--rb-field-h-padding-md);
+  border-radius: var(--rb-radius-md);
+  padding: var(--rb-input-padding-md);
 
   + .rebear-input-prefix-icon {
-    display: inline-block;
-    top: var(--rb-field-icon-padding-md);
-    left: var(--rb-field-icon-padding-md);
+    top: 10px;
+    left: 10px;
 
     svg {
-      width: var(--rb-text-sm-line-height);
-      height: var(--rb-text-sm-line-height);
+      width: 20px;
+      height: 20px;
     }
   }
 
   + .rebear-input-suffix-icon {
-    display: inline-block;
-    top: var(--rb-field-icon-padding-md);
-    right: var(--rb-field-icon-padding-md);
+    top: 10px;
+    right: 10px;
 
     svg {
-      width: var(--rb-text-sm-line-height);
-      height: var(--rb-text-sm-line-height);
+      width: 20px;
+      height: 20px;
     }
   }
 }
 
 .rebear-input-lg {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
-  padding: var(--rb-field-v-padding-lg) var(--rb-field-h-padding-lg);
+  height: var(--rb-spacing-6xl);
+  font-size: var(--rb-text-lg-font-size);
+  line-height: var(--rb-text-lg-line-height);
+  padding: var(--rb-input-padding-lg);
 
   + .rebear-input-prefix-icon {
-    top: var(--rb-field-icon-padding-lg);
-    left: var(--rb-field-icon-padding-lg);
+    top: 12px;
+    left: 12px;
 
     svg {
-      width: var(--rb-text-md-line-height);
-      height: var(--rb-text-md-line-height);
+      width: 24px;
+      height: 24px;
     }
   }
 
   + .rebear-input-suffix-icon {
-    top: var(--rb-field-icon-padding-lg);
-    right: var(--rb-field-icon-padding-lg);
+    top: 12px;
+    right: 12px;
 
     svg {
-      width: var(--rb-text-md-line-height);
-      height: var(--rb-text-md-line-height);
+      width: 24px;
+      height: 24px;
     }
   }
 }
 
 .rebear-input-primary {
-  color: var(--rb-secondary-800);
+  color: var(--rb-text-primary);
   background-color: var(--rb-white);
-  border-color: var(--rb-secondary-600);
+  border-color: var(--rb-border-primary);
 
-  &:hover {
-    border-color: var(--rb-secondary-900);
+  &:hover, &:focus {
+    outline: 1px solid var(--rb-focus-ring);
+    border-color: var(--rb-border-brand);
   }
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-brand);
-    border-color: var(--rb-ring-brand);
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: var(--rb-secondary-50);
-    border-color: var(--rb-secondary-500);
+  &:disabled, &.disabled {
+    background-color: var(--rb-bg-disabled-subtle);
+    border-color: var(--rb-border-disabled);
   }
 
   + .rebear-input-prefix-icon,
