@@ -1,5 +1,5 @@
 export const ClassNames = {
-  TextArea: 'rebear-text-area',
+  TextArea: 'rebear-textarea',
 }
 
 export const TextAreaVariant = {
@@ -10,8 +10,8 @@ export const TextAreaVariant = {
 export type TextAreaVariants = typeof TextAreaVariant[keyof typeof TextAreaVariant];
 
 export const ClassNameVariantMapping = new Map([
-  [TextAreaVariant.Primary, 'rebear-text-area-primary'],
-  [TextAreaVariant.Error, 'rebear-text-area-error'],
+  [TextAreaVariant.Primary, 'rebear-textarea-primary'],
+  [TextAreaVariant.Error, 'rebear-textarea-error'],
 ]);
 
 export const TextAreaSize = {
@@ -22,6 +22,6 @@ export const TextAreaSize = {
 export type TextAreaSizes = typeof TextAreaSize[keyof typeof TextAreaSize];
 
 export const ClassNameSizeMapping = new Map([
-  [TextAreaSize.MD, 'rebear-text-area-md'],
-  [TextAreaSize.LG, 'rebear-text-area-lg'],
+  [TextAreaSize.MD, 'rebear-textarea-md'],
+  [TextAreaSize.LG, 'rebear-textarea-lg'],
 ]);

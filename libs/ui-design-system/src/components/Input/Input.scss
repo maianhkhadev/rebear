@@ -48,7 +48,6 @@
   height: var(--rb-spacing-5xl);
   font-size: var(--rb-text-md-font-size);
   line-height: var(--rb-text-md-line-height);
-  border-radius: var(--rb-radius-md);
   padding: var(--rb-input-padding-md);
 
   + .rebear-input-prefix-icon {
@@ -117,35 +116,30 @@
   + .rebear-input-prefix-icon,
   + .rebear-input-suffix-icon {
     svg {
-      color: var(--rb-secondary-400);
+      color: var(--rb-fg-quaternary);
     }
   }
 }
 
 .rebear-input-error {
-  color: var(--rb-secondary-800);
+  color: var(--rb-text-primary);
   background-color: var(--rb-white);
-  border-color: var(--rb-error-700);
+  border-color: var(--rb-border-error-subtle);
 
-  &:hover {
-    border-color: var(--rb-error-900);
+  &:hover, &:focus {
+    outline: 1px solid var(--rb-focus-ring-error);
+    border-color: var(--rb-border-error);
   }
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-error);
-    border-color: var(--rb-ring-error);
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: var(--rb-secondary-50);
-    border-color: var(--rb-secondary-500);
+  &:disabled, &.disabled {
+    background-color: var(--rb-bg-disabled-subtle);
+    border-color: var(--rb-border-disabled);
   }
 
   + .rebear-input-prefix-icon,
   + .rebear-input-suffix-icon {
     svg {
-      color: var(--rb-error-500);
+      color: var(--rb-fg-error-secondary);
     }
   }
 }

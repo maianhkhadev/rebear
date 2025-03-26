@@ -1,64 +1,67 @@
-.rebear-text-area {
+:root {
+  --rb-textarea-padding-md: calc(var(--rb-spacing-md) - 1px) calc(var(--rb-spacing-lg) - 1px);
+  --rb-textarea-padding-lg: calc(var(--rb-spacing-md) + 1px) calc(var(--rb-spacing-lg) + 1px);
+}
+
+.rebear-textarea {
   width: 100%;
   border-width: 1px;
   border-style: solid;
   border-radius: var(--rb-radius-md);
+  outline-offset: 1px;
 
   &::placeholder {
-    color: var(--rb-secondary-600);
+    color: var(--rb-text-placeholder);
   }
 }
 
-.rebear-text-area-md {
+.rebear-textarea-md {
   font-size: var(--rb-text-md-font-size);
   line-height: var(--rb-text-md-line-height);
-  padding: var(--rb-field-v-padding-md) var(--rb-field-h-padding-md);
+  padding: var(--rb-textarea-padding-md);
 }
 
-.rebear-text-area-lg {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
-  padding: var(--rb-field-v-padding-lg) var(--rb-field-h-padding-lg);
+.rebear-textarea-lg {
+  font-size: var(--rb-text-lg-font-size);
+  line-height: var(--rb-text-lg-line-height);
+  padding: var(--rb-input-padding-lg);
 }
 
-.rebear-text-area-primary {
-  color: var(--rb-secondary-800);
+.rebear-textarea-primary {
+  color: var(--rb-text-primary);
   background-color: var(--rb-white);
-  border-color: var(--rb-secondary-600);
+  border-color: var(--rb-border-primary);
 
-  &:hover {
-    border-color: var(--rb-secondary-900);
+  &:hover, &:focus {
+    outline: 1px solid var(--rb-focus-ring);
+    border-color: var(--rb-border-brand);
   }
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-brand);
-    border-color: var(--rb-ring-brand);
-  }
-
-  &:disabled,
-  &.disabled {
-    background-color: var(--rb-secondary-50);
-    border-color: var(--rb-secondary-500);
+  &:disabled, &.disabled {
+    background-color: var(--rb-bg-disabled-subtle);
+    border-color: var(--rb-border-disabled);
   }
 }
 
-.rebear-text-area-error {
-  color: var(--rb-secondary-800);
+.rebear-textarea-error {
+  color: var(--rb-text-primary);
   background-color: var(--rb-white);
-  border-color: var(--rb-error-700);
+  border-color: var(--rb-border-error-subtle);
 
-  &:hover {
-    border-color: var(--rb-error-900);
+  &:hover, &:focus {
+    outline: 1px solid var(--rb-focus-ring-error);
+    border-color: var(--rb-border-error);
   }
 
-  &:focus {
-    outline: 1px solid var(--rb-ring-error);
-    border-color: var(--rb-ring-error);
+  &:disabled, &.disabled {
+    background-color: var(--rb-bg-disabled-subtle);
+    border-color: var(--rb-border-disabled);
   }
 
-  &:disabled,
-  &.disabled {
-    background-color: var(--rb-secondary-50);
-    border-color: var(--rb-secondary-500);
+  + .rebear-input-prefix-icon,
+  + .rebear-input-suffix-icon {
+    svg {
+      color: var(--rb-fg-error-secondary);
+    }
   }
 }
