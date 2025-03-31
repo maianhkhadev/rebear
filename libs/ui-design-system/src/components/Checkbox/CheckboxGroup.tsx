@@ -5,7 +5,7 @@ import { ClassNames, CheckboxSize, CheckboxSizes } from './Checkbox.constants';
 import './Checkbox.scss';
 
 export type CheckboxGroupProps = {
-  name: string;
+  name?: string;
   defaultValue?: string[] | number[];
   value?: string[] | number[];
   size?: CheckboxSizes;
@@ -13,18 +13,10 @@ export type CheckboxGroupProps = {
 };
 
 export const CheckboxGroup = forwardRef<
-  HTMLDivElement,
-  CheckboxGroupProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
+  HTMLInputElement,
+  CheckboxGroupProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function RadioGroup(props, ref) {
-  const {
-    className,
-    children,
-    onChange,
-  } = props;
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event)
-  }
+  const { className, children, value, ...rest } = props;
 
   const classes = clsx([ClassNames.CheckboxGroup, className]);
 
@@ -32,12 +24,10 @@ export const CheckboxGroup = forwardRef<
     <div className={classes} ref={ref}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          const props = {
+          return React.cloneElement(child, {
             ...child.props,
-            onChange: handleChange
-          };
-
-          return React.cloneElement(child, props);
+            ...rest,
+          });
         }
         return child;
       })}
@@ -47,7 +37,7 @@ export const CheckboxGroup = forwardRef<
 
 CheckboxGroup.defaultProps = {
   value: undefined,
-  size: CheckboxSize.Medium,
+  size: CheckboxSize.MD,
   onChange: undefined,
 };
 

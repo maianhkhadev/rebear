@@ -3,8 +3,9 @@ import { Form } from './Form';
 import { FormItem } from './FormItem';
 import { Input } from '../Input';
 import { TextArea } from '../TextArea';
-import { Select, SelectOption } from '../Select';
-// import { RadioGroup, Radio } from '../Radio';
+import { Select } from '../Select';
+import { CheckboxGroup, Checkbox } from '../Checkbox';
+import { RadioGroup, Radio } from '../Radio';
 import { Button } from '../Button';
 
 const DemoForm = () => {
@@ -14,7 +15,7 @@ const DemoForm = () => {
 
   return (
     <Form
-      defaultValues={{ fullname: '', note: '', country: '' }}
+      defaultValues={{ fullname: '', note: '', country: '', gender: 'male', languages: [] }}
       onSubmit={handleSubmit}
     >
       <FormItem
@@ -38,6 +39,30 @@ const DemoForm = () => {
               { value: 'sg', label: 'Singapore' },
             ]}
           />
+        }
+      />
+
+      <FormItem
+        name="gender"
+        label="Gender"
+        element={
+          <RadioGroup>
+            <Radio value="male">Male</Radio>
+            <Radio value="female">Female</Radio>
+            <Radio value="other">Other</Radio>
+          </RadioGroup>
+        }
+      />
+
+      <FormItem
+        name="languages"
+        label="Languages"
+        element={
+          <CheckboxGroup>
+            <Checkbox value="vi">Tiếng Việt</Checkbox>
+            <Checkbox value="en">English</Checkbox>
+            <Checkbox value="th">Thailand</Checkbox>
+          </CheckboxGroup>
         }
       />
 

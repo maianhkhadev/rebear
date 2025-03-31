@@ -1,5 +1,10 @@
-import React, { ReactElement, ReactNode,  } from 'react';
-import { Controller, RegisterOptions, FieldValues, useFormContext } from 'react-hook-form';
+import React, { ReactElement, ReactNode } from 'react';
+import {
+  Controller,
+  RegisterOptions,
+  FieldValues,
+  useFormContext,
+} from 'react-hook-form';
 import clsx from 'clsx';
 import { FormLabel } from './FormLabel';
 import { FormError } from './FormError';
@@ -25,12 +30,7 @@ export const FormItem = (props: FormItemProps) => {
       <Controller
         name={name}
         control={control}
-        render={({ field }) => {
-
-          return (
-            React.cloneElement(element, field)
-          )
-        }}
+        render={({ field }) => React.cloneElement(element, field)}
       />
 
       <FormError name={name} />
