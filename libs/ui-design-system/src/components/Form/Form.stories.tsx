@@ -48,7 +48,7 @@ const DemoForm = () => {
 
 const meta: Meta<typeof Form> = {
   component: Form,
-  title: 'Form',
+  title: 'Form/Form',
   render: ({ ...args }) => <DemoForm {...args} />,
 };
 export default meta;

@@ -4,7 +4,7 @@ import { IconX } from 'rebear-icons';
 
 const meta: Meta<typeof Input> = {
   component: Input,
-  title: 'Input',
+  title: 'Form/Input',
   argTypes: {
     size: {
       options: ['md', 'lg'],

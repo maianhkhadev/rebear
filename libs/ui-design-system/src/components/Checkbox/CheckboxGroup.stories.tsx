@@ -4,7 +4,7 @@ import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof CheckboxGroup> = {
   component: CheckboxGroup,
-  title: 'CheckboxGroup',
+  title: 'Form/CheckboxGroup',
   render: ({ ...args }) => (
     <CheckboxGroup name="languages">
       <Checkbox value="vi">Tiếng Việt</Checkbox>

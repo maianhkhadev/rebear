@@ -5,7 +5,7 @@
 .rebear-checkbox {
   display: flex;
   align-items: center;
-  gap: var(--rb-spacing-5);
+  gap: var(--rb-spacing-md);
 
   input {
     display: none;
@@ -37,8 +37,8 @@
   }
 
   input:checked + .rebear-checkbox-marker {
-    background-color: var(--rb-primary-500);
-    border: 1px solid var(--rb-primary-500);
+    background-color: var(--rb-bg-brand-solid);
+    border: 1px solid var(--rb-bg-brand-solid);
 
     svg {
       transform: scale(1);
@@ -46,15 +46,15 @@
   }
 
   input:focus + .rebear-checkbox-marker {
-    outline: 1px solid var(--rb-ring-brand);
+    outline: 1px solid var(--rb-focus-ring);
   }
 
   input:disabled + .rebear-checkbox-marker {
-    background-color: var(--rb-bg-disabled);
+    background-color: var(--rb-bg-disabled-subtle);
     border: 1px solid var(--rb-border-disabled);
 
     svg {
-      color: var(--rb-border-disabled);
+      color: var(--rb-fg-disabled-subtle);
     }
   }
 }

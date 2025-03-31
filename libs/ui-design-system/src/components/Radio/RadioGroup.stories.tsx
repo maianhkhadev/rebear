@@ -4,7 +4,7 @@ import { Radio } from './Radio';
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
-  title: 'RadioGroup',
+  title: 'Form/RadioGroup',
   render: ({ ...args }) => (
     <RadioGroup name="gender" defaultValue="male">
       <Radio value="male">Male</Radio>

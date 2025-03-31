@@ -3,7 +3,7 @@ import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
-  title: 'Checkbox',
+  title: 'Form/Checkbox',
   render: ({ ...args }) => (
     <>
       <Checkbox name="languages" value="vi" disabled checked>Tiếng Việt</Checkbox>

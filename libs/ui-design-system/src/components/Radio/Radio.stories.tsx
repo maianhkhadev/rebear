@@ -3,7 +3,7 @@ import { Radio } from './Radio';
 
 const meta: Meta<typeof Radio> = {
   component: Radio,
-  title: 'Radio',
+  title: 'Form/Radio',
   render: ({ ...args }) => (
     <>
       <Radio name="radio" value={1}>

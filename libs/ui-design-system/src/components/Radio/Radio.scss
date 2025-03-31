@@ -5,7 +5,7 @@
 .rebear-radio {
   display: flex;
   align-items: center;
-  gap: var(--rb-spacing-5);
+  gap: var(--rb-spacing-md);
 
   input {
     display: none;
@@ -23,10 +23,10 @@
     &::before {
       content: '';
       position: absolute;
-      top: 3px;
-      left: 3px;
-      width: 8px;
-      height: 8px;
+      top: 4px;
+      left: 4px;
+      width: 6px;
+      height: 6px;
       background-color: var(--rb-white);
       border-radius: 50%;
       transition: transform 0.2s ease-in-out;
@@ -39,8 +39,8 @@
   }
 
   input:checked + .rebear-radio-marker {
-    background-color: var(--rb-primary-500);
-    border: 1px solid var(--rb-primary-500);
+    background-color: var(--rb-bg-brand-solid);
+    border: 1px solid var(--rb-bg-brand-solid);
 
     &::before {
       transform: scale(1);
@@ -48,15 +48,15 @@
   }
 
   input:focus + .rebear-checkbox-marker {
-    outline: 1px solid var(--rb-ring-brand);
+    outline: 1px solid var(--rb-focus-ring);
   }
 
   input:disabled + .rebear-checkbox-marker {
-    background-color: var(--rb-bg-disabled);
+    background-color: var(--rb-bg-disabled-subtle);
     border: 1px solid var(--rb-border-disabled);
 
-    &::before {
-      background-color: var(--rb-border-disabled);
+    svg {
+      color: var(--rb-fg-disabled-subtle);
     }
   }
 }

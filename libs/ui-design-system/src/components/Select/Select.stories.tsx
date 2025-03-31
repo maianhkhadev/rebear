@@ -26,7 +26,7 @@ const Demo = () => {
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: 'Select',
+  title: 'Form/Select',
   render: ({ ...args }) => <Demo {...args} />,
 };
 export default meta;

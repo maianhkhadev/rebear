@@ -3,7 +3,7 @@ import { TextArea } from './TextArea';
 
 const meta: Meta<typeof TextArea> = {
   component: TextArea,
-  title: 'TextArea',
+  title: 'Form/TextArea',
   argTypes: {
     size: {
       options: ['md', 'lg'],
