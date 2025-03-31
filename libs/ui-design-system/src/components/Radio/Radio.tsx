@@ -34,7 +34,7 @@ export const Radio = forwardRef<
 });
 
 Radio.defaultProps = {
-  size: RadioSize.Medium,
+  size: RadioSize.MD,
 };
 
 export default Radio;

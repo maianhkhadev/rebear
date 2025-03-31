@@ -4,6 +4,12 @@ import { Radio } from './Radio';
 const meta: Meta<typeof Radio> = {
   component: Radio,
   title: 'Form/Radio',
+  argTypes: {
+    size: {
+      options: ['md', 'lg'],
+      control: { type: 'radio' },
+    },
+  },
   render: ({ ...args }) => (
     <>
       <Radio name="radio" value={1}>
@@ -20,22 +26,4 @@ type Story = StoryObj<typeof Radio>;
 
 export const Default: Story = {
   args: {},
-};
-
-export const SizeSmall: Story = {
-  args: {
-    size: 'small',
-  },
-};
-
-export const SizeMedium: Story = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const SizeLarge: Story = {
-  args: {
-    size: 'large',
-  },
 };

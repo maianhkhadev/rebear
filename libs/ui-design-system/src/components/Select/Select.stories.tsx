@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select } from './Select';
-import { SelectOption } from './SelectOption';
 
 const Demo = () => {
   const [value, setValue] = useState<string | number | undefined>(1);
@@ -27,6 +26,12 @@ const Demo = () => {
 const meta: Meta<typeof Select> = {
   component: Select,
   title: 'Form/Select',
+  argTypes: {
+    size: {
+      options: ['md', 'lg'],
+      control: { type: 'radio' },
+    },
+  },
   render: ({ ...args }) => <Demo {...args} />,
 };
 export default meta;

@@ -37,7 +37,7 @@ export const Checkbox = forwardRef<
 });
 
 Checkbox.defaultProps = {
-  size: CheckboxSize.Medium,
+  size: CheckboxSize.MD,
 };
 
 export default Checkbox;

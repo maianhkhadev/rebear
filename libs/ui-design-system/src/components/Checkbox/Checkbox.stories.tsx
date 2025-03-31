@@ -4,6 +4,12 @@ import { Checkbox } from './Checkbox';
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   title: 'Form/Checkbox',
+  argTypes: {
+    size: {
+      options: ['md', 'lg'],
+      control: { type: 'radio' },
+    },
+  },
   render: ({ ...args }) => (
     <>
       <Checkbox name="languages" value="vi" disabled checked>Tiếng Việt</Checkbox>
@@ -16,22 +22,4 @@ type Story = StoryObj<typeof Checkbox>;
 
 export const Default: Story = {
   args: {},
-};
-
-export const SizeSmall: Story = {
-  args: {
-    size: 'small',
-  },
-};
-
-export const SizeMedium: Story = {
-  args: {
-    size: 'medium',
-  },
-};
-
-export const SizeLarge: Story = {
-  args: {
-    size: 'large',
-  },
 };

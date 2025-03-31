@@ -7,15 +7,13 @@ export const ClassNames = {
 }
 
 export const RadioSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+  MD: 'md',
+  LG: 'lg',
 }
 
 export type RadioSizes = typeof RadioSize[keyof typeof RadioSize];
 
 export const ClassNameSizeMapping = new Map([
-  [RadioSize.Small, 'rebear-radio-small'],
-  [RadioSize.Medium, 'rebear-radio-medium'],
-  [RadioSize.Large, 'rebear-radio-large'],
+  [RadioSize.MD, 'rebear-radio-md'],
+  [RadioSize.LG, 'rebear-radio-lg'],
 ]);

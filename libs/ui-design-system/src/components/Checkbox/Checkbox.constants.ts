@@ -7,15 +7,13 @@ export const ClassNames = {
 }
 
 export const CheckboxSize = {
-  Small: 'small',
-  Medium: 'medium',
-  Large: 'large',
+  MD: 'md',
+  LG: 'lg',
 }
 
 export type CheckboxSizes = typeof CheckboxSize[keyof typeof CheckboxSize];
 
 export const ClassNameSizeMapping = new Map([
-  [CheckboxSize.Small, 'rebear-checkbox-small'],
-  [CheckboxSize.Medium, 'rebear-checkbox-medium'],
-  [CheckboxSize.Large, 'rebear-checkbox-large'],
+  [CheckboxSize.MD, 'rebear-checkbox-md'],
+  [CheckboxSize.LG, 'rebear-checkbox-lg'],
 ]);
