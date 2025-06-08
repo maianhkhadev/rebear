@@ -3,7 +3,7 @@ import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
   component: Switch,
-  title: 'Switch',
+  title: 'Form/Switch',
   render: ({ ...args }) =>  <Switch {...args} />,
 };
 export default meta;

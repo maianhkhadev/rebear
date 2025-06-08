@@ -27,3 +27,15 @@ export const Error: Story = {
     variant: 'error',
   },
 };
+
+export const Password: Story = {
+  args: {
+    variant: 'error',
+  },
+};
+
+export const Search: Story = {
+  args: {
+    variant: 'error',
+  },
+};

@@ -29,12 +29,18 @@ export default defineConfig({
   build: {
     outDir: '../../dist/libs/ui-design-system',
     reportCompressedSize: true,
+    cssCodeSplit: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
+      entry: {
+        index: path.resolve(__dirname, 'src/index.ts'),
+        style: path.resolve(__dirname, 'src/index.scss'),
+        light: path.resolve(__dirname, 'src/colors-light.scss'),
+        dark: path.resolve(__dirname, 'src/colors-dark.scss'),
+      },
       name: 'ui-design-system',
       fileName: 'index',
       // Change this to the formats you want to support.
@@ -42,7 +48,21 @@ export default defineConfig({
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      // External packages that should not be bundled into your library.
+      // input: {
+      //   index: path.resolve(__dirname, 'src/index.ts'),
+      //   light: path.resolve(__dirname, 'src/colors-light.scss'),
+      //   dark: path.resolve(__dirname, 'src/colors-dark.scss'),
+      // },
+      // output: {
+      //   // entryFileNames: chunk => {
+      //   //   if (chunk.name === 'light' || chunk.name === 'dark') {
+      //   //     console.log(chunk)
+      //   //     return `${chunk.name}.css`;
+      //   //   }
+      //   //   return 'index.[format].js';
+      //   // },
+      //   assetFileNames: '[name][extname]',
+      // },
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
   },
