@@ -9,7 +9,6 @@ import {
 import { useInstallFloating } from './useInstallFloating';
 import { ModalDismiss } from './ModalDismiss';
 import { ClassNames } from './Modal.constants';
-import './Modal.scss';
 
 export interface ModalProps {
   open: boolean;

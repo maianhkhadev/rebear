@@ -6,7 +6,6 @@ import {
   DisplaySizes,
   ClassNameDisplaySizeMapping,
 } from './Typography.constants';
-import './Display.scss';
 
 export type DisplayProps = {
   size?: DisplaySizes;

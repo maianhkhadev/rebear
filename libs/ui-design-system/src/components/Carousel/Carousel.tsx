@@ -10,7 +10,6 @@ import clsx from 'clsx';
 import { IconChevronLeft, IconChevronRight } from 'rebear-icons';
 import { ButtonIcon } from '../Button';
 import { ClassNames } from './Carousel.constants';
-import './Carousel.scss';
 
 export type CarouselProps = {
   dots?: boolean;

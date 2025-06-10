@@ -9,7 +9,6 @@ import {
   TextAreaSizes,
   ClassNameSizeMapping,
 } from './TextArea.constants';
-import './TextArea.scss';
 
 export type TextAreaProps = {
   variant?: TextAreaVariants;

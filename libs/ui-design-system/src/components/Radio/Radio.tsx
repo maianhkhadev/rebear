@@ -6,7 +6,6 @@ import {
   RadioSizes,
   ClassNameSizeMapping,
 } from './Radio.constants';
-import './Radio.scss';
 
 export type RadioProps = {
   size?: RadioSizes;

@@ -2,7 +2,6 @@ import { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
 import { useForm, FormProvider, FieldValues } from 'react-hook-form';
 import { ClassNames } from './Form.constants';
-import './Form.scss';
 
 export type FormProps = {
   defaultValues: FieldValues;

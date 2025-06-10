@@ -6,7 +6,6 @@ import {
   ChipVariants,
   ClassNameVariantMapping,
 } from './Chip.constants';
-import './Chip.scss';
 
 export type ChipProps = {
   variant?: ChipVariants;

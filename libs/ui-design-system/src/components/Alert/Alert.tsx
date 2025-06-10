@@ -8,7 +8,6 @@ import {
   AlertTypes,
   alertTypeClassesMap,
 } from './Alert.constants';
-import './Alert.scss';
 
 export const AlertIconsMapping = new Map<AlertType, JSX.Element>([
   [AlertTypes.Info, <IconAlertCircle key="info" role="img" />],

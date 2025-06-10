@@ -1,7 +1,6 @@
 import { forwardRef, HTMLProps, useMemo } from 'react';
 import clsx from 'clsx';
 import { ClassNames } from './Typography.constants';
-import './Title.scss';
 
 export type TitleProps = {
   level: 1 | 2 | 3 | 4 | 5 | 6;

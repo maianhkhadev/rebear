@@ -6,7 +6,6 @@ import {
   ParagraphSizes,
   ClassNameParagraphSizeMapping,
 } from './Typography.constants';
-import './Paragraph.scss';
 
 export type ParagraphProps = {
   size?: ParagraphSizes;

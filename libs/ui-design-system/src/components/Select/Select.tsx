@@ -13,7 +13,6 @@ import {
   SelectSizes,
   ClassNameSizeMapping,
 } from './Select.constants';
-import './Select.scss';
 
 export type SelectOptions = {
   value: string | number;

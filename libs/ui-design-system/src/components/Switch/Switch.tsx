@@ -6,7 +6,6 @@ import {
   SwitchSizes,
   ClassNameSizeMapping,
 } from './Switch.constants';
-import './Switch.scss';
 
 export type SwitchProps = {
   size?: SwitchSizes;

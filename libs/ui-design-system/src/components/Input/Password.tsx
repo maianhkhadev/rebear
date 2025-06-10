@@ -9,7 +9,6 @@ import {
   InputSizes,
   ClassNameSizeMapping,
 } from './Input.constants';
-import './Input.scss';
 
 export type PasswordProps = {
   variant?: InputVariants;

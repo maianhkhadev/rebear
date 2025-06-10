@@ -1,7 +1,6 @@
 import { forwardRef, HTMLProps, useMemo } from 'react';
 import clsx from 'clsx';
 import { ClassNames } from './Typography.constants';
-import './Footnote.scss';
 
 type FootnoteProps = {
   weight?: 900 | 800 | 700 | 600 | 500 | 400 | 300 | 200 | 100

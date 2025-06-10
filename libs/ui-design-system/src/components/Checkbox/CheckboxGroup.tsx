@@ -2,7 +2,6 @@ import React, { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
 import { isChecked } from './utils';
 import { ClassNames, CheckboxSize, CheckboxSizes } from './Checkbox.constants';
-import './Checkbox.scss';
 
 export type CheckboxGroupProps = {
   name?: string;

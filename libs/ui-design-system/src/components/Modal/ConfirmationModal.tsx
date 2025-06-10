@@ -17,7 +17,6 @@ import {
   ModalVariants,
   ClassNameVariantMapping,
 } from './Modal.constants';
-import './Modal.scss';
 
 export interface ConfirmationModalProps {
   isLoading?: boolean;

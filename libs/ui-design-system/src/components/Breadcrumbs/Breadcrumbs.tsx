@@ -1,7 +1,6 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import { clsx } from 'clsx';
 import { ClassNames } from './Breadcrumbs.constants';
-import './Breadcrumbs.scss';
 
 export const Breadcrumbs = forwardRef<
   HTMLUListElement,

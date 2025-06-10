@@ -7,7 +7,6 @@ import {
   CheckboxSizes,
   ClassNameSizeMapping,
 } from './Checkbox.constants';
-import './Checkbox.scss';
 
 export type CheckboxProps = {
   size?: CheckboxSizes;

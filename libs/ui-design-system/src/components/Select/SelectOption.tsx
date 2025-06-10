@@ -1,7 +1,6 @@
 import { HTMLProps } from 'react';
 import clsx from 'clsx';
 import { ClassNames } from './Select.constants';
-import './Select.scss';
 
 export type SelectOptionProps = {
   value: string | number;

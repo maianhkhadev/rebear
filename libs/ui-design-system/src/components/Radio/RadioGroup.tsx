@@ -1,7 +1,6 @@
 import React, { forwardRef, HTMLProps } from 'react';
 import clsx from 'clsx';
 import { ClassNames, RadioSize, RadioSizes } from './Radio.constants';
-import './Radio.scss';
 
 export type RadioGroupProps = {
   name?: string;

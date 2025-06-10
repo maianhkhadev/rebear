@@ -1,7 +1,6 @@
 import React, { forwardRef, HTMLProps, useRef, useMemo, useState } from 'react';
 import { AccordionsContext, AccordionsData } from './AccordionsContext';
 import { ClassNames } from './Accordions.constants';
-import './Accordions.scss';
 
 export const Accordions = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>(
   function Accordions(props, ref) {

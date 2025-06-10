@@ -9,7 +9,6 @@ import {
   ButtonSizes,
   ClassNameSizeMapping,
 } from './Button.constants';
-import './Button.scss';
 
 export type ButtonProps = {
   type?: "button" | "submit" | "reset";
