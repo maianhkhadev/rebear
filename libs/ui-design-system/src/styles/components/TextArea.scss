@@ -16,14 +16,12 @@
 }
 
 .rebear-textarea-md {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
+  @include rb-title-h6;
   padding: var(--rb-textarea-padding-md);
 }
 
 .rebear-textarea-lg {
-  font-size: var(--rb-text-lg-font-size);
-  line-height: var(--rb-text-lg-line-height);
+  @include rb-title-h5;
   padding: var(--rb-input-padding-lg);
 }
 

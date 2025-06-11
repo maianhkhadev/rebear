@@ -3,11 +3,9 @@
 }
 
 .rebear-display-sm {
-  font-size: var(--rb-display-lg-font-size);
-  line-height: var(--rb-display-lg-line-height);
+  @include rb-display-sm;
 }
 
 .rebear-display-md {
-  font-size: var(--rb-display-xl-font-size);
-  line-height: var(--rb-display-xl-line-height);
+  @include rb-display-md;
 }

@@ -3,11 +3,9 @@
 }
 
 .rebear-paragraph-sm {
-  font-size: var(--rb-text-sm-font-size);
-  line-height: var(--rb-text-sm-line-height);
+  @include rb-paragraph-sm;
 }
 
 .rebear-paragraph-md {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
+  @include rb-paragraph-md;
 }

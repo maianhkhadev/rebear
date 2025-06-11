@@ -45,9 +45,8 @@
 }
 
 .rebear-input-md {
+  @include rb-title-h6;
   height: var(--rb-spacing-5xl);
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
   padding: var(--rb-input-padding-md);
 
   + .rebear-input-prefix-icon {
@@ -72,9 +71,8 @@
 }
 
 .rebear-input-lg {
+  @include rb-title-h5;
   height: var(--rb-spacing-6xl);
-  font-size: var(--rb-text-lg-font-size);
-  line-height: var(--rb-text-lg-line-height);
   padding: var(--rb-input-padding-lg);
 
   + .rebear-input-prefix-icon {

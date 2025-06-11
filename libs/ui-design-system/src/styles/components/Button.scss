@@ -74,9 +74,8 @@
   }
 
   &.rebear-button-sm {
+    @include rb-paragraph-sm;
     gap: var(--rb-spacing-sm);
-    font-size: var(--rb-text-sm-font-size);
-    line-height: var(--rb-text-sm-line-height);
     padding: var(--rb-button-padding-sm);
 
     .rebear-button-prefix-icon, .rebear-button-suffix-icon {
@@ -89,9 +88,8 @@
   }
 
   &.rebear-button-md {
+    @include rb-paragraph-sm;
     gap: var(--rb-spacing-sm);
-    font-size: var(--rb-text-sm-font-size);
-    line-height: var(--rb-text-sm-line-height);
     padding: var(--rb-button-padding-md);
 
     .rebear-button-prefix-icon, .rebear-button-suffix-icon {
@@ -104,9 +102,8 @@
   }
 
   &.rebear-button-lg {
+    @include rb-title-h6;
     gap: var(--rb-spacing-md);
-    font-size: var(--rb-text-md-font-size);
-    line-height: var(--rb-text-md-line-height);
     padding: var(--rb-button-padding-lg);
 
     .rebear-button-prefix-icon, .rebear-button-suffix-icon {
@@ -119,9 +116,8 @@
   }
 
   &.rebear-button-xl {
+    @include rb-title-h6;
     gap: var(--rb-spacing-md);
-    font-size: var(--rb-text-md-font-size);
-    line-height: var(--rb-text-md-line-height);
     padding: var(--rb-button-padding-xl);
 
     .rebear-button-prefix-icon, .rebear-button-suffix-icon {
@@ -134,9 +130,8 @@
   }
 
   &.rebear-button-2xl {
+    @include rb-title-h5;
     gap: var(--rb-spacing-lg);
-    font-size: var(--rb-text-lg-font-size);
-    line-height: var(--rb-text-lg-line-height);
     padding: var(--rb-button-padding-2xl);
 
     .rebear-button-prefix-icon, .rebear-button-suffix-icon {

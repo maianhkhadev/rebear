@@ -1,24 +1,54 @@
+@mixin rb-display-md {
+  font-size: var(--rb-display-xl-font-size);
+  line-height: var(--rb-display-xl-line-height);
+}
+
+@mixin rb-display-sm {
+  font-size: var(--rb-display-lg-font-size);
+  line-height: var(--rb-display-lg-line-height);
+}
+
+@mixin rb-title-h1 {
+  font-size: var(--rb-display-md-font-size);
+  line-height: var(--rb-display-md-line-height);
+}
+
+@mixin rb-title-h2 {
+  font-size: var(--rb-display-sm-font-size);
+  line-height: var(--rb-display-sm-line-height);
+}
+
+@mixin rb-title-h3 {
+  font-size: var(--rb-display-xs-font-size);
+  line-height: var(--rb-display-xs-line-height);
+}
+
 @mixin rb-title-h4 {
-  font-size: var(--rb-title-h4-font-size);
-  line-height: var(--rb-title-h4-line-height);
+  font-size: var(--rb-text-xl-font-size);
+  line-height: var(--rb-text-xl-line-height);
 }
 
 @mixin rb-title-h5 {
-  font-size: var(--rb-title-h5-font-size);
-  line-height: var(--rb-title-h5-line-height);
+  font-size: var(--rb-text-lg-font-size);
+  line-height: var(--rb-text-lg-line-height);
 }
 
-@mixin rb-paragraph-L {
-  font-size: var(--rb-paragraph-large-font-size);
-  line-height: var(--rb-paragraph-large-line-height);
+@mixin rb-title-h6 {
+  font-size: var(--rb-text-md-font-size);
+  line-height: var(--rb-text-md-line-height);
 }
 
-@mixin rb-paragraph-S {
-  font-size: var(--rb-paragraph-small-font-size);
-  line-height: var(--rb-paragraph-small-line-height);
+@mixin rb-paragraph-md {
+  font-size: var(--rb-text-md-font-size);
+  line-height: var(--rb-text-md-line-height);
 }
 
-@mixin rb-caption {
-  font-size: var(--rb-caption-font-size);
-  line-height: var(--rb-caption-line-height);
+@mixin rb-paragraph-sm {
+  font-size: var(--rb-text-sm-font-size);
+  line-height: var(--rb-text-sm-line-height);
+}
+
+@mixin rb-footnote {
+  font-size: var(--rb-text-xs-font-size);
+  line-height: var(--rb-text-xs-line-height);
 }

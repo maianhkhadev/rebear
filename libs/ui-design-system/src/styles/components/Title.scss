@@ -1,33 +1,27 @@
 .rebear-title {
-  
+  font-weight: 500;
 }
 
 h1.rebear-title {
-  font-size: var(--rb-display-md-font-size);
-  line-height: var(--rb-display-md-line-height);
+  @include rb-title-h1;
 }
 
 h2.rebear-title {
-  font-size: var(--rb-display-sm-font-size);
-  line-height: var(--rb-display-sm-line-height);
+  @include rb-title-h3;
 }
 
 h3.rebear-title {
-  font-size: var(--rb-display-xs-font-size);
-  line-height: var(--rb-display-xs-line-height);
+  @include rb-title-h3;
 }
 
 h4.rebear-title {
-  font-size: var(--rb-text-xl-font-size);
-  line-height: var(--rb-text-xl-line-height);
+  @include rb-title-h4;
 }
 
 h5.rebear-title {
-  font-size: var(--rb-text-lg-font-size);
-  line-height: var(--rb-text-lg-line-height);
+  @include rb-title-h5;
 }
 
 h6.rebear-title {
-  font-size: var(--rb-text-md-font-size);
-  line-height: var(--rb-text-md-line-height);
+  @include rb-title-h6;
 }
