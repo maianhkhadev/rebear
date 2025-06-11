@@ -37,9 +37,9 @@ export default defineConfig({
       // Could also be a dictionary or array of multiple entry points.
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),
-        style: path.resolve(__dirname, 'src/index.scss'),
-        light: path.resolve(__dirname, 'src/colors-light.scss'),
-        dark: path.resolve(__dirname, 'src/colors-dark.scss'),
+        style: path.resolve(__dirname, 'src/styles/index.scss'),
+        light: path.resolve(__dirname, 'src/styles/colors-light.scss'),
+        dark: path.resolve(__dirname, 'src/styles/colors-dark.scss'),
       },
       name: 'ui-design-system',
       fileName: 'index',
