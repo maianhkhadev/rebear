@@ -25,11 +25,11 @@ export const Button = forwardRef<
   ButtonProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function Button(props, ref) {
   const {
-    type,
-    variant,
-    size,
-    block,
-    error,
+    type = "button",
+    variant = ButtonVariant.Primary,
+    size = ButtonSize.MD,
+    block = false,
+    error = false,
     prefixIcon,
     suffixIcon,
     className,
@@ -60,15 +60,5 @@ export const Button = forwardRef<
     </button>
   );
 });
-
-Button.defaultProps = {
-  type: undefined,
-  variant: ButtonVariant.Primary,
-  size: ButtonSize.MD,
-  block: false,
-  error: false,
-  prefixIcon: undefined,
-  suffixIcon: undefined,
-};
 
 export default Button;

@@ -10,7 +10,7 @@ import {
 import { useInstallFloating } from './useInstallFloating';
 import { ModalDismiss } from './ModalDismiss';
 import { ModalActions } from './ModalActions';
-import { Button } from '../Button';
+import { Button, ButtonVariant } from '../Button';
 import {
   ClassNames,
   ModalVariant,
@@ -18,25 +18,25 @@ import {
   ClassNameVariantMapping,
 } from './Modal.constants';
 
-export interface ConfirmationModalProps {
+export type ConfirmationModalProps = {
   isLoading?: boolean;
   showIcon?: boolean;
   open: boolean;
   onOpenChange: (open: boolean) => void;
   variant?: ModalVariants;
   onConfirm?: () => void;
-}
+};
 
 export const ConfirmationModal = forwardRef<
   HTMLDivElement,
   ConfirmationModalProps & Omit<HTMLProps<HTMLDivElement>, 'size'>
 >(function ConfirmationModal(props, ref) {
   const {
-    open,
+    open = false,
     onOpenChange,
     isLoading,
-    variant,
-    showIcon,
+    variant = ModalVariant.Info,
+    showIcon = false,
     onConfirm,
     className,
     children,
@@ -73,13 +73,13 @@ export const ConfirmationModal = forwardRef<
               {children}
 
               <ModalActions>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant={ButtonVariant.Secondary} onClick={handleClose}>
                   Cancel
                 </Button>
 
                 {onConfirm && (
                   <Button
-                    variant="primary"
+                    variant={ButtonVariant.Primary}
                     disabled={isLoading}
                     onClick={onConfirm}
                   >
@@ -94,11 +94,5 @@ export const ConfirmationModal = forwardRef<
     </FloatingPortal>
   );
 });
-
-ConfirmationModal.defaultProps = {
-  isLoading: false,
-  variant: ModalVariant.Info,
-  showIcon: true,
-};
 
 export default ConfirmationModal;

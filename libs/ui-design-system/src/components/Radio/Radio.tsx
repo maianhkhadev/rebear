@@ -15,7 +15,7 @@ export const Radio = forwardRef<
   HTMLInputElement,
   RadioProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Radio(props, ref) {
-  const { className, size, children, ...rest } = props;
+  const { className, size = RadioSize.MD, children, ...rest } = props;
 
   const classes = clsx([
     ClassNames.Radio,
@@ -31,9 +31,5 @@ export const Radio = forwardRef<
     </label>
   );
 });
-
-Radio.defaultProps = {
-  size: RadioSize.MD,
-};
 
 export default Radio;

@@ -1,3 +1,4 @@
+export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Carousel';
 export * from './components/Input';
@@ -9,3 +10,5 @@ export * from './components/Select';
 export * from './components/Checkbox';
 export * from './components/Radio';
 export * from './components/Switch';
+export * from './components/Markdown';
+export * from './components/Dropdown';

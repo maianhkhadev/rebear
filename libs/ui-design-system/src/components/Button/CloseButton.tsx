@@ -18,7 +18,7 @@ export const CloseButton = forwardRef<
   HTMLButtonElement,
   ButtonIconProps & Omit<HTMLProps<HTMLButtonElement>, 'size'>
 >(function CloseButton(props, ref) {
-  const { size, className, ...rest } = props;
+  const { size = ButtonSize.MD, className, ...rest } = props;
 
   const classes = clsx([
     ClassNames.ButtonIcon,
@@ -33,9 +33,5 @@ export const CloseButton = forwardRef<
     </button>
   );
 });
-
-CloseButton.defaultProps = {
-  size: ButtonSize.MD,
-};
 
 export default CloseButton;

@@ -56,3 +56,106 @@
   --rb-white: #ffffff;
   --rb-black: #000000;
 }
+
+:root {
+  // GRAY COLORS
+  --rb-gray-950: #0A0D12;
+  --rb-gray-900: #181D27;
+  --rb-gray-800: #252B37;
+  --rb-gray-700: #414651;
+  --rb-gray-600: #535862;
+  --rb-gray-500: #717680;
+  --rb-gray-400: #A4A7AE;
+  --rb-gray-300: #D5D7DA;
+  --rb-gray-200: #E9EAEB;
+  --rb-gray-100: #F5F5F5;
+  --rb-gray-50: #FAFAFA;
+  --rb-gray-25: #FDFDFD;
+  // TEXT COLORS
+  --rb-text-primary: var(--rb-gray-900);
+  --rb-text-primary-on-brand: var(--rb-white);
+  --rb-text-secondary: var(--rb-gray-700);
+  --rb-text-secondary-hover: var(--rb-gray-800);
+  --rb-text-secondary-on-brand: var(--rb-brand-200);
+  --rb-text-tertiary: var(--rb-gray-600);
+  --rb-text-tertiary-hover: var(--rb-gray-700);
+  --rb-text-tertiary-on-brand: var(--rb-brand-200);
+  --rb-text-quaternary: var(--rb-gray-500);
+  --rb-text-quaternary-on-brand: var(--rb-brand-300);
+  --rb-text-white: var(--rb-white);
+  --rb-text-disabled: var(--rb-gray-500);
+  --rb-text-placeholder: var(--rb-gray-500);
+  --rb-text-placeholder-subtle: var(--rb-gray-300);
+  --rb-text-brand-primary: var(--rb-brand-900);
+  --rb-text-brand-secondary: var(--rb-brand-700);
+  --rb-text-brand-tertiary: var(--rb-brand-600);
+  --rb-text-brand-tertiary-alt: var(--rb-brand-600);
+  --rb-text-error-primary: var(--rb-error-600);
+  --rb-text-warning-primary: var(--rb-warning-600);
+  --rb-text-success-primary: var(--rb-success-600);
+  // BORDER COLORS
+  --rb-border-primary: var(--rb-gray-300);
+  --rb-border-secondary: var(--rb-gray-200);
+  --rb-border-tertiary: var(--rb-gray-100);
+  --rb-border-disabled: var(--rb-gray-300);
+  --rb-border-disabled-subtle: var(--rb-gray-200);
+  --rb-border-brand: var(--rb-brand-500);
+  --rb-border-brand-alt: var(--rb-brand-600);
+  --rb-border-error: var(--rb-error-500);
+  --rb-border-error-subtle: var(--rb-error-300);
+  // FOREGROUND COLORS
+  --rb-fg-primary: var(--rb-gray-900);
+  --rb-fg-secondary: var(--rb-gray-700);
+  --rb-fg-secondary-hover: var(--rb-gray-700);
+  --rb-fg-tertiary: var(--rb-gray-600);
+  --rb-fg-tertiary-hover: var(--rb-gray-700);
+  --rb-fg-quaternary: var(--rb-gray-500);
+  --rb-fg-quaternary-hover: var(--rb-gray-600);
+  --rb-fg-quinary: var(--rb-gray-400);
+  --rb-fg-quinary-hover: var(--rb-gray-500);
+  --rb-fg-senary: var(--rb-gray-300);
+  --rb-fg-white: var(--rb-white);
+  --rb-fg-disabled: var(--rb-gray-400);
+  --rb-fg-disabled-subtle: var(--rb-gray-300);
+  --rb-fg-brand-primary: var(--rb-brand-600);
+  --rb-fg-brand-primary-alt: var(--rb-brand-600);
+  --rb-fg-brand-secondary: var(--rb-brand-500);
+  --rb-fg-error-primary: var(--rb-error-600);
+  --rb-fg-error-secondary: var(--rb-error-500);
+  --rb-fg-warning-primary: var(--rb-warning-600);
+  --rb-fg-warning-secondary: var(--rb-warning-500);
+  --rb-fg-success-primary: var(--rb-success-600);
+  --rb-fg-success-secondary: var(--rb-success-500);
+  // BACKGROUND COLORS
+  --rb-bg-primary: var(--rb-white);
+  --rb-bg-primary-alt: var(--rb-white);
+  --rb-bg-primary-hover: var(--rb-gray-50);
+  --rb-bg-primary-solid: var(--rb-gray-950);
+  --rb-bg-secondary: var(--rb-gray-50);
+  --rb-bg-secondary-alt: var(--rb-gray-50);
+  --rb-bg-secondary-hover: var(--rb-gray-100);
+  --rb-bg-secondary-subtle: var(--rb-gray-25);
+  --rb-bg-secondary-solid: var(--rb-gray-600);
+  --rb-bg-tertiary: var(--rb-gray-100);
+  --rb-bg-quaternary: var(--rb-gray-200);
+  --rb-bg-active: var(--rb-gray-50);
+  --rb-bg-disabled: var(--rb-gray-100);
+  --rb-bg-disabled-subtle: var(--rb-gray-50);
+  --rb-bg-overlay: var(--rb-gray-950);
+  --rb-bg-brand-primary: var(--rb-brand-50);
+  --rb-bg-brand-primary-alt: var(--rb-brand-50);
+  --rb-bg-brand-secondary: var(--rb-brand-100);
+  --rb-bg-brand-solid: var(--rb-brand-600);
+  --rb-bg-brand-solid-hover: var(--rb-brand-700);
+  --rb-bg-brand-section: var(--rb-brand-800);
+  --rb-bg-brand-section-subtle: var(--rb-brand-700);
+  --rb-bg-error-primary: var(--rb-error-50);
+  --rb-bg-error-secondary: var(--rb-error-100);
+  --rb-bg-error-solid: var(--rb-error-600);
+  --rb-bg-warning-primary: var(--rb-warning-50);
+  --rb-bg-warning-secondary: var(--rb-warning-100);
+  --rb-bg-warning-solid: var(--rb-warning-600);
+  --rb-bg-success-primary: var(--rb-success-50);
+  --rb-bg-success-secondary: var(--rb-success-100);
+  --rb-bg-success-solid: var(--rb-success-600);
+}

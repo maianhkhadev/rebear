@@ -21,7 +21,14 @@ export const Input = forwardRef<
   HTMLInputElement,
   InputProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Input(props, ref) {
-  const { className, variant, size, prefixIcon, suffixIcon, ...rest } = props;
+  const {
+    className,
+    variant = InputVariant.Primary,
+    size = InputSize.MD,
+    prefixIcon,
+    suffixIcon,
+    ...rest
+  } = props;
 
   const classes = clsx([
     ClassNames.Input,
@@ -44,12 +51,5 @@ export const Input = forwardRef<
     </div>
   );
 });
-
-Input.defaultProps = {
-  variant: InputVariant.Primary,
-  size: InputSize.MD,
-  prefixIcon: undefined,
-  suffixIcon: undefined,
-};
 
 export default Input;

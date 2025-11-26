@@ -19,7 +19,12 @@ export const Password = forwardRef<
   HTMLInputElement,
   PasswordProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Password(props, ref) {
-  const { className, variant, size, ...rest } = props;
+  const {
+    className,
+    variant = InputVariant.Primary,
+    size = InputSize.MD,
+    ...rest
+  } = props;
 
   const classes = clsx([
     ClassNames.Input,
@@ -34,10 +39,5 @@ export const Password = forwardRef<
     </div>
   );
 });
-
-Password.defaultProps = {
-  variant: InputVariant.Primary,
-  size: InputSize.MD,
-};
 
 export default Password;

@@ -2,7 +2,7 @@ import { ButtonIcon, ButtonVariant, ButtonSize } from '../Button';
 import { IconX } from 'rebear-icons';
 import { ClassNames } from './Modal.constants';
 
-export interface ModalDismissProps {
+export type ModalDismissProps = {
   onOpenChange: (open: boolean) => void;
 }
 

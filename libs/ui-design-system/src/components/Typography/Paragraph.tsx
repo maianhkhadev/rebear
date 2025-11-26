@@ -15,7 +15,7 @@ export const Paragraph = forwardRef<
   HTMLParagraphElement,
   ParagraphProps & Omit<HTMLProps<HTMLParagraphElement>, 'size'>
 >(function Paragraph(props, ref) {
-  const { size, className, children, ...rest } = props;
+  const { size = ParagraphSize.MD, className, children, ...rest } = props;
 
   const classes = clsx([
     ClassNames.Paragraph,
@@ -29,9 +29,5 @@ export const Paragraph = forwardRef<
     </p>
   );
 });
-
-Paragraph.defaultProps = {
-  size: ParagraphSize.MD,
-};
 
 export default Paragraph;

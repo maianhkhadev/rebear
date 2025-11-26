@@ -19,7 +19,12 @@ export const TextArea = forwardRef<
   HTMLTextAreaElement,
   TextAreaProps & Omit<HTMLProps<HTMLTextAreaElement>, 'size'>
 >(function TextArea(props, ref) {
-  const { className, variant, size, ...rest } = props;
+  const {
+    className,
+    variant = TextAreaVariant.Primary,
+    size = TextAreaSize.MD,
+    ...rest
+  } = props;
 
   const classes = clsx([
     ClassNames.TextArea,
@@ -28,14 +33,7 @@ export const TextArea = forwardRef<
     className,
   ]);
 
-  return (
-    <textarea className={classes} {...rest} ref={ref} />
-  );
+  return <textarea className={classes} {...rest} ref={ref} />;
 });
-
-TextArea.defaultProps = {
-  variant: TextAreaVariant.Primary,
-  size: TextAreaSize.MD,
-};
 
 export default TextArea;

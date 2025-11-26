@@ -15,7 +15,7 @@ export const Display = forwardRef<
   HTMLParagraphElement,
   DisplayProps & Omit<HTMLProps<HTMLParagraphElement>, 'size'>
 >(function Paragraph(props, ref) {
-  const { size, className, children, ...rest } = props;
+  const { size = DisplaySize.MD, className, children, ...rest } = props;
 
   const classes = clsx([
     ClassNames.Display,
@@ -29,9 +29,5 @@ export const Display = forwardRef<
     </p>
   );
 });
-
-Display.defaultProps = {
-  size: DisplaySize.MD,
-};
 
 export default Display;

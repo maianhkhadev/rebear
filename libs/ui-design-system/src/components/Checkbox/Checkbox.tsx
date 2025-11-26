@@ -16,7 +16,7 @@ export const Checkbox = forwardRef<
   HTMLInputElement,
   CheckboxProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Checkbox(props, ref) {
-  const { className, size, children, ...rest } = props;
+  const { className, size = CheckboxSize.MD, children, ...rest } = props;
 
   const classes = clsx([
     ClassNames.Checkbox,
@@ -34,9 +34,5 @@ export const Checkbox = forwardRef<
     </label>
   );
 });
-
-Checkbox.defaultProps = {
-  size: CheckboxSize.MD,
-};
 
 export default Checkbox;

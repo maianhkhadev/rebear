@@ -10,7 +10,7 @@ import { useInstallFloating } from './useInstallFloating';
 import { ModalDismiss } from './ModalDismiss';
 import { ClassNames } from './Modal.constants';
 
-export interface ModalProps {
+export type ModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }

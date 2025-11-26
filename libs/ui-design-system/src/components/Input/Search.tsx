@@ -19,7 +19,12 @@ export const Search = forwardRef<
   HTMLInputElement,
   SearchProps & Omit<HTMLProps<HTMLInputElement>, 'size'>
 >(function Search(props, ref) {
-  const { className, variant, size, ...rest } = props;
+  const {
+    className,
+    variant = InputVariant.Primary,
+    size = InputSize.MD,
+    ...rest
+  } = props;
 
   const classes = clsx([
     ClassNames.Input,
@@ -34,10 +39,5 @@ export const Search = forwardRef<
     </div>
   );
 });
-
-Search.defaultProps = {
-  variant: InputVariant.Primary,
-  size: InputSize.MD,
-};
 
 export default Search;

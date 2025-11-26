@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from './Input';
-import { IconX } from 'rebear-icons';
+import { Search } from './Search';
 
-const meta: Meta<typeof Input> = {
-  component: Input,
-  title: 'Form/Input',
+const meta: Meta<typeof Search> = {
+  component: Search,
+  title: 'Form/Search',
   argTypes: {
     size: {
       options: ['md', 'lg'],
       control: { type: 'radio' },
     },
   },
-  render: ({ ...args }) => <Input {...args} suffixIcon={<IconX />} />,
+  render: ({ ...args }) => <Search {...args} />,
 };
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof Search>;
 
 export const Default: Story = {
   args: {

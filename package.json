@@ -10,9 +10,12 @@
   "private": true,
   "dependencies": {
     "@floating-ui/react": "^0.26.19",
+    "@lexical/html": "^0.37.0",
+    "@lexical/react": "^0.37.0",
     "@nx/next": "17.2.6",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
+    "lexical": "^0.37.0",
     "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

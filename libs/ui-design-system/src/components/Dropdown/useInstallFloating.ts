@@ -12,16 +12,16 @@ import {
 
 type InstallFloatingProps = {
   open: boolean;
-  onOpenChange: (isOpen: boolean) => void;
+  onOpenChange: (open: boolean) => void;
 };
 
 export const useInstallFloating = (props: InstallFloatingProps) => {
   const { open, onOpenChange } = props;
 
-  const { refs, context, floatingStyles } = useFloating({
+  const { refs, context } = useFloating({
     open,
     onOpenChange,
-    placement: "bottom-start",
+    placement: 'bottom-start',
     whileElementsMounted: autoUpdate,
     middleware: [
       offset(5),
@@ -30,7 +30,7 @@ export const useInstallFloating = (props: InstallFloatingProps) => {
         apply({ rects, elements, availableHeight }) {
           Object.assign(elements.floating.style, {
             maxHeight: `${availableHeight}px`,
-            minWidth: `${rects.reference.width}px`,
+            minWidth: `100px`,
           });
         },
         padding: 10,
@@ -39,7 +39,7 @@ export const useInstallFloating = (props: InstallFloatingProps) => {
   });
 
   const click = useClick(context);
-  const dismiss = useDismiss(context);
+  const dismiss = useDismiss(context, { outsidePressEvent: 'mousedown' });
   const role = useRole(context);
 
   const { getReferenceProps, getFloatingProps } = useInteractions([
@@ -51,12 +51,10 @@ export const useInstallFloating = (props: InstallFloatingProps) => {
   return {
     context,
     refs,
-    floatingStyles,
     referenceProps: {
       ...getReferenceProps(),
     },
     floatingProps: {
-      style: floatingStyles,
       ...getFloatingProps(),
     },
   };

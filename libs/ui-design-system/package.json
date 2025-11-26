@@ -5,6 +5,7 @@
   "types": "./index.d.ts",
   "exports": {
     "./style.css": "./style.css",
+    "./light.css": "./light.css",
     ".": {
       "import": "./index.mjs",
       "require": "./index.js",

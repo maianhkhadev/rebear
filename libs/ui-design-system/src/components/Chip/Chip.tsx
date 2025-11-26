@@ -15,7 +15,7 @@ export const Chip = forwardRef<
   HTMLSpanElement,
   ChipProps & HTMLProps<HTMLSpanElement>
 >(function Chip(props, ref) {
-  const { variant, children } = props;
+  const { variant = ChipVariant.Primary, children } = props;
 
   const classes = clsx([
     ClassNames.Chip,
@@ -28,9 +28,5 @@ export const Chip = forwardRef<
     </span>
   );
 });
-
-Chip.defaultProps = {
-  variant: ChipVariant.Primary,
-};
 
 export default Chip;

@@ -36,8 +36,8 @@ export const Select = forwardRef<
   const {
     className,
     value,
-    variant,
-    size,
+    variant = SelectVariant.Primary,
+    size = SelectSize.MD,
     prefixIcon,
     children,
     options = [],
@@ -107,12 +107,5 @@ export const Select = forwardRef<
     </div>
   );
 });
-
-Select.defaultProps = {
-  variant: SelectVariant.Primary,
-  size: SelectSize.MD,
-  prefixIcon: undefined,
-  multiple: false,
-};
 
 export default Select;

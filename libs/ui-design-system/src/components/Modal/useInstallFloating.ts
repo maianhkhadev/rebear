@@ -6,7 +6,7 @@ import {
   useInteractions,
 } from '@floating-ui/react';
 
-export type InstallFloatingProps = {
+type InstallFloatingProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
